@@ -25,19 +25,18 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18dp" />
 
-        <EditText
-            android:id="@+id/txt_username"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:background="@drawable/input_border"
-            android:ems="10"
-            android:fontFamily="@font/quicksand_semibold"
-            android:paddingLeft="5dp"
-            android:paddingTop="4dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="8dp"
-            android:textSize="16dp" />
+       <Spinner
+           android:id="@+id/spinner_sicknesses"
+           android:layout_width="0dp"
+           android:layout_height="35dp"
+           android:layout_weight="3"
+           android:background="@drawable/input_border"
+           android:fontFamily="@font/quicksand_semibold"
+           android:paddingLeft="5dp"
+           android:paddingTop="4dp"
+           android:paddingRight="5dp"
+           android:paddingBottom="8dp"
+           />
 
     </LinearLayout>
 
@@ -84,25 +83,10 @@
             android:layout_height="32dp"
             android:layout_gravity="end"
             android:layout_marginTop="0dp"
-            android:layout_marginRight="10dp"
             android:background="@drawable/button_start"
             android:backgroundTint="@color/medi_sickness"
             android:fontFamily="@font/quicksand_bold"
             android:text="Add Medicine"
-            android:textColor="@color/medi_sickness_text"
-            android:textSize="15dp" />
-
-        <Button
-            android:id="@+id/btn_skip_medicine"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_gravity="end"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/button_start"
-            android:backgroundTint="@color/medi_sickness"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="Update Medicine"
             android:textColor="@color/medi_sickness_text"
             android:textSize="15dp" />
 
@@ -122,20 +106,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Diabetes"
+                android:text="Amexo"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -148,20 +133,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Cholestarol"
+                android:text="Lumigen"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -174,20 +160,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Cough"
+                android:text="Pfizer"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -200,20 +187,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Fever"
+                android:text="Panadol"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -226,20 +214,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Dystonia"
+                android:text="Asprin"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -252,20 +241,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Gallstones"
+                android:text="Xalatan"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 

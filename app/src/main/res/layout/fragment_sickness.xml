@@ -91,20 +91,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Diabetes"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -117,20 +118,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Cholestarol"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -143,20 +145,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Cough"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -169,20 +172,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Fever"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -195,20 +199,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Dystonia"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -221,20 +226,21 @@
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Gallstones"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
             <TextView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
                 android:textColor="@color/medi_sickness_delete"
-                android:textSize="20dp" />
+                android:textSize="25dp" />
 
         </LinearLayout>
 
