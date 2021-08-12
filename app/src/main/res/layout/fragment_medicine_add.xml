@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_medicine_add"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_add_pills"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_sickness"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Add Pills"
+            android:textColor="@color/medi_sickness_text"
+            android:textSize="17dp" />
+
+        <Button
+            android:id="@+id/btn_add_syrup"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_sickness"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Add Syrup"
+            android:textColor="@color/medi_sickness_text"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Medicine :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_medicine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btn_update_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_sickness"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Update Medicine"
+            android:textColor="@color/medi_sickness_text"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Date :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="2020-02-02"
+            android:textColor="#7A7A7A"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Pills In Card :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_pills_in_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Cards :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Boxes :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_boxes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Total Pills :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Intervals :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_intervals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="First time to take :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_first"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/btn_save_pills"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_sickness"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Add Pills"
+            android:textColor="@color/medi_sickness_text"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
