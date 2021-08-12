@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/recycler_reminder_history"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/card_border"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lbl_header_medicine"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Took Pill"
+            android:textColor="@color/medi_header_text"
+            android:fontFamily="@font/quicksand_bold"
+            android:textSize="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Medicine :"
+            android:textColor="#101010"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_medicine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="N/A"
+            android:textColor="#7A7A7A"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Dose :"
+            android:textColor="#101010"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_dose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="N/A"
+            android:textColor="#7A7A7A"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Due Time :"
+            android:textColor="#101010"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_due"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="N/A"
+            android:textColor="#7A7A7A"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Took Time :"
+            android:textColor="#101010"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_took"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="N/A"
+            android:textColor="#7A7A7A"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

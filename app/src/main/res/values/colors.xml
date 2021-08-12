@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2F6831</color>
+    <color name="colorPrimaryDark">#1E421F</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="medi_green">#3A833D</color>
+    <color name="medi_green_text">#BAD5BB</color>
+    <color name="medi_header_text">#107742</color>
+
+    <color name="medi_sickness">#B9CD5B</color>
+    <color name="medi_sickness_text">#465505</color>
+    <color name="medi_sickness_delete">#F82B1C</color>
+</resources>

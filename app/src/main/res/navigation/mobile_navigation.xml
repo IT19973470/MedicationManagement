@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_fragment_reminder">
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_home"-->
+<!--        android:name="lk.drugreminder.ui.home.HomeFragment"-->
+<!--        android:label="@string/menu_home"-->
+<!--        tools:layout="@layout/fragment_sickness" />-->
+
+    <fragment
+        android:id="@+id/nav_fragment_reminder"
+        android:name="lk.drugreminder.ui.reminder.ReminderFragment"
+        android:label="@string/menu_reminder"
+        tools:layout="@layout/fragment_reminder" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/nav_slideshow"-->
+<!--        android:name="lk.drugreminder.ui.slideshow.SlideshowFragment"-->
+<!--        android:label="@string/menu_slideshow"-->
+<!--        tools:layout="@layout/fragment_medicine" />-->
+
+    <fragment
+        android:id="@+id/nav_fragment_reminder_accept"
+        android:name="lk.drugreminder.ui.reminder.ReminderAcceptFragment"
+        android:label="@string/menu_reminder_accept"
+        tools:layout="@layout/fragment_reminder_accept" />
+
+    <fragment
+        android:id="@+id/nav_fragment_sickness"
+        android:name="lk.drugreminder.ui.sickness.SicknessFragment"
+        android:label="@string/menu_my_sickness"
+        tools:layout="@layout/fragment_sickness" />
+
+    <fragment
+        android:id="@+id/nav_fragment_medicine"
+        android:name="lk.drugreminder.ui.sickness.MedicineFragment"
+        android:label="@string/menu_my_medicine"
+        tools:layout="@layout/fragment_medicine" />
+</navigation>

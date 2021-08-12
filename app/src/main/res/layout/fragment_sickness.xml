@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_sickness"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Sickness :"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/txt_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:background="@drawable/input_border"
+            android:ems="10"
+            android:fontFamily="@font/quicksand_semibold"
+            android:paddingLeft="5dp"
+            android:paddingTop="4dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/btn_took_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_sickness"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Add Sickness"
+            android:textColor="@color/medi_sickness_text"
+            android:textSize="15dp" />
+
+        <Button
+            android:id="@+id/btn_skip_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_sickness"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Update Sickness"
+            android:textColor="@color/medi_sickness_text"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_border"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Diabetes"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/font_awesome_free_solid_900"
+                android:text="\uf00d"
+                android:textColor="@color/medi_sickness_delete"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_border"
+            android:layout_marginTop="20dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Cholestarol"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/font_awesome_free_solid_900"
+                android:text="\uf00d"
+                android:textColor="@color/medi_sickness_delete"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_border"
+            android:layout_marginTop="20dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Cough"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/font_awesome_free_solid_900"
+                android:text="\uf00d"
+                android:textColor="@color/medi_sickness_delete"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_border"
+            android:layout_marginTop="20dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Fever"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/font_awesome_free_solid_900"
+                android:text="\uf00d"
+                android:textColor="@color/medi_sickness_delete"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_border"
+            android:layout_marginTop="20dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Dystonia"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/font_awesome_free_solid_900"
+                android:text="\uf00d"
+                android:textColor="@color/medi_sickness_delete"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_border"
+            android:layout_marginTop="20dp"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Gallstones"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:fontFamily="@font/font_awesome_free_solid_900"
+                android:text="\uf00d"
+                android:textColor="@color/medi_sickness_delete"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
