@@ -87,6 +87,20 @@
             android:fontFamily="@font/quicksand_bold"
             android:text="Add medication"
             android:textColor="@color/medi_medicine_text"
+            android:layout_marginRight="10dp"
+            android:textSize="15dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/button_start"
+            android:backgroundTint="@color/medi_medicine"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Update medication"
+            android:textColor="@color/medi_medicine_text"
+            android:layout_marginLeft="10dp"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -114,14 +128,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/font_awesome_free_solid_900"
-                android:text="\uf00d"
-                android:textColor="@color/medi_medicine_delete"
-                android:textSize="25dp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -140,14 +146,6 @@
                 android:text="Lumigen"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
-
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/font_awesome_free_solid_900"
-                android:text="\uf00d"
-                android:textColor="@color/medi_medicine_delete"
-                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -168,14 +166,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/font_awesome_free_solid_900"
-                android:text="\uf00d"
-                android:textColor="@color/medi_medicine_delete"
-                android:textSize="25dp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -194,14 +184,6 @@
                 android:text="Panadol"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
-
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/font_awesome_free_solid_900"
-                android:text="\uf00d"
-                android:textColor="@color/medi_medicine_delete"
-                android:textSize="25dp" />
 
         </LinearLayout>
 
@@ -222,14 +204,6 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
 
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/font_awesome_free_solid_900"
-                android:text="\uf00d"
-                android:textColor="@color/medi_medicine_delete"
-                android:textSize="25dp" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -248,14 +222,6 @@
                 android:text="Xalatan"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="18dp" />
-
-            <TextView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:fontFamily="@font/font_awesome_free_solid_900"
-                android:text="\uf00d"
-                android:textColor="@color/medi_medicine_delete"
-                android:textSize="25dp" />
 
         </LinearLayout>
 

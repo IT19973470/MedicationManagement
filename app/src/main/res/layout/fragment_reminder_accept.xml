@@ -236,7 +236,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:padding="8dp">
+            android:padding="8dp"
+            android:paddingBottom="0dp">
 
             <TextView
                 android:layout_width="0dp"
@@ -255,6 +256,123 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingLeft="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Last week"
+                android:textColor="#101010"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Pills to be taken :"
+                android:textColor="#101010"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="3"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="25 pills"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Pills took :"
+                android:textColor="#101010"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="3"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="20 pills"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="30dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="2"
+                android:fontFamily="@font/quicksand_bold"
+                android:textColor="#101010"
+                android:text="Pills missed :"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="3"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="5 pills"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
