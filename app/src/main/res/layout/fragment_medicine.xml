@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_bold"
             android:text="Sickness :"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/medi_medicine_text"
             android:textSize="18dp" />
 
        <Spinner
@@ -51,7 +51,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_bold"
             android:text="Medicine :"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/medi_medicine_text"
             android:textSize="18dp" />
 
         <EditText
@@ -125,7 +125,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Amexo"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -144,7 +144,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Lumigen"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -163,7 +163,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Pfizer"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -182,7 +182,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Panadol"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -201,7 +201,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Asprin"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
         </LinearLayout>
@@ -220,7 +220,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Xalatan"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
         </LinearLayout>

@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2F6831</color>
+    <color name="colorPrimary">#3483C1</color>
     <color name="colorPrimaryDark">#1E421F</color>
     <color name="colorAccent">#03DAC5</color>
+
     <color name="medi_green">#B9CD5B</color>
     <color name="medi_green_text">#465505</color>
-    <color name="medi_header_text">#107742</color>
+    <color name="medi_header_text">#0B914C</color>
+
+    <color name="medi_blue">#176AAC</color>
+    <color name="medi_blue_dark">#0B4F85</color>
 
     <color name="medi_medicine_delete">#F82B1C</color>
 
-    <color name="medi_medicine">#B9CD5B</color>
-    <color name="medi_medicine_text">#465505</color>
-    <color name="medi_medicine_not_clicked">#D1DAAB</color>
+    <color name="medi_medicine">#8AA9C3</color>
+    <color name="medi_medicine_text">#083355</color>
+    <color name="medi_medicine_not_clicked">#C8CFD5</color>
 
     <color name="medi_medicine_add_by">#FDC601</color>
     <color name="medi_medicine_add_by_not_clicked">#FAEAB3</color>
     <color name="medi_medicine_add_by_text">#5E3902</color>
 </resources>
+
+<!--<resources>-->
+<!--<color name="colorPrimary">#2F6831</color>-->
+<!--<color name="colorPrimaryDark">#1E421F</color>-->
+<!--<color name="colorAccent">#03DAC5</color>-->
+<!--<color name="medi_green">#B9CD5B</color>-->
+<!--<color name="medi_green_text">#465505</color>-->
+<!--<color name="medi_header_text">#107742</color>-->
+
+<!--<color name="medi_medicine_delete">#F82B1C</color>-->
+
+<!--<color name="medi_medicine">#B9CD5B</color>-->
+<!--<color name="medi_medicine_text">#465505</color>-->
+<!--<color name="medi_medicine_not_clicked">#D1DAAB</color>-->
+
+<!--<color name="medi_medicine_add_by">#FDC601</color>-->
+<!--<color name="medi_medicine_add_by_not_clicked">#FAEAB3</color>-->
+<!--<color name="medi_medicine_add_by_text">#5E3902</color>-->
+<!--</resources>-->

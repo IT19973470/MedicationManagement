@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_bold"
             android:text="Sickness :"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/medi_medicine_text"
             android:textSize="18dp" />
 
         <EditText
@@ -96,7 +96,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Diabetes"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
             <TextView
@@ -123,7 +123,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Cholestarol"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
             <TextView
@@ -150,7 +150,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Cough"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
             <TextView
@@ -177,7 +177,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Fever"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
             <TextView
@@ -204,7 +204,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Dystonia"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
             <TextView
@@ -231,7 +231,7 @@
                 android:gravity="center_vertical"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Gallstones"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/medi_medicine_text"
                 android:textSize="18dp" />
 
             <TextView

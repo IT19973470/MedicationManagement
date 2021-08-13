@@ -33,7 +33,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Diabetes Pill"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/medi_blue"
                     android:textSize="20dp" />
 
             </LinearLayout>
@@ -208,10 +208,10 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_start"
-                    android:backgroundTint="@color/medi_green"
+                    android:backgroundTint="@color/medi_medicine"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Take Medication"
-                    android:textColor="@color/medi_green_text"
+                    android:textColor="@color/medi_medicine_text"
                     android:layout_marginRight="10dp"
                     android:textSize="14dp" />
 
@@ -222,10 +222,10 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_start"
-                    android:backgroundTint="@color/medi_green"
+                    android:backgroundTint="@color/medi_medicine"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Skip Medication"
-                    android:textColor="@color/medi_green_text"
+                    android:textColor="@color/medi_medicine_text"
                     android:layout_marginLeft="10dp"
                     android:textSize="14dp" />
 
@@ -288,7 +288,7 @@
                 android:layout_marginBottom="0dp"
                 android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Pills to be taken :"
+                android:text="Pills should have taken :"
                 android:textColor="#101010"
                 android:textSize="15dp" />
 
@@ -298,7 +298,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="0dp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="25 pills"
                 android:textSize="15dp" />
@@ -330,7 +330,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="0dp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="20 pills"
                 android:textSize="15dp" />
@@ -362,7 +362,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="0dp"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="5 pills"
                 android:textSize="15dp" />

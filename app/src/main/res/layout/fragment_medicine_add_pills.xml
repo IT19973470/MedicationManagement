@@ -83,6 +83,7 @@
             android:fontFamily="@font/quicksand_semibold"
             android:gravity="end"
             android:text="2021-08-13"
+            android:paddingRight="5dp"
             android:textColor="#7A7A7A"
             android:textSize="17dp" />
 
