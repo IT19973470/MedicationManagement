@@ -49,9 +49,12 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         holder.getTxtDose().setText(reminderDTO.getDose());
         holder.getTxtDue().setText(reminderDTO.getDueTime());
         holder.getTxtTook().setText(reminderDTO.getTookTime());
+        holder.getLyReason().setVisibility(View.GONE);
         if (reminderDTO.isMissed()) {
             holder.getLblHeaderMedicine().setTextColor(Color.parseColor("red"));
             holder.getLinearLayout().setBackground(holder.getLinearLayout().getContext().getDrawable(R.drawable.card_border_missed));
+            holder.getTxtReason().setText(reminderDTO.getReason());
+            holder.getLyReason().setVisibility(View.VISIBLE);
         }
     }
 

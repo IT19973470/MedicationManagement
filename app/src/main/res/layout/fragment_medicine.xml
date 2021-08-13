@@ -83,10 +83,10 @@
             android:layout_gravity="end"
             android:layout_marginTop="0dp"
             android:background="@drawable/button_start"
-            android:backgroundTint="@color/medi_sickness"
+            android:backgroundTint="@color/medi_medicine"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Add Medicine"
-            android:textColor="@color/medi_sickness_text"
+            android:text="Add medication"
+            android:textColor="@color/medi_medicine_text"
             android:textSize="15dp" />
 
     </LinearLayout>
@@ -119,7 +119,7 @@
                 android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
-                android:textColor="@color/medi_sickness_delete"
+                android:textColor="@color/medi_medicine_delete"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -146,7 +146,7 @@
                 android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
-                android:textColor="@color/medi_sickness_delete"
+                android:textColor="@color/medi_medicine_delete"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -173,7 +173,7 @@
                 android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
-                android:textColor="@color/medi_sickness_delete"
+                android:textColor="@color/medi_medicine_delete"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -200,7 +200,7 @@
                 android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
-                android:textColor="@color/medi_sickness_delete"
+                android:textColor="@color/medi_medicine_delete"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -227,7 +227,7 @@
                 android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
-                android:textColor="@color/medi_sickness_delete"
+                android:textColor="@color/medi_medicine_delete"
                 android:textSize="25dp" />
 
         </LinearLayout>
@@ -254,7 +254,7 @@
                 android:layout_height="25dp"
                 android:fontFamily="@font/font_awesome_free_solid_900"
                 android:text="\uf00d"
-                android:textColor="@color/medi_sickness_delete"
+                android:textColor="@color/medi_medicine_delete"
                 android:textSize="25dp" />
 
         </LinearLayout>

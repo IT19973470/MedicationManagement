@@ -12,9 +12,9 @@ import lk.drugreminder.R;
 
 public class ReminderHistoryViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue, txtTook;
+    private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue, txtTook, txtReason;
     private Button btnTakeMedicine;
-    private LinearLayout linearLayout;
+    private LinearLayout linearLayout, lyReason;
 //    private LinearLayout layoutTutor;
 //    private ProgressBar zoomProgress;
 
@@ -25,8 +25,10 @@ public class ReminderHistoryViewHolder extends RecyclerView.ViewHolder {
         txtDose = itemView.findViewById(R.id.txt_dose);
         txtDue = itemView.findViewById(R.id.txt_due);
         txtTook = itemView.findViewById(R.id.txt_took);
+        txtReason = itemView.findViewById(R.id.txt_reason);
         btnTakeMedicine = itemView.findViewById(R.id.btn_take_medicine);
         linearLayout = itemView.findViewById(R.id.recycler_reminder_history);
+        lyReason = itemView.findViewById(R.id.ly_reason);
 //        Intent intent = new Intent(LoginActivity.this, ZoomWaitingActivity.class);
     }
 
@@ -78,11 +80,27 @@ public class ReminderHistoryViewHolder extends RecyclerView.ViewHolder {
         this.txtTook = txtTook;
     }
 
+    public TextView getTxtReason() {
+        return txtReason;
+    }
+
+    public void setTxtReason(TextView txtReason) {
+        this.txtReason = txtReason;
+    }
+
     public LinearLayout getLinearLayout() {
         return linearLayout;
     }
 
     public void setLinearLayout(LinearLayout linearLayout) {
         this.linearLayout = linearLayout;
+    }
+
+    public LinearLayout getLyReason() {
+        return lyReason;
+    }
+
+    public void setLyReason(LinearLayout lyReason) {
+        this.lyReason = lyReason;
     }
 }

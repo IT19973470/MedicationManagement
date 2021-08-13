@@ -11,6 +11,7 @@ public class ReminderDTO {
     private String remaining;
     private String endAt;
     private boolean missed;
+    private String reason;
 
     public ReminderDTO(String medicineHeader, String medicine, String dose, String dueTime, String nextTime, String remaining, String endAt) {
         this.medicineHeader = medicineHeader;
@@ -32,6 +33,19 @@ public class ReminderDTO {
         this.remaining = remaining;
         this.endAt = endAt;
         this.missed = missed;
+    }
+
+    public ReminderDTO(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed, String reason) {
+        this.medicineHeader = medicineHeader;
+        this.medicine = medicine;
+        this.dose = dose;
+        this.dueTime = dueTime;
+        this.tookTime = tookTime;
+        this.nextTime = nextTime;
+        this.remaining = remaining;
+        this.endAt = endAt;
+        this.missed = missed;
+        this.reason = reason;
     }
 
     public String getMedicineHeader() {
@@ -104,5 +118,13 @@ public class ReminderDTO {
 
     public void setMissed(boolean missed) {
         this.missed = missed;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 }

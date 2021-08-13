@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -24,7 +25,7 @@ import lk.drugreminder.model.ReminderDTO;
 public class ReminderAcceptFragment extends Fragment {
 
     private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue, txtNext, txtRemaining, txtEnd;
-    private Button btnTakeMedicine;
+    private Button btnTakeMedicine, btnSkipMedicine;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private ReminderHistoryAdapter reminderHistoryAdapter;
@@ -42,6 +43,14 @@ public class ReminderAcceptFragment extends Fragment {
         txtRemaining = view.findViewById(R.id.txt_remian);
         txtEnd = view.findViewById(R.id.txt_end);
         btnTakeMedicine = view.findViewById(R.id.btn_took_medicine);
+        btnSkipMedicine = view.findViewById(R.id.btn_skip_medicine);
+
+        btnSkipMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_fragment_skip_reason);
+            }
+        });
 
         ReminderDTO reminderDTO = ReminderAdapter.getReminderStaticDTO();
         lblHeaderMedicine.setText(reminderDTO.getMedicineHeader());
@@ -54,11 +63,11 @@ public class ReminderAcceptFragment extends Fragment {
 
         List<ReminderDTO> reminderDTOS = new ArrayList<>();
         reminderDTOS.add(new ReminderDTO("Took Pill", "Donpiri", "2 pills", "01:30 PM", "02:30 PM", "Next day at 05:30 PM", "20 pills", "2020-03-02 AT 06:30 PM", false));
-        reminderDTOS.add(new ReminderDTO("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true));
-        reminderDTOS.add(new ReminderDTO("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true));
-        reminderDTOS.add(new ReminderDTO("Missed Syrup", "Amexo", "10ml", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "200ml", "2020-04-08 AT 07:30 PM", true));
-        reminderDTOS.add(new ReminderDTO("Took Syrup", "Amexo", "10ml", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "200ml", "2020-04-08 AT 07:30 PM", false));
-        reminderDTOS.add(new ReminderDTO("Missed Syrup", "Amexo", "10ml", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "200ml", "2020-04-08 AT 07:30 PM", true));
+        reminderDTOS.add(new ReminderDTO("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true, "Forgot"));
+        reminderDTOS.add(new ReminderDTO("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true, "Forgot"));
+        reminderDTOS.add(new ReminderDTO("Missed Pill", "Amexo", "2 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "50 pills", "2020-04-08 AT 07:30 PM", true, "Forgot"));
+        reminderDTOS.add(new ReminderDTO("Took Pill", "Amexo", "3 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "30 pills", "2020-04-08 AT 07:30 PM", false));
+        reminderDTOS.add(new ReminderDTO("Missed Pill", "Amexo", "4 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "20 pills", "2020-04-08 AT 07:30 PM", true, "Forgot"));
 
         recyclerView = view.findViewById(R.id.recycler_reminder_history);
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
