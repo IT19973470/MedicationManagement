@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/nav_fragment_reminder"
         android:name="lk.drugreminder.ui.reminder.ReminderFragment"
-        android:label="@string/menu_reminder"
+        android:label="@string/my_reminders"
         tools:layout="@layout/recycler_reminder" />
 
 <!--    <fragment-->
@@ -26,7 +26,7 @@
     <fragment
         android:id="@+id/nav_fragment_reminder_accept"
         android:name="lk.drugreminder.ui.reminder.ReminderAcceptFragment"
-        android:label="@string/menu_reminder_accept"
+        android:label="@string/my_reminders"
         tools:layout="@layout/fragment_reminder_accept" />
 
     <fragment
@@ -50,13 +50,13 @@
     <fragment
         android:id="@+id/nav_fragment_skip_reason"
         android:name="lk.drugreminder.ui.reminder.ReminderReasonFragment"
-        android:label="@string/menu_my_medicine"
+        android:label="@string/my_reminders"
         tools:layout="@layout/fragment_reminder_skip_reason" />
 
     <fragment
         android:id="@+id/nav_fragment_medicine_take"
         android:name="lk.drugreminder.ui.reminder.ReminderMedicineTakeFragment"
-        android:label="@string/menu_reminder_accept"
+        android:label="@string/my_reminders"
         tools:layout="@layout/fragment_reminder_medicine_take" />
 
 </navigation>

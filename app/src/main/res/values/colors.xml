@@ -21,6 +21,7 @@
     <color name="medi_medicine_add_by">#FDC601</color>
     <color name="medi_medicine_add_by_not_clicked">#FAEAB3</color>
     <color name="medi_medicine_add_by_text">#5E3902</color>
+    <color name="medi_login">#DEE5EF</color>
 </resources>
 
 

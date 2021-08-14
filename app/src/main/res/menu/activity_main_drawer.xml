@@ -6,15 +6,18 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_fragment_reminder"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_reminder" />
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/my_reminders" />
         <item
             android:id="@+id/nav_fragment_sickness"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
             android:title="@string/menu_my_sickness" />
         <item
             android:id="@+id/nav_fragment_medicine"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
             android:title="@string/menu_my_medicine" />
     </group>
 </menu>
