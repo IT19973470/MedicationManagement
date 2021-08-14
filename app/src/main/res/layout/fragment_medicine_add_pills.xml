@@ -29,7 +29,7 @@
             android:background="@drawable/button_start"
             android:backgroundTint="@color/medi_medicine_add_by"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Pills"
+            android:text="@string/pills"
             android:textColor="@color/medi_medicine_add_by_text"
             android:textSize="16dp" />
 
@@ -42,7 +42,7 @@
             android:background="@drawable/button_start"
             android:backgroundTint="@color/medi_medicine_add_by_not_clicked"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Cards"
+            android:text="@string/cards"
             android:textColor="@color/medi_medicine_add_by_text"
             android:textSize="16dp" />
 
@@ -55,7 +55,7 @@
             android:background="@drawable/button_start"
             android:backgroundTint="@color/medi_medicine_add_by_not_clicked"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Boxes"
+            android:text="@string/boxes"
             android:textColor="@color/medi_medicine_add_by_text"
             android:textSize="16dp" />
 

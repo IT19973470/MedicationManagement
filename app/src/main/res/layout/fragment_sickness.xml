@@ -57,7 +57,7 @@
             android:background="@drawable/button_start"
             android:backgroundTint="@color/medi_medicine"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Add Sickness"
+            android:text="@string/add_sickness"
             android:textColor="@color/medi_medicine_text"
             android:textSize="15dp" />
 
@@ -71,7 +71,7 @@
             android:background="@drawable/button_start"
             android:backgroundTint="@color/medi_medicine"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Update Sickness"
+            android:text="@string/update_sickness"
             android:textColor="@color/medi_medicine_text"
             android:textSize="15dp" />
 

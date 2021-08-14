@@ -210,7 +210,7 @@
                     android:background="@drawable/button_start"
                     android:backgroundTint="@color/medi_medicine"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Take Medication"
+                    android:text="@string/take_medication"
                     android:textColor="@color/medi_medicine_text"
                     android:layout_marginRight="10dp"
                     android:textSize="14dp" />
@@ -224,7 +224,7 @@
                     android:background="@drawable/button_start"
                     android:backgroundTint="@color/medi_medicine"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Skip Medication"
+                    android:text="@string/skip_medication"
                     android:textColor="@color/medi_medicine_text"
                     android:layout_marginLeft="10dp"
                     android:textSize="14dp" />

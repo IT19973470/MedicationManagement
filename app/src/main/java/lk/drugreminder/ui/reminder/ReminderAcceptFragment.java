@@ -45,6 +45,13 @@ public class ReminderAcceptFragment extends Fragment {
         btnTakeMedicine = view.findViewById(R.id.btn_took_medicine);
         btnSkipMedicine = view.findViewById(R.id.btn_skip_medicine);
 
+        btnTakeMedicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_fragment_medicine_take);
+            }
+        });
+
         btnSkipMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

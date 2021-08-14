@@ -12,6 +12,7 @@
     <color name="medi_blue_dark">#0B4F85</color>
 
     <color name="medi_medicine_delete">#F82B1C</color>
+    <color name="medi_medicine_next">#4CAF50</color>
 
     <color name="medi_medicine">#8AA9C3</color>
     <color name="medi_medicine_text">#083355</color>
@@ -21,6 +22,19 @@
     <color name="medi_medicine_add_by_not_clicked">#FAEAB3</color>
     <color name="medi_medicine_add_by_text">#5E3902</color>
 </resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--<resources>-->
 <!--<color name="colorPrimary">#2F6831</color>-->

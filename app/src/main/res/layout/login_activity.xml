@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Medication Reminder"
+            android:text="@string/app_name"
             android:textColor="#114F80"
             android:textSize="30dp" />
 
