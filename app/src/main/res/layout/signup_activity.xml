@@ -142,7 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/button_start"
+                android:background="@drawable/button_crud"
                 android:backgroundTint="#176AAC"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Sign Up"

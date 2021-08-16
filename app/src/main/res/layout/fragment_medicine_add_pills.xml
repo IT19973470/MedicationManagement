@@ -6,58 +6,71 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        android:layout_marginBottom="20dp"
+        android:weightSum="5">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/quicksand_bold"
             android:text="Add by :"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18dp" />
 
-        <Button
-            android:id="@+id/btn_add_by_pills"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/button_start"
-            android:backgroundTint="@color/medi_medicine_add_by"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="@string/pills"
-            android:textColor="@color/medi_medicine_add_by_text"
-            android:textSize="16dp" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:weightSum="3">
 
-        <Button
-            android:id="@+id/btn_add_by_cards"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/button_start"
-            android:backgroundTint="@color/medi_medicine_add_by_not_clicked"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="@string/cards"
-            android:textColor="@color/medi_medicine_add_by_text"
-            android:textSize="16dp" />
+            <Button
+                android:id="@+id/btn_add_by_pills"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button_start"
+                android:backgroundTint="@color/medi_medicine_add_by"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/pills"
+                android:textColor="@color/medi_medicine_add_by_text"
+                android:textSize="14dp" />
 
-        <Button
-            android:id="@+id/btn_add_by_box"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/button_start"
-            android:backgroundTint="@color/medi_medicine_add_by_not_clicked"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="@string/boxes"
-            android:textColor="@color/medi_medicine_add_by_text"
-            android:textSize="16dp" />
+            <Button
+                android:id="@+id/btn_add_by_cards"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button_start"
+                android:backgroundTint="@color/medi_medicine_add_by_not_clicked"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/cards"
+                android:textColor="@color/medi_medicine_add_by_text"
+                android:textSize="14dp" />
+
+            <Button
+                android:id="@+id/btn_add_by_box"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button_start"
+                android:backgroundTint="@color/medi_medicine_add_by_not_clicked"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/boxes"
+                android:textColor="@color/medi_medicine_add_by_text"
+                android:textSize="14dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -71,6 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/quicksand_bold"
             android:text="Date :"
             android:textColor="@color/colorPrimaryDark"
@@ -80,10 +94,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/quicksand_semibold"
             android:gravity="end"
-            android:text="2021-08-13"
             android:paddingRight="5dp"
+            android:text="2021-08-13"
             android:textColor="#7A7A7A"
             android:textSize="17dp" />
 
@@ -106,6 +121,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Pills :"
                 android:textColor="@color/colorPrimaryDark"
@@ -142,10 +158,11 @@
             android:layout_weight="4">
 
             <TextView
-
                 android:layout_width="0dp"
+
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Pills In Card :"
                 android:textColor="@color/colorPrimaryDark"
@@ -177,6 +194,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Cards :"
                 android:textColor="@color/colorPrimaryDark"
@@ -213,10 +231,11 @@
             android:layout_weight="4">
 
             <TextView
-
                 android:layout_width="0dp"
+
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Pills In Card :"
                 android:textColor="@color/colorPrimaryDark"
@@ -248,6 +267,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Cards :"
                 android:textColor="@color/colorPrimaryDark"
@@ -279,6 +299,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Boxes :"
                 android:textColor="@color/colorPrimaryDark"
@@ -312,6 +333,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:autoSizeTextType="uniform"
             android:fontFamily="@font/quicksand_bold"
             android:text="Total Pills :"
             android:textColor="@color/colorPrimaryDark"
