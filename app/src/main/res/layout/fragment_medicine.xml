@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            android:layout_weight="4">
+            android:weightSum="4">
 
             <TextView
                 android:layout_width="0dp"
@@ -29,7 +29,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Sickness :"
                 android:textColor="@color/medi_medicine_text"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
             <Spinner
                 android:id="@+id/spinner_sicknesses"
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            android:layout_weight="4">
+            android:weightSum="4">
 
             <TextView
                 android:layout_width="0dp"
@@ -59,7 +59,7 @@
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Medicine :"
                 android:textColor="@color/medi_medicine_text"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/txt_medicine"
@@ -90,6 +90,7 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="10dp"
+                android:autoSizeTextType="uniform"
                 android:background="@drawable/button_crud"
                 android:backgroundTint="@color/medi_medicine"
                 android:fontFamily="@font/quicksand_bold"
@@ -135,7 +136,7 @@
                     android:gravity="center_vertical"
                     android:text="Amexo"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
@@ -164,7 +165,7 @@
                     android:gravity="center_vertical"
                     android:text="Lumigen"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
@@ -193,7 +194,7 @@
                     android:gravity="center_vertical"
                     android:text="Pfizer"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
@@ -222,7 +223,7 @@
                     android:gravity="center_vertical"
                     android:text="Panadol"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
@@ -251,7 +252,7 @@
                     android:gravity="center_vertical"
                     android:text="Asprin"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
@@ -280,7 +281,7 @@
                     android:gravity="center_vertical"
                     android:text="Xalatan"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"

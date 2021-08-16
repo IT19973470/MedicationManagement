@@ -19,16 +19,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            android:layout_weight="4">
+            android:weightSum="4">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Sickness :"
                 android:textColor="@color/medi_medicine_text"
-                android:textSize="18dp" />
+                android:textSize="16dp" />
 
             <EditText
                 android:id="@+id/txt_username"
@@ -98,15 +99,17 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center_vertical"
                     android:text="Diabetes"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
                     android:textColor="@color/medi_medicine_delete"
@@ -125,15 +128,17 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center_vertical"
                     android:text="Cholestarol"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
                     android:textColor="@color/medi_medicine_delete"
@@ -152,15 +157,17 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center_vertical"
                     android:text="Cough"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
                     android:textColor="@color/medi_medicine_delete"
@@ -179,15 +186,17 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center_vertical"
                     android:text="Fever"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
                     android:textColor="@color/medi_medicine_delete"
@@ -206,15 +215,17 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center_vertical"
                     android:text="Dystonia"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
                     android:textColor="@color/medi_medicine_delete"
@@ -233,15 +244,17 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:gravity="center_vertical"
                     android:text="Gallstones"
                     android:textColor="@color/medi_medicine_text"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
                     android:textColor="@color/medi_medicine_delete"
