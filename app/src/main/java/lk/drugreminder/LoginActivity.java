@@ -10,16 +10,26 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-public class LoginActivity extends Activity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class LoginActivity extends AppCompatActivity {
 
     private Button btnLogin;
     private TextView txtSignUp;
+    private FirebaseAuth mAuth;
+    private EditText txtUsername, txtPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,9 @@ public class LoginActivity extends Activity {
 
         btnLogin = findViewById(R.id.btn_login);
         txtSignUp = findViewById(R.id.txt_signup);
+
+        txtUsername = findViewById(R.id.txt_username);
+        txtPassword = findViewById(R.id.txt_password);
 
         txtSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,15 +73,38 @@ public class LoginActivity extends Activity {
         // Add as notification
         final NotificationManagerCompat manager = NotificationManagerCompat.from(this);
 
+        mAuth = FirebaseAuth.getInstance();
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                signIn();
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
 //                manager.notify(100, builder.build());
             }
         });
         createNotificationChannel();
+    }
+
+    private void signIn() {
+        if (!txtUsername.getText().toString().equals("") && !txtPassword.getText().toString().equals("")) {
+            mAuth.signInWithEmailAndPassword(txtUsername.getText().toString(), txtPassword.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter username and password", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void createNotificationChannel() {
