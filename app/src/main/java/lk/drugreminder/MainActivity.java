@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -42,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
 //        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView textName = (TextView) headerView.findViewById(R.id.txt_username);
+        textName.setText(LoginActivity.getUser().getName());
+        TextView textEmail = (TextView) headerView.findViewById(R.id.txt_email);
+        textEmail.setText(LoginActivity.getUser().getEmail());
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
