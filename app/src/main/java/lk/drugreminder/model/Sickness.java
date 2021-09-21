@@ -1,9 +1,12 @@
-package lk.drugreminder.entity;
+package lk.drugreminder.model;
 
 public class Sickness {
 
     private String diseaseId;
     private String diseaseName;
+
+    public Sickness() {
+    }
 
     public Sickness(String diseaseId, String diseaseName) {
         this.diseaseId = diseaseId;

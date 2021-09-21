@@ -9,7 +9,7 @@
 <!--        android:id="@+id/nav_home"-->
 <!--        android:name="lk.drugreminder.ui.home.HomeFragment"-->
 <!--        android:label="@string/menu_home"-->
-<!--        tools:layout="@layout/fragment_sickness" />-->
+<!--        tools:layout="@layout/fragment_sickness_main" />-->
 
     <fragment
         android:id="@+id/nav_fragment_reminder"
@@ -33,7 +33,7 @@
         android:id="@+id/nav_fragment_sickness"
         android:name="lk.drugreminder.ui.sickness.SicknessFragment"
         android:label="@string/menu_my_sickness"
-        tools:layout="@layout/fragment_sickness" />
+        tools:layout="@layout/fragment_sickness_main" />
 
     <fragment
         android:id="@+id/nav_fragment_medicine"
