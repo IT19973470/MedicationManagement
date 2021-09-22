@@ -14,23 +14,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lk.drugreminder.R;
-import lk.drugreminder.model.ReminderDTO;
+import lk.drugreminder.model.Reminder;
 import lk.drugreminder.ui.reminder.ReminderFragment;
 
 public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ReminderViewHolder> {
 
-    private List<ReminderDTO> reminderDTOS;
+    private List<Reminder> reminders;
     private LayoutInflater inflater;
     private Context context;
     private ReminderFragment fragment;
-    private static ReminderDTO reminderStaticDTO;
+    private static Reminder reminderStatic;
 
     public ReminderAdapter(ReminderFragment fragment) {
         this.fragment = fragment;
     }
 
-    public ReminderAdapter(List<ReminderDTO> reminderDTOS, Context context) {
-        this.reminderDTOS = reminderDTOS;
+    public ReminderAdapter(List<Reminder> reminders, Context context) {
+        this.reminders = reminders;
         this.inflater = LayoutInflater.from(context);
     }
 
@@ -43,15 +43,15 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     @Override
     public void onBindViewHolder(@NonNull final ReminderViewHolder holder, int position) {
-        final ReminderDTO reminderDTO = reminderDTOS.get(position);
-        holder.getLblHeaderMedicine().setText(reminderDTO.getMedicineHeader());
-        holder.getTxtMedicine().setText(reminderDTO.getMedicine());
-        holder.getTxtDose().setText(reminderDTO.getDose());
-        holder.getTxtDue().setText(reminderDTO.getDueTime());
+        final Reminder reminder = reminders.get(position);
+        holder.getLblHeaderMedicine().setText(reminder.getMedicineHeader());
+        holder.getTxtMedicine().setText(reminder.getMedicine());
+        holder.getTxtDose().setText(reminder.getDose());
+        holder.getTxtDue().setText(reminder.getDueTime());
         holder.getBtnTakeMedicine().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                reminderStaticDTO = reminderDTO;
+                reminderStatic = reminder;
                 Navigation.findNavController(view).navigate(R.id.nav_fragment_reminder_accept);
             }
         });
@@ -59,11 +59,11 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     @Override
     public int getItemCount() {
-        return reminderDTOS.size();
+        return reminders.size();
     }
 
-    public void setReminderDTOS(List<ReminderDTO> reminderDTOS) {
-        this.reminderDTOS = reminderDTOS;
+    public void setReminderDTOS(List<Reminder> reminders) {
+        this.reminders = reminders;
     }
 
     public void setInflater(LayoutInflater inflater) {
@@ -78,20 +78,18 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
         return fragment;
     }
 
-    public static ReminderDTO getReminderStaticDTO() {
-        return reminderStaticDTO;
+    public List<Reminder> getReminders() {
+        return reminders;
     }
 
-    public static void setReminderStaticDTO(ReminderDTO reminderStaticDTO) {
-        ReminderAdapter.reminderStaticDTO = reminderStaticDTO;
+    public void setReminders(List<Reminder> reminders) {
+        this.reminders = reminders;
     }
 
     public class ReminderViewHolder extends RecyclerView.ViewHolder {
 
         private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue;
         private Button btnTakeMedicine;
-//    private LinearLayout layoutTutor;
-//    private ProgressBar zoomProgress;
 
         public ReminderViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -1,6 +1,6 @@
 package lk.drugreminder.model;
 
-public class ReminderDTO {
+public class Reminder {
 
     private String medicineHeader;
     private String medicine;
@@ -13,7 +13,7 @@ public class ReminderDTO {
     private boolean missed;
     private String reason;
 
-    public ReminderDTO(String medicineHeader, String medicine, String dose, String dueTime, String nextTime, String remaining, String endAt) {
+    public Reminder(String medicineHeader, String medicine, String dose, String dueTime, String nextTime, String remaining, String endAt) {
         this.medicineHeader = medicineHeader;
         this.medicine = medicine;
         this.dose = dose;
@@ -23,7 +23,7 @@ public class ReminderDTO {
         this.endAt = endAt;
     }
 
-    public ReminderDTO(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed) {
+    public Reminder(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed) {
         this.medicineHeader = medicineHeader;
         this.medicine = medicine;
         this.dose = dose;
@@ -35,7 +35,7 @@ public class ReminderDTO {
         this.missed = missed;
     }
 
-    public ReminderDTO(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed, String reason) {
+    public Reminder(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed, String reason) {
         this.medicineHeader = medicineHeader;
         this.medicine = medicine;
         this.dose = dose;

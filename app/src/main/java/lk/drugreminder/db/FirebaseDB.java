@@ -11,6 +11,10 @@ public class FirebaseDB {
         return getFirebaseDatabaseRef().child("sickness");
     }
 
+    public static DatabaseReference getDBReminder() {
+        return getFirebaseDatabaseRef().child("reminder");
+    }
+
     public static DatabaseReference getDBMedicine() {
         return getFirebaseDatabaseRef().child("medicine");
     }
