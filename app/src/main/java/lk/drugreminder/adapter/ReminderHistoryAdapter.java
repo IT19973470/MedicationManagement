@@ -15,23 +15,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lk.drugreminder.R;
-import lk.drugreminder.model.ReminderDTO;
+import lk.drugreminder.model.Reminder;
 import lk.drugreminder.ui.reminder.ReminderAcceptFragment;
 
 public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistoryAdapter.ReminderHistoryViewHolder> {
 
-    private List<ReminderDTO> reminderDTOS;
+    private List<Reminder> reminders;
     private LayoutInflater inflater;
     private Context context;
     private ReminderAcceptFragment fragment;
-    private static ReminderDTO reminderStaticDTO;
+    private static Reminder reminderStaticDTO;
 
     public ReminderHistoryAdapter(ReminderAcceptFragment fragment) {
         this.fragment = fragment;
     }
 
-    public ReminderHistoryAdapter(List<ReminderDTO> reminderDTOS, Context context) {
-        this.reminderDTOS = reminderDTOS;
+    public ReminderHistoryAdapter(List<Reminder> reminders, Context context) {
+        this.reminders = reminders;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
     }
@@ -45,28 +45,28 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
 
     @Override
     public void onBindViewHolder(@NonNull final ReminderHistoryViewHolder holder, int position) {
-        final ReminderDTO reminderDTO = reminderDTOS.get(position);
-        holder.getLblHeaderMedicine().setText(reminderDTO.getMedicineHeader());
-        holder.getTxtMedicine().setText(reminderDTO.getMedicine());
-        holder.getTxtDose().setText(reminderDTO.getDose());
-        holder.getTxtDue().setText(reminderDTO.getDueTime());
-        holder.getTxtTook().setText(reminderDTO.getTookTime());
+        final Reminder reminder = reminders.get(position);
+        holder.getLblHeaderMedicine().setText(reminder.getMedicineHeader());
+        holder.getTxtMedicine().setText(reminder.getMedicine());
+        holder.getTxtDose().setText(reminder.getDose());
+        holder.getTxtDue().setText(reminder.getDueTime());
+        holder.getTxtTook().setText(reminder.getTookTime());
         holder.getLyReason().setVisibility(View.GONE);
-        if (reminderDTO.isMissed()) {
+        if (reminder.isMissed()) {
             holder.getLblHeaderMedicine().setTextColor(Color.parseColor("red"));
             holder.getLinearLayout().setBackground(holder.getLinearLayout().getContext().getDrawable(R.drawable.card_border_missed));
-            holder.getTxtReason().setText(reminderDTO.getReason());
+            holder.getTxtReason().setText(reminder.getReason());
             holder.getLyReason().setVisibility(View.VISIBLE);
         }
     }
 
     @Override
     public int getItemCount() {
-        return reminderDTOS.size();
+        return reminders.size();
     }
 
-    public void setReminderDTOS(List<ReminderDTO> reminderDTOS) {
-        this.reminderDTOS = reminderDTOS;
+    public void setReminderDTOS(List<Reminder> reminders) {
+        this.reminders = reminders;
     }
 
     public void setInflater(LayoutInflater inflater) {
@@ -81,7 +81,7 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         return fragment;
     }
 
-    public static ReminderDTO getReminderStaticDTO() {
+    public static Reminder getReminderStaticDTO() {
         return reminderStaticDTO;
     }
 
@@ -181,7 +181,7 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         }
     }
 
-//    public static void setReminderStaticDTO(ReminderDTO reminderStaticDTO) {
+//    public static void setReminderStaticDTO(Reminder reminderStaticDTO) {
 //        ReminderAdapter.reminderStaticDTO = reminderStaticDTO;
 //    }
 }
