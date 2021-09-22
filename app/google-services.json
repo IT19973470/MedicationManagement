@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "451291849432",
+    "project_id": "medication-reminder-ad69c",
+    "storage_bucket": "medication-reminder-ad69c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451291849432:android:d1bf3cdaa49934636eedad",
+        "android_client_info": {
+          "package_name": "lk.drugreminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451291849432-f6ukqj6paomua3mdgpjdp7sru9rb4p2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwt8r-XW8Ao9j0DrH5L1MWTFMzdm5M0z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451291849432-f6ukqj6paomua3mdgpjdp7sru9rb4p2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

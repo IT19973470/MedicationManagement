@@ -10,16 +10,36 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-public class LoginActivity extends Activity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import lk.drugreminder.db.FirebaseDB;
+import lk.drugreminder.model.User;
+
+public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView txtSignUp;
+    private FirebaseAuth mAuth;
+    private DatabaseReference dbUser;
+    private EditText txtUsername, txtPassword;
+    private static User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +51,9 @@ public class LoginActivity extends Activity {
 
         btnLogin = findViewById(R.id.btn_login);
         txtSignUp = findViewById(R.id.txt_signup);
+
+        txtUsername = findViewById(R.id.txt_username);
+        txtPassword = findViewById(R.id.txt_password);
 
         txtSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,15 +83,57 @@ public class LoginActivity extends Activity {
         // Add as notification
         final NotificationManagerCompat manager = NotificationManagerCompat.from(this);
 
+        mAuth = FirebaseAuth.getInstance();
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
+                signIn();
+//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);
 //                manager.notify(100, builder.build());
             }
         });
         createNotificationChannel();
+    }
+
+    private void signIn() {
+        if (!txtUsername.getText().toString().equals("") && !txtPassword.getText().toString().equals("")) {
+            mAuth.signInWithEmailAndPassword(txtUsername.getText().toString(), txtPassword.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                user = new User();
+                                user.setEmail(txtUsername.getText().toString().replace(".", ""));
+                                getLoggedUser();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter username and password", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void getLoggedUser() {
+        dbUser = FirebaseDB.getDBUser();
+        dbUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user.setName(snapshot.getValue(User.class).getName());
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     private void createNotificationChannel() {
@@ -85,5 +150,13 @@ public class LoginActivity extends Activity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void setUser(User user) {
+        LoginActivity.user = user;
     }
 }
