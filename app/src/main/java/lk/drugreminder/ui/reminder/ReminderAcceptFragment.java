@@ -59,24 +59,33 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
+        Reminder reminder = ReminderAdapter.getReminderStatic();
+        lblHeaderMedicine.setText(reminder.getMedicineHeader());
+        txtMedicine.setText(reminder.getMedicineHeader());
+        txtDose.setText(reminder.getDose());
+        txtDue.setText(reminder.getDueTime());
+        txtNext.setText(reminder.getNextTime());
+        txtRemaining.setText(reminder.getRemaining());
+        txtEnd.setText(reminder.getEndAt());
 
+        List<Reminder> reminders = new ArrayList<>();
+        reminders.add(new Reminder("Took Pill", "Donpiri", "2 pills", "01:30 PM", "02:30 PM", "Next day at 05:30 PM", "20 pills", "2020-03-02 AT 06:30 PM", false));
+        reminders.add(new Reminder("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true, "Forgot"));
+        reminders.add(new Reminder("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true, "Forgot"));
+        reminders.add(new Reminder("Missed Pill", "Amexo", "2 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "50 pills", "2020-04-08 AT 07:30 PM", true, "Forgot"));
+        reminders.add(new Reminder("Took Pill", "Amexo", "3 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "30 pills", "2020-04-08 AT 07:30 PM", false));
+        reminders.add(new Reminder("Missed Pill", "Amexo", "4 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "20 pills", "2020-04-08 AT 07:30 PM", true, "Forgot"));
+
+        recyclerView = view.findViewById(R.id.recycler_reminder_history);
+        layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+        reminderHistoryAdapter = new ReminderHistoryAdapter(this);
+        reminderHistoryAdapter.setContext(getActivity());
+        reminderHistoryAdapter.setReminders(reminders);
+        reminderHistoryAdapter.setContext(getContext());
+        recyclerView.setAdapter(reminderHistoryAdapter);
 
         return view;
     }
-
-    //    @Override
-//    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        setContentView(R.layout.fragment_reminder_accept);
-//
-//        lblHeaderMedicine = findViewById(R.id.lbl_header_medicine);
-//        txtMedicine = findViewById(R.id.txt_medicine);
-//        txtDose = findViewById(R.id.txt_dose);
-//        txtDue = findViewById(R.id.txt_due);
-//        txtNext = findViewById(R.id.txt_next);
-//        txtRemaining = findViewById(R.id.txt_remian);
-//        txtEnd = findViewById(R.id.txt_end);
-//        btnTakeMedicine = findViewById(R.id.btn_took_medicine);
-//    }
+    
 }
