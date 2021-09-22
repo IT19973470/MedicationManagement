@@ -86,5 +86,4 @@ public class MedicineFragmentAdd extends Fragment {
         lyCards.setVisibility(View.GONE);
         lyBoxes.setVisibility(View.GONE);
     }
-
 }
