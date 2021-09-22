@@ -64,9 +64,9 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         final NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this, "asdsa")
+                new NotificationCompat.Builder(this, "abcd")
                         .setSmallIcon(R.drawable.ic_menu_slideshow) //set icon for notification
-                        .setContentTitle("Diabetic Pill") //set title of notification
+                        .setContentTitle("Take Diabetic Pill") //set title of notification
                         .setContentText("Your next pill is at 5:30 PM")//this is notification message
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT); //set priority of notification
 
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
         final Intent notificationIntent = new Intent(this, MainActivity.class);
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         //notification message will get at NotificationView
-        notificationIntent.putExtra("message", "This is a notification message 2");
+        notificationIntent.putExtra("message", "This is a notification message");
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
@@ -143,7 +143,7 @@ public class LoginActivity extends AppCompatActivity {
             CharSequence name = "A";
             String description = "B";
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel = new NotificationChannel("asdsa", name, importance);
+            NotificationChannel channel = new NotificationChannel("abcd", name, importance);
             channel.setDescription(description);
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this
