@@ -55,7 +55,7 @@ public class ReminderAcceptFragment extends Fragment {
         btnSkipMedicine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.nav_fragment_skip_reason);
+                Navigation.findNavController(view).navigate(R.id.nav_fragment_add_reason);
             }
         });
 
