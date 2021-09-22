@@ -59,7 +59,7 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
-        Reminder reminder = ReminderAdapter.getReminderStaticDTO();
+        Reminder reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedicine.setText(reminder.getMedicineHeader());
         txtMedicine.setText(reminder.getMedicineHeader());
         txtDose.setText(reminder.getDose());
