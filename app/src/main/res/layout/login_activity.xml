@@ -11,6 +11,25 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/view_login_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="@string/app_name"
+                android:textColor="#114F80"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
 
