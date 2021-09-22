@@ -38,7 +38,52 @@ public class MedicineFragmentAdd extends Fragment {
         btnAddByCards = view.findViewById(R.id.btn_add_by_cards);
         btnAddByBoxes = view.findViewById(R.id.btn_add_by_box);
 
+        setLayoutsFalse();
+        lyPills.setVisibility(View.VISIBLE);
+        btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+
+        btnAddByPills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setLayoutsFalse();
+                btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+                btnSavePills.setText("Add pills");
+                btnUpdatePills.setText("Update pills");
+                lyPills.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnAddByCards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setLayoutsFalse();
+                btnAddByCards.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+                btnSavePills.setText("Add cards");
+                btnUpdatePills.setText("Update cards");
+                lyCards.setVisibility(View.VISIBLE);
+            }
+        });
+
+        btnAddByBoxes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setLayoutsFalse();
+                btnAddByBoxes.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+                btnSavePills.setText("Add boxes");
+                btnUpdatePills.setText("Update boxes");
+                lyBoxes.setVisibility(View.VISIBLE);
+            }
+        });
+
         return view;
     }
 
+    private void setLayoutsFalse() {
+        btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by_not_clicked));
+        btnAddByCards.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by_not_clicked));
+        btnAddByBoxes.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by_not_clicked));
+        lyPills.setVisibility(View.GONE);
+        lyCards.setVisibility(View.GONE);
+        lyBoxes.setVisibility(View.GONE);
+    }
 }
