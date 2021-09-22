@@ -41,7 +41,7 @@ public class SicknessFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_sickness_main, container, false);
 
-        dbDisease = FirebaseDB.getFirebaseDatabase();
+        dbDisease = FirebaseDB.getDBSickness();
 
         txtDisease = view.findViewById(R.id.txt_disease);
         btnDisease = view.findViewById(R.id.btn_add_disease);
