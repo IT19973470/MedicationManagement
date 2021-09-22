@@ -87,5 +87,5 @@ public class ReminderAcceptFragment extends Fragment {
 
         return view;
     }
-    
+
 }
