@@ -1,5 +1,7 @@
 package lk.drugreminder.ui.sickness;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +18,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -30,9 +31,9 @@ import lk.drugreminder.model.Sickness;
 public class SicknessFragment extends Fragment {
 
     private View view;
-    private Button btnDisease;
-    private DatabaseReference dbDisease;
-    private EditText txtDisease;
+    private Button btnSickness, btnCancel;
+    private DatabaseReference dbSickness;
+    private EditText txtSickness;
     private RecyclerView recyclerView;
     private SicknessAdapter sicknessAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -41,19 +42,47 @@ public class SicknessFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_sickness_main, container, false);
 
-        dbDisease = FirebaseDB.getDBSickness();
+        dbSickness = FirebaseDB.getDBSickness();
 
-        txtDisease = view.findViewById(R.id.txt_disease);
-        btnDisease = view.findViewById(R.id.btn_add_disease);
+        txtSickness = view.findViewById(R.id.txt_sickness);
+        btnSickness = view.findViewById(R.id.btn_add_disease);
+        btnCancel = view.findViewById(R.id.btn_cancel);
 
-        btnDisease.setOnClickListener(new View.OnClickListener() {
+        btnSickness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!txtDisease.getText().toString().equals("")) {
-                    addDisease();
+                if (!txtSickness.getText().toString().equals("")) {
+                    if (btnSickness.getText().equals("Add Sickness")) {
+                        addSickness();
+                    } else if (btnSickness.getText().equals("Update Sickness")) {
+                        AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                        alert.setTitle("Update");
+                        alert.setMessage("Do you want to update " + SicknessAdapter.getStaticSickness().getSicknessName() + "?");
+                        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                updateSickness();
+                            }
+                        });
+                        alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        alert.show();
+                    }
                 } else {
                     Toast.makeText(getContext(), "Please enter a sickness", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtSickness.setText("");
+                btnSickness.setText("Add Sickness");
             }
         });
 
@@ -62,13 +91,35 @@ public class SicknessFragment extends Fragment {
         return view;
     }
 
-    private void addDisease() {
-        String id = dbDisease.push().getKey();
-        Sickness sickness = new Sickness(id, txtDisease.getText().toString());
+    private void addSickness() {
+        String id = dbSickness.push().getKey();
+        Sickness sickness = new Sickness(id, txtSickness.getText().toString());
 //        dbDisease.push().setValue(sickness);
-        dbDisease.child(id).setValue(sickness);
-        txtDisease.setText("");
+        dbSickness.child(id).setValue(sickness);
+        txtSickness.setText("");
         Toast.makeText(getContext(), "Sickness added successfully", Toast.LENGTH_LONG).show();
+    }
+
+    private void updateSickness() {
+        DatabaseReference updateSick = FirebaseDB.getDBSickness();
+        updateSick.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Sickness sickness = SicknessAdapter.getStaticSickness();
+                if (snapshot.hasChild(sickness.getSicknessId())) {
+                    sickness.setSicknessName(txtSickness.getText().toString());
+                    updateSick.child(sickness.getSicknessId()).setValue(sickness);
+                    txtSickness.setText("");
+                    btnSickness.setText("Add Sickness");
+                    Toast.makeText(getContext(), "Sickness updated successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void loadSicknesses() {
@@ -78,7 +129,7 @@ public class SicknessFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         sicknessAdapter = new SicknessAdapter(this);
 
-        dbDisease.addValueEventListener(new ValueEventListener() {
+        dbSickness.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 sicknessList.clear();
@@ -89,6 +140,8 @@ public class SicknessFragment extends Fragment {
                 }
                 sicknessAdapter.setSicknessList(sicknessList);
                 sicknessAdapter.setContext(getContext());
+                sicknessAdapter.setTxtSickness(txtSickness);
+                sicknessAdapter.setBtnSickness(btnSickness);
                 recyclerView.setAdapter(sicknessAdapter);
             }
 
