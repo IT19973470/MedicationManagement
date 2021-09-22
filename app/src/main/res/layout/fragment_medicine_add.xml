@@ -10,5 +10,408 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="2"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Medication Status"
+                android:textColor="#009688"
+                android:textSize="30dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/card_border"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lbl_header_medicine"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Amexo"
+                    android:textColor="@color/medi_blue"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/font_awesome_free_solid_900"
+                    android:text="\uf00d"
+                    android:textColor="@color/medi_medicine_delete"
+                    android:textSize="25dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Pills :"
+                    android:textColor="#101010"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:text="50"
+                    android:textColor="#7A7A7A"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Cards :"
+                    android:textColor="#101010"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:text="5"
+                    android:textColor="#7A7A7A"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Boxes :"
+                    android:textColor="#101010"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txt_due"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:text="2"
+                    android:textColor="#7A7A7A"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Dose :"
+                    android:textColor="#101010"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txt_medi_dose"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:text="2 pills"
+                    android:textColor="#7A7A7A"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Interval :"
+                    android:textColor="#101010"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txt_interval"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:text="6 hours"
+                    android:textColor="#7A7A7A"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Pills will end on :"
+                    android:textColor="#101010"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txt_medi_end"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:text="2021-05-06 AT 5:30 PM"
+                    android:textColor="#7A7A7A"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <include layout="@layout/fragment_medicine_add_pills" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Dose :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_dose"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Interval :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_intervals"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="First time to take :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Pills will end on :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:id="@+id/txt_first"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btn_save_pills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/button_crud"
+                    android:backgroundTint="@color/medi_medicine"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Add Pills"
+                    android:textColor="@color/medi_medicine_text"
+                    android:textSize="17dp" />
+
+                <Button
+                    android:id="@+id/btn_update_pills"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/button_crud"
+                    android:backgroundTint="@color/medi_medicine_not_clicked"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Update Pills"
+                    android:textColor="@color/medi_medicine_text"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
