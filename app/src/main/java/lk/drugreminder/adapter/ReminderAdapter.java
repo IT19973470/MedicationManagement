@@ -62,8 +62,12 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
         return reminders.size();
     }
 
-    public void setReminderDTOS(List<Reminder> reminders) {
-        this.reminders = reminders;
+    public static Reminder getReminderStatic() {
+        return reminderStatic;
+    }
+
+    public static void setReminderStatic(Reminder reminderStatic) {
+        ReminderAdapter.reminderStatic = reminderStatic;
     }
 
     public void setInflater(LayoutInflater inflater) {

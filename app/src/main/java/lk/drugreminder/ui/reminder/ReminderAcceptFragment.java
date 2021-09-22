@@ -59,7 +59,7 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
-        Reminder reminder = ReminderAdapter.getReminderStaticDTO();
+        Reminder reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedicine.setText(reminder.getMedicineHeader());
         txtMedicine.setText(reminder.getMedicineHeader());
         txtDose.setText(reminder.getDose());
@@ -81,26 +81,11 @@ public class ReminderAcceptFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         reminderHistoryAdapter = new ReminderHistoryAdapter(this);
         reminderHistoryAdapter.setContext(getActivity());
-        reminderHistoryAdapter.setReminderDTOS(reminders);
+        reminderHistoryAdapter.setReminders(reminders);
         reminderHistoryAdapter.setContext(getContext());
         recyclerView.setAdapter(reminderHistoryAdapter);
 
         return view;
     }
-
-    //    @Override
-//    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//        setContentView(R.layout.fragment_reminder_accept);
-//
-//        lblHeaderMedicine = findViewById(R.id.lbl_header_medicine);
-//        txtMedicine = findViewById(R.id.txt_medicine);
-//        txtDose = findViewById(R.id.txt_dose);
-//        txtDue = findViewById(R.id.txt_due);
-//        txtNext = findViewById(R.id.txt_next);
-//        txtRemaining = findViewById(R.id.txt_remian);
-//        txtEnd = findViewById(R.id.txt_end);
-//        btnTakeMedicine = findViewById(R.id.btn_took_medicine);
-//    }
+    
 }

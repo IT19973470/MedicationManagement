@@ -31,7 +31,7 @@ public class ReminderMedicineTakeFragment extends Fragment {
         txtRemaining = view.findViewById(R.id.txt_remian);
         txtEnd = view.findViewById(R.id.txt_end);
 
-        Reminder reminder = ReminderAdapter.getReminderStaticDTO();
+        Reminder reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedicine.setText(reminder.getMedicineHeader());
         txtMedicine.setText(reminder.getMedicineHeader());
         txtDose.setText(reminder.getDose());

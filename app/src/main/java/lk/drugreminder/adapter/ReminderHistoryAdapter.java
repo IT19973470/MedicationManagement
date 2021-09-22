@@ -65,7 +65,11 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         return reminders.size();
     }
 
-    public void setReminderDTOS(List<Reminder> reminders) {
+    public List<Reminder> getReminders() {
+        return reminders;
+    }
+
+    public void setReminders(List<Reminder> reminders) {
         this.reminders = reminders;
     }
 
@@ -91,8 +95,6 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue, txtTook, txtReason;
         private Button btnTakeMedicine;
         private LinearLayout linearLayout, lyReason;
-//    private LinearLayout layoutTutor;
-//    private ProgressBar zoomProgress;
 
         public ReminderHistoryViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -105,7 +107,6 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
             btnTakeMedicine = itemView.findViewById(R.id.btn_take_medicine);
             linearLayout = itemView.findViewById(R.id.recycler_reminder_history);
             lyReason = itemView.findViewById(R.id.ly_reason);
-//        Intent intent = new Intent(LoginActivity.this, ZoomWaitingActivity.class);
         }
 
         public TextView getLblHeaderMedicine() {
@@ -181,7 +182,4 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         }
     }
 
-//    public static void setReminderStaticDTO(Reminder reminderStaticDTO) {
-//        ReminderAdapter.reminderStaticDTO = reminderStaticDTO;
-//    }
 }
