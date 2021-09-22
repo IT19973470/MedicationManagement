@@ -34,7 +34,6 @@ import lk.drugreminder.db.FirebaseDB;
 import lk.drugreminder.model.User;
 
 public class LoginActivity extends AppCompatActivity {
-
     private Button btnLogin;
     private TextView txtSignUp;
     private FirebaseAuth mAuth;
