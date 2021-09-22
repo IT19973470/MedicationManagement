@@ -20,6 +20,7 @@
     <string name="take_medication">Take Medication</string>
     <string name="skip_medication">Skip Medication</string>
     <string name="update_reason">Update Reason</string>
+    <string name="add_reason">Add Reason</string>
     <string name="delete_reason">Delete Reason</string>
     <string name="add_sickness">Add Sickness</string>
     <string name="update_sickness">Update Sickness</string>
