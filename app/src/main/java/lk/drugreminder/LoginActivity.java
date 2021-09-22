@@ -35,5 +35,5 @@ import lk.drugreminder.model.User;
 
 public class LoginActivity extends AppCompatActivity {
 
-   
+
 }
