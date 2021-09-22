@@ -97,5 +97,66 @@ public class LoginActivity extends AppCompatActivity {
         createNotificationChannel();
     }
 
+    private void signIn() {
+        if (!txtUsername.getText().toString().equals("") && !txtPassword.getText().toString().equals("")) {
+            mAuth.signInWithEmailAndPassword(txtUsername.getText().toString(), txtPassword.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                user = new User();
+                                user.setEmail(txtUsername.getText().toString().replace(".", ""));
+                                getLoggedUser();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Login Failed", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter username and password", Toast.LENGTH_LONG).show();
+        }
+    }
 
+    private void getLoggedUser() {
+        dbUser = FirebaseDB.getDBUser();
+        dbUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                user.setName(snapshot.getValue(User.class).getName());
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "A";
+            String description = "B";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("asdsa", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void setUser(User user) {
+        LoginActivity.user = user;
+    }
 }
