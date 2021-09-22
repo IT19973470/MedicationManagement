@@ -51,5 +51,35 @@ public class SignUpActivity extends Activity {
         });
     }
 
-
+    private void accSignup() {
+        if (!txtName.getText().toString().equals("") && !txtEmail.getText().toString().equals("") && !txtPassword.getText().toString().equals("")) {
+            if (txtPassword.getText().toString().equals(txtConfPassword.getText().toString())) {
+                String id = txtEmail.getText().toString().replace(".", "");
+                dbUser = FirebaseDB.getFirebaseDatabase().child(id).child("user");
+                User user = new User();
+                user.setName(txtName.getText().toString());
+                user.setEmail(txtEmail.getText().toString());
+                mAuth.createUserWithEmailAndPassword(txtEmail.getText().toString(), txtPassword.getText().toString())
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    dbUser.setValue(user);
+                                    txtName.setText("");
+                                    txtEmail.setText("");
+                                    txtPassword.setText("");
+                                    txtConfPassword.setText("");
+                                    Toast.makeText(getApplicationContext(), "Sign Up Success", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(getApplicationContext(), "Sign Up Failed", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+            } else {
+                Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
+        }
+    }
 }
