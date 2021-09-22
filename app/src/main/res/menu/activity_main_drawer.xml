@@ -19,5 +19,10 @@
             android:icon="@drawable/baseline_navigate_next_black_36"
             android:fontFamily="@font/quicksand_bold"
             android:title="@string/menu_my_medicine" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/logout" />
     </group>
 </menu>
