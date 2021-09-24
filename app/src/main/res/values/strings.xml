@@ -26,5 +26,7 @@
     <string name="cancel">Cancel</string>
     <string name="take_my_medication">Take my medication</string>
     <string name="my_reminders">My Reminders</string>
+    <string name="add_new_reason">Add Reason</string>
     <string name="logout">Logout</string>
+
 </resources>

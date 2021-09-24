@@ -10,6 +10,10 @@ public class FirebaseDB {
     public static DatabaseReference getDBSickness() {
         return getFirebaseDatabaseRef().child("sickness");
     }
+    public static DatabaseReference getDBReason() {
+        //return FirebaseDatabase.getInstance().getReference("gayan").child("reason");
+        return getFirebaseDatabaseRef().child("reason");
+    }
 
     public static DatabaseReference getDBReminder() {
         return getFirebaseDatabaseRef().child("reminder");
