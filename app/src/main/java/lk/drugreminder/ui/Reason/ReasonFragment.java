@@ -52,7 +52,7 @@ public class ReasonFragment extends Fragment {
 
        // loadSicknesses();
 
-        return view;
+        //return view;
     }
 
     private void addDisease() {
