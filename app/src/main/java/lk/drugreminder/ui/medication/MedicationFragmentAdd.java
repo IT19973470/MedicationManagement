@@ -1,6 +1,8 @@
 package lk.drugreminder.ui.medication;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +15,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.MedicationAdapter;
@@ -35,11 +32,11 @@ public class MedicationFragmentAdd extends Fragment {
     private LinearLayout lyPills, lyCards, lyBoxes;
     private LinearLayout lyAddPills, lyFirstMedi1, lyFirstMedi2;
     private Button btnAddByPills, btnAddByCards, btnAddByBoxes;
-    private EditText txtPills, txtPillsIncard, txtCards, txtPillsIncardBox, txtCardsInbox, txtBoxes, txtTotalPills;
+    private EditText txtPills, txtPillsIncard, txtCards, txtPillsInCardBox, txtCardsInbox, txtBoxes, txtTotalPills;
     private EditText txtDose, txtIntervalH, txtIntervalM;
     private TimePicker txtFirstMedication;
     private Button btnSavePills, btnUpdatePills;
-    private TextView lblHeaderMedication, lblTotalPills, lblLastaddedPills, lblMediDose, lblInterval;
+    private TextView lblHeaderMedication, lblTotalPills, lblLastAddedPills, lblMediDose, lblInterval;
     private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -59,14 +56,14 @@ public class MedicationFragmentAdd extends Fragment {
         txtPills = view.findViewById(R.id.txt_pills);
         txtPillsIncard = view.findViewById(R.id.txt_pills_incard);
         txtCards = view.findViewById(R.id.txt_cards);
-        txtPillsIncardBox = view.findViewById(R.id.txt_pills_incard_box);
+        txtPillsInCardBox = view.findViewById(R.id.txt_pills_incard_box);
         txtCardsInbox = view.findViewById(R.id.txt_cards_inbox);
         txtBoxes = view.findViewById(R.id.txt_boxes);
         txtTotalPills = view.findViewById(R.id.txt_total_pills);
 
         lblHeaderMedication = view.findViewById(R.id.lbl_header_medication);
         lblTotalPills = view.findViewById(R.id.lbl_total_pills);
-        lblLastaddedPills = view.findViewById(R.id.lbl_lastadded_pills);
+        lblLastAddedPills = view.findViewById(R.id.lbl_lastadded_pills);
         lblMediDose = view.findViewById(R.id.lbl_medi_dose);
         lblInterval = view.findViewById(R.id.lbl_interval);
 
@@ -76,6 +73,10 @@ public class MedicationFragmentAdd extends Fragment {
         txtIntervalH = view.findViewById(R.id.txt_intervalH);
         txtIntervalM = view.findViewById(R.id.txt_intervalM);
         txtFirstMedication = view.findViewById(R.id.txt_first_medication);
+
+        txtDose.setText(MedicationAdapter.getStaticMedication().getDose() + "");
+        txtIntervalH.setText(MedicationAdapter.getStaticMedication().getIntervalH() + "");
+        txtIntervalM.setText(MedicationAdapter.getStaticMedication().getIntervalM() + "");
 
         btnSavePills = view.findViewById(R.id.btn_save_pills);
         btnUpdatePills = view.findViewById(R.id.btn_update_pills);
@@ -124,6 +125,13 @@ public class MedicationFragmentAdd extends Fragment {
             }
         });
 
+        txtPills.addTextChangedListener(getKeyListener("Pills"));
+        txtPillsIncard.addTextChangedListener(getKeyListener("PillsInCard"));
+        txtCards.addTextChangedListener(getKeyListener("PillsInCard"));
+        txtPillsInCardBox.addTextChangedListener(getKeyListener("PillsInCardBox"));
+        txtCardsInbox.addTextChangedListener(getKeyListener("PillsInCardBox"));
+        txtBoxes.addTextChangedListener(getKeyListener("PillsInCardBox"));
+
         return view;
     }
 
@@ -134,8 +142,8 @@ public class MedicationFragmentAdd extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Medication medication = MedicationAdapter.getStaticMedication();
                 if (snapshot.hasChild(medication.getMedicationId())) {
-                    medication.setTotalPills(Integer.parseInt(txtTotalPills.getText().toString()));
-                    medication.setLastAddedPills(Integer.parseInt(txtPills.getText().toString()));
+                    medication.setTotalPills(medication.getTotalPills() + Integer.parseInt(txtTotalPills.getText().toString()));
+                    medication.setLastAddedPills(Integer.parseInt(txtTotalPills.getText().toString()));
                     medication.setDose(Integer.parseInt(txtDose.getText().toString()));
                     medication.setIntervalH(Integer.parseInt(txtIntervalH.getText().toString()));
                     medication.setIntervalM(Integer.parseInt(txtIntervalM.getText().toString()));
@@ -163,7 +171,7 @@ public class MedicationFragmentAdd extends Fragment {
                 if (snapshot.hasChild(MedicationAdapter.getStaticMedication().getMedicationId())) {
                     Medication medication = snapshot.child(MedicationAdapter.getStaticMedication().getMedicationId()).getValue(Medication.class);
                     lblTotalPills.setText(medication.getTotalPills() + " pills");
-                    lblLastaddedPills.setText(medication.getLastAddedPills() + " pills");
+                    lblLastAddedPills.setText(medication.getLastAddedPills() + " pills");
                     lblMediDose.setText(medication.getDose() + " pills");
                     lblInterval.setText(medication.getIntervalH() + " hours  " + medication.getIntervalM() + " minutes");
                     if (medication.getFirstMedicationH() > -1) {
@@ -181,9 +189,9 @@ public class MedicationFragmentAdd extends Fragment {
     }
 
     private void setTextEmpty() {
-        EditText[] editTexts = {txtPillsIncardBox, txtPills, txtPillsIncard, txtBoxes, txtCards, txtCardsInbox, txtDose, txtIntervalH, txtIntervalM, txtTotalPills};
+        EditText[] editTexts = {txtPillsInCardBox, txtPills, txtPillsIncard, txtBoxes, txtCards, txtCardsInbox, txtTotalPills};
         for (EditText editText : editTexts) {
-            editText.setText("");
+            editText.setText("0");
         }
     }
 
@@ -194,5 +202,41 @@ public class MedicationFragmentAdd extends Fragment {
         lyPills.setVisibility(View.GONE);
         lyCards.setVisibility(View.GONE);
         lyBoxes.setVisibility(View.GONE);
+    }
+
+    private TextWatcher getKeyListener(String inputType) {
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                try {
+                    switch (inputType) {
+                        case "Pills": {
+                            txtTotalPills.setText(txtPills.getText().toString());
+                            break;
+                        }
+                        case "PillsInCard": {
+                            int totPills = Integer.parseInt(txtPillsIncard.getText().toString()) * Integer.parseInt(txtCards.getText().toString());
+                            txtTotalPills.setText(totPills + "");
+                            break;
+                        }
+                        case "PillsInCardBox": {
+                            int totPills = Integer.parseInt(txtPillsInCardBox.getText().toString()) * Integer.parseInt(txtCardsInbox.getText().toString()) * Integer.parseInt(txtBoxes.getText().toString());
+                            txtTotalPills.setText(totPills + "");
+                            break;
+                        }
+                    }
+                } catch (NumberFormatException e) {
+
+                }
+            }
+        };
     }
 }

@@ -140,6 +140,8 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
                 android:inputType="number"
+                android:text="0"
+                android:textAlignment="textEnd"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -182,6 +184,8 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
                 android:inputType="number"
+                android:text="0"
+                android:textAlignment="textEnd"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -215,6 +219,8 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
                 android:inputType="number"
+                android:text="0"
+                android:textAlignment="textEnd"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -257,6 +263,8 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
                 android:inputType="number"
+                android:text="0"
+                android:textAlignment="textEnd"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -290,6 +298,8 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
                 android:inputType="number"
+                android:text="0"
+                android:textAlignment="textEnd"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -323,6 +333,8 @@
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
                 android:inputType="number"
+                android:text="0"
+                android:textAlignment="textEnd"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -357,7 +369,9 @@
             android:paddingTop="4dp"
             android:paddingRight="5dp"
             android:paddingBottom="8dp"
-            android:inputType="number"
+            android:inputType="none"
+            android:text="0"
+            android:textAlignment="textEnd"
             android:textSize="16dp" />
 
     </LinearLayout>
