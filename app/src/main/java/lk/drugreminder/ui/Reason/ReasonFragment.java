@@ -61,7 +61,7 @@ public class ReasonFragment extends Fragment {
 //        dbDisease.push().setValue(sickness);
         dbDisease.child(id).setValue(sickness);
         txtDisease.setText("");
-        Toast.makeText(getContext(), "Sickness added successfully", Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "Reason added successfully", Toast.LENGTH_LONG).show();
     }
 
 }
