@@ -26,7 +26,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/lbl_header_medicine"
+                    android:id="@+id/lbl_header_medication"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -48,12 +48,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Medicine :"
+                    android:text="Medication :"
                     android:textColor="#101010"
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/txt_medicine"
+                    android:id="@+id/txt_medication"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -208,30 +208,30 @@
                 android:layout_marginTop="30dp">
 
                 <Button
-                    android:id="@+id/btn_took_medicine"
+                    android:id="@+id/btn_took_medication"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_crud"
-                    android:backgroundTint="@color/medi_medicine"
+                    android:backgroundTint="@color/medi_medication"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="@string/take_medication"
-                    android:textColor="@color/medi_medicine_text"
+                    android:textColor="@color/medi_medication_text"
                     android:layout_marginRight="10dp"
                     android:textSize="14dp" />
 
                 <Button
-                    android:id="@+id/btn_skip_medicine"
+                    android:id="@+id/btn_skip_medication"
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_crud"
-                    android:backgroundTint="@color/medi_medicine"
+                    android:backgroundTint="@color/medi_medication"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="@string/skip_medication"
-                    android:textColor="@color/medi_medicine_text"
+                    android:textColor="@color/medi_medication_text"
                     android:layout_marginLeft="10dp"
                     android:textSize="14dp" />
 

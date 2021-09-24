@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/fragment_medicine_add"
+    android:id="@+id/fragment_medication_add"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true">
@@ -47,7 +47,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/lbl_header_medicine"
+                    android:id="@+id/lbl_header_medication"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -64,7 +64,7 @@
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/font_awesome_free_solid_900"
                     android:text="\uf00d"
-                    android:textColor="@color/medi_medicine_delete"
+                    android:textColor="@color/medi_medication_delete"
                     android:textSize="25dp" />
 
             </LinearLayout>
@@ -247,7 +247,7 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <include layout="@layout/fragment_medicine_add_pills" />
+            <include layout="@layout/fragment_medication_add_pills" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -390,10 +390,10 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginRight="15dp"
                     android:background="@drawable/button_crud"
-                    android:backgroundTint="@color/medi_medicine"
+                    android:backgroundTint="@color/medi_medication"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Add Pills"
-                    android:textColor="@color/medi_medicine_text"
+                    android:textColor="@color/medi_medication_text"
                     android:textSize="17dp" />
 
                 <Button
@@ -403,10 +403,10 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_crud"
-                    android:backgroundTint="@color/medi_medicine_not_clicked"
+                    android:backgroundTint="@color/medi_medication_not_clicked"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Update Pills"
-                    android:textColor="@color/medi_medicine_text"
+                    android:textColor="@color/medi_medication_text"
                     android:textSize="17dp" />
 
             </LinearLayout>

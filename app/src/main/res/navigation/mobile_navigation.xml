@@ -5,11 +5,11 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_fragment_reminder">
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_home"-->
-<!--        android:name="lk.drugreminder.ui.home.HomeFragment"-->
-<!--        android:label="@string/menu_home"-->
-<!--        tools:layout="@layout/fragment_sickness_main" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/nav_home"-->
+    <!--        android:name="lk.drugreminder.ui.home.HomeFragment"-->
+    <!--        android:label="@string/menu_home"-->
+    <!--        tools:layout="@layout/fragment_sickness_main" />-->
 
     <fragment
         android:id="@+id/nav_fragment_reminder"
@@ -17,11 +17,11 @@
         android:label="@string/my_reminders"
         tools:layout="@layout/recycler_reminder" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/nav_slideshow"-->
-<!--        android:name="lk.drugreminder.ui.slideshow.SlideshowFragment"-->
-<!--        android:label="@string/menu_slideshow"-->
-<!--        tools:layout="@layout/fragment_medicine" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/nav_slideshow"-->
+    <!--        android:name="lk.drugreminder.ui.slideshow.SlideshowFragment"-->
+    <!--        android:label="@string/menu_slideshow"-->
+    <!--        tools:layout="@layout/fragment_medication_main" />-->
 
     <fragment
         android:id="@+id/nav_fragment_reminder_accept"
@@ -36,27 +36,36 @@
         tools:layout="@layout/fragment_sickness_main" />
 
     <fragment
-        android:id="@+id/nav_fragment_medicine"
-        android:name="lk.drugreminder.ui.medicine.MedicineFragment"
-        android:label="@string/menu_my_medicine"
-        tools:layout="@layout/fragment_medicine" />
+        android:id="@+id/nav_fragment_medication"
+        android:name="lk.drugreminder.ui.medication.MedicationFragment"
+        android:label="@string/menu_my_medication"
+        tools:layout="@layout/fragment_medication_main" />
 
     <fragment
-        android:id="@+id/nav_fragment_medicine_add"
-        android:name="lk.drugreminder.ui.medicine.MedicineFragmentAdd"
-        android:label="@string/menu_my_medicine"
-        tools:layout="@layout/fragment_medicine_add" />
+        android:id="@+id/nav_fragment_medication_add"
+        android:name="lk.drugreminder.ui.medication.MedicationFragmentAdd"
+        android:label="@string/menu_my_medication"
+        tools:layout="@layout/fragment_medication_add" />
 
     <fragment
         android:id="@+id/nav_fragment_skip_reason"
         android:name="lk.drugreminder.ui.reminder.ReminderReasonFragment"
         android:label="@string/my_reminders"
         tools:layout="@layout/fragment_reminder_skip_reason" />
+    <fragment
+        android:id="@+id/nav_fragment_add_reason"
+        android:name="lk.drugreminder.ui.reminder.ReminderAddReasonFragment"
+        android:label="@string/my_reminders"
+        tools:layout="@layout/fragment_reminder_new_reason" />
 
     <fragment
-        android:id="@+id/nav_fragment_medicine_take"
-        android:name="lk.drugreminder.ui.reminder.ReminderMedicineTakeFragment"
+        android:id="@+id/nav_fragment_medication_take"
+        android:name="lk.drugreminder.ui.reminder.ReminderMedicationTakeFragment"
         android:label="@string/my_reminders"
-        tools:layout="@layout/fragment_reminder_medicine_take" />
+        tools:layout="@layout/fragment_reminder_medication_take" />
+
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="lk.drugreminder.LogoutActivity" />
 
 </navigation>

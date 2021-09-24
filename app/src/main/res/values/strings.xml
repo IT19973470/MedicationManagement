@@ -11,18 +11,20 @@
     <string name="menu_reminder">Medication Reminder</string>
     <string name="menu_reminder_accept">Medication Reminder</string>
     <string name="menu_my_sickness">My Sicknesses</string>
-    <string name="menu_my_medicine">My Medications</string>
-    <string name="add_medication">Add medication</string>
-    <string name="update_medication">Update medication</string>
+    <string name="menu_my_medication">My Medications</string>
+    <string name="add_medication">Add Medication</string>
+    <string name="update_medication">Update Medication</string>
     <string name="pills">Pills</string>
     <string name="cards">Cards</string>
     <string name="boxes">Boxes</string>
     <string name="take_medication">Take Medication</string>
     <string name="skip_medication">Skip Medication</string>
     <string name="update_reason">Update Reason</string>
+    <string name="add_reason">Add Reason</string>
     <string name="delete_reason">Delete Reason</string>
     <string name="add_sickness">Add Sickness</string>
-    <string name="update_sickness">Update Sickness</string>
+    <string name="cancel">Cancel</string>
     <string name="take_my_medication">Take my medication</string>
     <string name="my_reminders">My Reminders</string>
+    <string name="logout">Logout</string>
 </resources>

@@ -2,30 +2,35 @@ package lk.drugreminder.model;
 
 public class Sickness {
 
-    private String diseaseId;
-    private String diseaseName;
+    private String sicknessId;
+    private String sicknessName;
 
     public Sickness() {
     }
 
-    public Sickness(String diseaseId, String diseaseName) {
-        this.diseaseId = diseaseId;
-        this.diseaseName = diseaseName;
+    public Sickness(String sicknessId, String sicknessName) {
+        this.sicknessId = sicknessId;
+        this.sicknessName = sicknessName;
     }
 
-    public String getDiseaseId() {
-        return diseaseId;
+    public String getSicknessId() {
+        return sicknessId;
     }
 
-    public void setDiseaseId(String diseaseId) {
-        this.diseaseId = diseaseId;
+    public void setSicknessId(String sicknessId) {
+        this.sicknessId = sicknessId;
     }
 
-    public String getDiseaseName() {
-        return diseaseName;
+    public String getSicknessName() {
+        return sicknessName;
     }
 
-    public void setDiseaseName(String diseaseName) {
-        this.diseaseName = diseaseName;
+    public void setSicknessName(String sicknessName) {
+        this.sicknessName = sicknessName;
+    }
+
+    @Override
+    public String toString() {
+        return sicknessName;
     }
 }

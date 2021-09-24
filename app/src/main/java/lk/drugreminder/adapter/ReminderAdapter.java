@@ -44,11 +44,11 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
     @Override
     public void onBindViewHolder(@NonNull final ReminderViewHolder holder, int position) {
         final Reminder reminder = reminders.get(position);
-        holder.getLblHeaderMedicine().setText(reminder.getMedicineHeader());
-        holder.getTxtMedicine().setText(reminder.getMedicine());
+        holder.getLblHeaderMedication().setText(reminder.getMedicationHeader());
+        holder.getTxtMedication().setText(reminder.getMedication());
         holder.getTxtDose().setText(reminder.getDose());
         holder.getTxtDue().setText(reminder.getDueTime());
-        holder.getBtnTakeMedicine().setOnClickListener(new View.OnClickListener() {
+        holder.getBtnTakeMedication().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 reminderStatic = reminder;
@@ -62,8 +62,12 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
         return reminders.size();
     }
 
-    public void setReminderDTOS(List<Reminder> reminders) {
-        this.reminders = reminders;
+    public static Reminder getReminderStatic() {
+        return reminderStatic;
+    }
+
+    public static void setReminderStatic(Reminder reminderStatic) {
+        ReminderAdapter.reminderStatic = reminderStatic;
     }
 
     public void setInflater(LayoutInflater inflater) {
@@ -88,33 +92,33 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     public class ReminderViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue;
-        private Button btnTakeMedicine;
+        private TextView lblHeaderMedication, txtMedication, txtDose, txtDue;
+        private Button btnTakeMedication;
 
         public ReminderViewHolder(@NonNull View itemView) {
             super(itemView);
-            lblHeaderMedicine = itemView.findViewById(R.id.lbl_header_medicine);
-            txtMedicine = itemView.findViewById(R.id.txt_medicine);
+            lblHeaderMedication = itemView.findViewById(R.id.lbl_header_medication);
+            txtMedication = itemView.findViewById(R.id.txt_medication);
             txtDose = itemView.findViewById(R.id.txt_dose);
             txtDue = itemView.findViewById(R.id.txt_due);
-            btnTakeMedicine = itemView.findViewById(R.id.btn_take_medicine);
+            btnTakeMedication = itemView.findViewById(R.id.btn_take_medication);
 //        Intent intent = new Intent(LoginActivity.this, ZoomWaitingActivity.class);
         }
 
-        public TextView getLblHeaderMedicine() {
-            return lblHeaderMedicine;
+        public TextView getLblHeaderMedication() {
+            return lblHeaderMedication;
         }
 
-        public void setLblHeaderMedicine(TextView lblHeaderMedicine) {
-            this.lblHeaderMedicine = lblHeaderMedicine;
+        public void setLblHeaderMedication(TextView lblHeaderMedication) {
+            this.lblHeaderMedication = lblHeaderMedication;
         }
 
-        public TextView getTxtMedicine() {
-            return txtMedicine;
+        public TextView getTxtMedication() {
+            return txtMedication;
         }
 
-        public void setTxtMedicine(TextView txtMedicine) {
-            this.txtMedicine = txtMedicine;
+        public void setTxtMedication(TextView txtMedication) {
+            this.txtMedication = txtMedication;
         }
 
         public TextView getTxtDose() {
@@ -133,12 +137,12 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
             this.txtDue = txtDue;
         }
 
-        public Button getBtnTakeMedicine() {
-            return btnTakeMedicine;
+        public Button getBtnTakeMedication() {
+            return btnTakeMedication;
         }
 
-        public void setBtnTakeMedicine(Button btnTakeMedicine) {
-            this.btnTakeMedicine = btnTakeMedicine;
+        public void setBtnTakeMedication(Button btnTakeMedication) {
+            this.btnTakeMedication = btnTakeMedication;
         }
     }
 }

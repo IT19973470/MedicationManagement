@@ -11,16 +11,16 @@
     <color name="medi_blue">#176AAC</color>
     <color name="medi_blue_dark">#0B4F85</color>
 
-    <color name="medi_medicine_delete">#F82B1C</color>
-    <color name="medi_medicine_next">#4CAF50</color>
+    <color name="medi_medication_delete">#F82B1C</color>
+    <color name="medi_medication_next">#4CAF50</color>
 
-    <color name="medi_medicine">#8AA9C3</color>
-    <color name="medi_medicine_text">#083355</color>
-    <color name="medi_medicine_not_clicked">#C8CFD5</color>
+    <color name="medi_medication">#8AA9C3</color>
+    <color name="medi_medication_text">#083355</color>
+    <color name="medi_medication_not_clicked">#C8CFD5</color>
 
-    <color name="medi_medicine_add_by">#FDC601</color>
-    <color name="medi_medicine_add_by_not_clicked">#FAEAB3</color>
-    <color name="medi_medicine_add_by_text">#5E3902</color>
+    <color name="medi_medication_add_by">#FDC601</color>
+    <color name="medi_medication_add_by_not_clicked">#FAEAB3</color>
+    <color name="medi_medication_add_by_text">#5E3902</color>
     <color name="medi_login">#DEE5EF</color>
 </resources>
 
@@ -45,13 +45,13 @@
 <!--<color name="medi_green_text">#465505</color>-->
 <!--<color name="medi_header_text">#107742</color>-->
 
-<!--<color name="medi_medicine_delete">#F82B1C</color>-->
+<!--<color name="medi_medication_delete">#F82B1C</color>-->
 
-<!--<color name="medi_medicine">#B9CD5B</color>-->
-<!--<color name="medi_medicine_text">#465505</color>-->
-<!--<color name="medi_medicine_not_clicked">#D1DAAB</color>-->
+<!--<color name="medi_medication">#B9CD5B</color>-->
+<!--<color name="medi_medication_text">#465505</color>-->
+<!--<color name="medi_medication_not_clicked">#D1DAAB</color>-->
 
-<!--<color name="medi_medicine_add_by">#FDC601</color>-->
-<!--<color name="medi_medicine_add_by_not_clicked">#FAEAB3</color>-->
-<!--<color name="medi_medicine_add_by_text">#5E3902</color>-->
+<!--<color name="medi_medication_add_by">#FDC601</color>-->
+<!--<color name="medi_medication_add_by_not_clicked">#FAEAB3</color>-->
+<!--<color name="medi_medication_add_by_text">#5E3902</color>-->
 <!--</resources>-->

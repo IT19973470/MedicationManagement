@@ -2,8 +2,8 @@ package lk.drugreminder.model;
 
 public class Reminder {
 
-    private String medicineHeader;
-    private String medicine;
+    private String medicationHeader;
+    private String medication;
     private String dose;
     private String dueTime;
     private String tookTime;
@@ -13,9 +13,9 @@ public class Reminder {
     private boolean missed;
     private String reason;
 
-    public Reminder(String medicineHeader, String medicine, String dose, String dueTime, String nextTime, String remaining, String endAt) {
-        this.medicineHeader = medicineHeader;
-        this.medicine = medicine;
+    public Reminder(String medicationHeader, String medication, String dose, String dueTime, String nextTime, String remaining, String endAt) {
+        this.medicationHeader = medicationHeader;
+        this.medication = medication;
         this.dose = dose;
         this.dueTime = dueTime;
         this.nextTime = nextTime;
@@ -23,9 +23,9 @@ public class Reminder {
         this.endAt = endAt;
     }
 
-    public Reminder(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed) {
-        this.medicineHeader = medicineHeader;
-        this.medicine = medicine;
+    public Reminder(String medicationHeader, String medication, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed) {
+        this.medicationHeader = medicationHeader;
+        this.medication = medication;
         this.dose = dose;
         this.dueTime = dueTime;
         this.tookTime = tookTime;
@@ -35,9 +35,9 @@ public class Reminder {
         this.missed = missed;
     }
 
-    public Reminder(String medicineHeader, String medicine, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed, String reason) {
-        this.medicineHeader = medicineHeader;
-        this.medicine = medicine;
+    public Reminder(String medicationHeader, String medication, String dose, String dueTime, String tookTime, String nextTime, String remaining, String endAt, boolean missed, String reason) {
+        this.medicationHeader = medicationHeader;
+        this.medication = medication;
         this.dose = dose;
         this.dueTime = dueTime;
         this.tookTime = tookTime;
@@ -48,20 +48,20 @@ public class Reminder {
         this.reason = reason;
     }
 
-    public String getMedicineHeader() {
-        return medicineHeader;
+    public String getMedicationHeader() {
+        return medicationHeader;
     }
 
-    public void setMedicineHeader(String medicineHeader) {
-        this.medicineHeader = medicineHeader;
+    public void setMedicationHeader(String medicationHeader) {
+        this.medicationHeader = medicationHeader;
     }
 
-    public String getMedicine() {
-        return medicine;
+    public String getMedication() {
+        return medication;
     }
 
-    public void setMedicine(String medicine) {
-        this.medicine = medicine;
+    public void setMedication(String medication) {
+        this.medication = medication;
     }
 
     public String getDose() {

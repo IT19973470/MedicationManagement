@@ -1,27 +1,40 @@
 package lk.drugreminder.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.List;
 
 import lk.drugreminder.R;
+import lk.drugreminder.db.FirebaseDB;
 import lk.drugreminder.model.Sickness;
 import lk.drugreminder.ui.sickness.SicknessFragment;
 
-public class SicknessAdapter extends RecyclerView.Adapter<SicknessAdapter.SicknessViewHolder>{
+public class SicknessAdapter extends RecyclerView.Adapter<SicknessAdapter.SicknessViewHolder> {
 
     private List<Sickness> sicknessList;
     private LayoutInflater inflater;
     private Context context;
     private SicknessFragment fragment;
-    private static Sickness sicknessStatic;
+    private static Sickness staticSickness;
+    private EditText txtSickness;
+    private Button btnSickness;
 
     public SicknessAdapter(SicknessFragment fragment) {
         this.fragment = fragment;
@@ -42,12 +55,55 @@ public class SicknessAdapter extends RecyclerView.Adapter<SicknessAdapter.Sickne
     @Override
     public void onBindViewHolder(@NonNull final SicknessViewHolder holder, int position) {
         final Sickness sickness = sicknessList.get(position);
-        holder.getTxtSickness().setText(sickness.getDiseaseName());
+        holder.getTxtSickness().setText(sickness.getSicknessName());
         holder.getTxtSickness().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sicknessStatic = sickness;
-//                Navigation.findNavController(view).navigate(R.id.nav_fragment_reminder_accept);
+                txtSickness.setText(sickness.getSicknessName());
+                btnSickness.setText("Update Sickness");
+                staticSickness = sickness;
+            }
+        });
+
+        holder.getTxtDelete().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(context);
+                alert.setTitle("Delete");
+                alert.setMessage("Do you want to delete " + sickness.getSicknessName() + "?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        deleteSickness(sickness);
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.show();
+            }
+        });
+    }
+
+    private void deleteSickness(Sickness sickness) {
+        DatabaseReference deleteSick = FirebaseDB.getDBSickness();
+        deleteSick.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(sickness.getSicknessId())) {
+                    deleteSick.child(sickness.getSicknessId()).removeValue();
+                    txtSickness.setText("");
+                    btnSickness.setText("Add Sickness");
+                    Toast.makeText(context, "Sickness deleted successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
     }
@@ -78,6 +134,7 @@ public class SicknessAdapter extends RecyclerView.Adapter<SicknessAdapter.Sickne
     }
 
     public void setContext(Context context) {
+        this.context = context;
         this.inflater = LayoutInflater.from(context);
     }
 
@@ -89,12 +146,20 @@ public class SicknessAdapter extends RecyclerView.Adapter<SicknessAdapter.Sickne
         this.fragment = fragment;
     }
 
-    public static Sickness getSicknessStatic() {
-        return sicknessStatic;
+    public static Sickness getStaticSickness() {
+        return staticSickness;
     }
 
-    public static void setSicknessStatic(Sickness sicknessStatic) {
-        SicknessAdapter.sicknessStatic = sicknessStatic;
+    public static void setStaticSickness(Sickness staticSickness) {
+        SicknessAdapter.staticSickness = staticSickness;
+    }
+
+    public void setTxtSickness(EditText txtSickness) {
+        this.txtSickness = txtSickness;
+    }
+
+    public void setBtnSickness(Button btnSickness) {
+        this.btnSickness = btnSickness;
     }
 
     public class SicknessViewHolder extends RecyclerView.ViewHolder {
