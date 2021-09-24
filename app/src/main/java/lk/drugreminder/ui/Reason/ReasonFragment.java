@@ -57,9 +57,9 @@ public class ReasonFragment extends Fragment {
 
     private void addDisease() {
         String id = dbDisease.push().getKey();
-        Sickness sickness = new Sickness(id, txtDisease.getText().toString());
+        Reason reason = new Reason(id, txtDisease.getText().toString());
 //        dbDisease.push().setValue(sickness);
-        dbDisease.child(id).setValue(sickness);
+        dbDisease.child(id).setValue(reason);
         txtDisease.setText("");
         Toast.makeText(getContext(), "Reason added successfully", Toast.LENGTH_LONG).show();
     }
