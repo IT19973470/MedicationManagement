@@ -28,7 +28,7 @@ public class FirebaseDB {
     }
 
     public static DatabaseReference getFirebaseDatabaseRef() {
-        return FirebaseDatabase.getInstance().getReference("MedicationReminder").child(LoginActivity.getUser().getEmail());
+        return FirebaseDatabase.getInstance().getReference("MedicationReminder").child(LoginActivity.getUsername());
     }
 
     public static DatabaseReference getFirebaseDatabase() {

@@ -23,8 +23,10 @@
     <string name="add_reason">Add Reason</string>
     <string name="delete_reason">Delete Reason</string>
     <string name="add_sickness">Add Sickness</string>
-    <string name="update_sickness">Update Sickness</string>
+    <string name="cancel">Cancel</string>
     <string name="take_my_medication">Take my medication</string>
     <string name="my_reminders">My Reminders</string>
     <string name="add_new_reason">Add Reason</string>
+    <string name="logout">Logout</string>
+
 </resources>

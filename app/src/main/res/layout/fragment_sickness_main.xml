@@ -32,7 +32,7 @@
                 android:textSize="16dp" />
 
             <EditText
-                android:id="@+id/txt_disease"
+                android:id="@+id/txt_sickness"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -68,7 +68,7 @@
                 android:textSize="15dp" />
 
             <Button
-                android:id="@+id/btn_skip_medicine"
+                android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
                 android:layout_gravity="end"
@@ -77,7 +77,7 @@
                 android:background="@drawable/button_crud"
                 android:backgroundTint="@color/medi_medicine"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="@string/update_sickness"
+                android:text="@string/cancel"
                 android:textColor="@color/medi_medicine_text"
                 android:textSize="15dp" />
 
@@ -87,7 +87,7 @@
             android:id="@+id/recycler_sickness"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
     </LinearLayout>
 </ScrollView>
