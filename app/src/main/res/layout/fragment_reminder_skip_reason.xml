@@ -14,7 +14,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/lbl_header_medicine"
+            android:id="@+id/lbl_header_medication"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/txt_medicine"
+            android:id="@+id/txt_medication"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:inputType="text|textMultiLine"
@@ -60,10 +60,10 @@
             android:layout_gravity="end"
             android:layout_marginTop="0dp"
             android:background="@drawable/button_crud"
-            android:backgroundTint="@color/medi_medicine"
+            android:backgroundTint="@color/medi_medication"
             android:fontFamily="@font/quicksand_bold"
             android:text="@string/update_reason"
-            android:textColor="@color/medi_medicine_text"
+            android:textColor="@color/medi_medication_text"
             android:layout_marginRight="10dp"
             android:textSize="14dp" />
 
@@ -73,10 +73,10 @@
             android:layout_gravity="end"
             android:layout_marginTop="0dp"
             android:background="@drawable/button_crud"
-            android:backgroundTint="@color/medi_medicine"
+            android:backgroundTint="@color/medi_medication"
             android:fontFamily="@font/quicksand_bold"
             android:text="@string/delete_reason"
-            android:textColor="@color/medi_medicine_text"
+            android:textColor="@color/medi_medication_text"
             android:layout_marginRight="10dp"
             android:textSize="14dp" />
 

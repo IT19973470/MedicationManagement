@@ -24,8 +24,8 @@ import lk.drugreminder.model.Reminder;
 
 public class ReminderAcceptFragment extends Fragment {
 
-    private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue, txtNext, txtRemaining, txtEnd;
-    private Button btnTakeMedicine, btnSkipMedicine;
+    private TextView lblHeaderMedication, txtMedication, txtDose, txtDue, txtNext, txtRemaining, txtEnd;
+    private Button btnTakeMedication, btnSkipMedication;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private ReminderHistoryAdapter reminderHistoryAdapter;
@@ -35,24 +35,24 @@ public class ReminderAcceptFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_reminder_accept, container, false);
-        lblHeaderMedicine = view.findViewById(R.id.lbl_header_medicine);
-        txtMedicine = view.findViewById(R.id.txt_medicine);
+        lblHeaderMedication = view.findViewById(R.id.lbl_header_medication);
+        txtMedication = view.findViewById(R.id.txt_medication);
         txtDose = view.findViewById(R.id.txt_dose);
         txtDue = view.findViewById(R.id.txt_due);
         txtNext = view.findViewById(R.id.txt_next);
         txtRemaining = view.findViewById(R.id.txt_remian);
         txtEnd = view.findViewById(R.id.txt_end);
-        btnTakeMedicine = view.findViewById(R.id.btn_took_medicine);
-        btnSkipMedicine = view.findViewById(R.id.btn_skip_medicine);
+        btnTakeMedication = view.findViewById(R.id.btn_took_medication);
+        btnSkipMedication = view.findViewById(R.id.btn_skip_medication);
 
-        btnTakeMedicine.setOnClickListener(new View.OnClickListener() {
+        btnTakeMedication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.nav_fragment_medicine_take);
+                Navigation.findNavController(view).navigate(R.id.nav_fragment_medication_take);
             }
         });
 
-        btnSkipMedicine.setOnClickListener(new View.OnClickListener() {
+        btnSkipMedication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.nav_fragment_add_reason);
@@ -60,8 +60,8 @@ public class ReminderAcceptFragment extends Fragment {
         });
 
         Reminder reminder = ReminderAdapter.getReminderStatic();
-        lblHeaderMedicine.setText(reminder.getMedicineHeader());
-        txtMedicine.setText(reminder.getMedicineHeader());
+        lblHeaderMedication.setText(reminder.getMedicationHeader());
+        txtMedication.setText(reminder.getMedicationHeader());
         txtDose.setText(reminder.getDose());
         txtDue.setText(reminder.getDueTime());
         txtNext.setText(reminder.getNextTime());

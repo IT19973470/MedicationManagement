@@ -28,4 +28,9 @@ public class Sickness {
     public void setSicknessName(String sicknessName) {
         this.sicknessName = sicknessName;
     }
+
+    @Override
+    public String toString() {
+        return sicknessName;
+    }
 }

@@ -46,14 +46,14 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
     @Override
     public void onBindViewHolder(@NonNull final ReminderHistoryViewHolder holder, int position) {
         final Reminder reminder = reminders.get(position);
-        holder.getLblHeaderMedicine().setText(reminder.getMedicineHeader());
-        holder.getTxtMedicine().setText(reminder.getMedicine());
+        holder.getLblHeaderMedication().setText(reminder.getMedicationHeader());
+        holder.getTxtMedication().setText(reminder.getMedication());
         holder.getTxtDose().setText(reminder.getDose());
         holder.getTxtDue().setText(reminder.getDueTime());
         holder.getTxtTook().setText(reminder.getTookTime());
         holder.getLyReason().setVisibility(View.GONE);
         if (reminder.isMissed()) {
-            holder.getLblHeaderMedicine().setTextColor(Color.parseColor("red"));
+            holder.getLblHeaderMedication().setTextColor(Color.parseColor("red"));
             holder.getLinearLayout().setBackground(holder.getLinearLayout().getContext().getDrawable(R.drawable.card_border_missed));
             holder.getTxtReason().setText(reminder.getReason());
             holder.getLyReason().setVisibility(View.VISIBLE);
@@ -92,37 +92,37 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
 
     public class ReminderHistoryViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView lblHeaderMedicine, txtMedicine, txtDose, txtDue, txtTook, txtReason;
-        private Button btnTakeMedicine;
+        private TextView lblHeaderMedication, txtMedication, txtDose, txtDue, txtTook, txtReason;
+        private Button btnTakeMedication;
         private LinearLayout linearLayout, lyReason;
 
         public ReminderHistoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            lblHeaderMedicine = itemView.findViewById(R.id.lbl_header_medicine);
-            txtMedicine = itemView.findViewById(R.id.txt_medicine);
+            lblHeaderMedication = itemView.findViewById(R.id.lbl_header_medication);
+            txtMedication = itemView.findViewById(R.id.txt_medication);
             txtDose = itemView.findViewById(R.id.txt_dose);
             txtDue = itemView.findViewById(R.id.txt_due);
             txtTook = itemView.findViewById(R.id.txt_took);
             txtReason = itemView.findViewById(R.id.txt_reason);
-            btnTakeMedicine = itemView.findViewById(R.id.btn_take_medicine);
+            btnTakeMedication = itemView.findViewById(R.id.btn_take_medication);
             linearLayout = itemView.findViewById(R.id.recycler_reminder_history);
             lyReason = itemView.findViewById(R.id.ly_reason);
         }
 
-        public TextView getLblHeaderMedicine() {
-            return lblHeaderMedicine;
+        public TextView getLblHeaderMedication() {
+            return lblHeaderMedication;
         }
 
-        public void setLblHeaderMedicine(TextView lblHeaderMedicine) {
-            this.lblHeaderMedicine = lblHeaderMedicine;
+        public void setLblHeaderMedication(TextView lblHeaderMedication) {
+            this.lblHeaderMedication = lblHeaderMedication;
         }
 
-        public TextView getTxtMedicine() {
-            return txtMedicine;
+        public TextView getTxtMedication() {
+            return txtMedication;
         }
 
-        public void setTxtMedicine(TextView txtMedicine) {
-            this.txtMedicine = txtMedicine;
+        public void setTxtMedication(TextView txtMedication) {
+            this.txtMedication = txtMedication;
         }
 
         public TextView getTxtDose() {
@@ -141,12 +141,12 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
             this.txtDue = txtDue;
         }
 
-        public Button getBtnTakeMedicine() {
-            return btnTakeMedicine;
+        public Button getBtnTakeMedication() {
+            return btnTakeMedication;
         }
 
-        public void setBtnTakeMedicine(Button btnTakeMedicine) {
-            this.btnTakeMedicine = btnTakeMedicine;
+        public void setBtnTakeMedication(Button btnTakeMedication) {
+            this.btnTakeMedication = btnTakeMedication;
         }
 
         public TextView getTxtTook() {

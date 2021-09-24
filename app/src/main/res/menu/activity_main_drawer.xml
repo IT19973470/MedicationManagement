@@ -15,10 +15,10 @@
             android:fontFamily="@font/quicksand_bold"
             android:title="@string/menu_my_sickness" />
         <item
-            android:id="@+id/nav_fragment_medicine"
+            android:id="@+id/nav_fragment_medication"
             android:icon="@drawable/baseline_navigate_next_black_36"
             android:fontFamily="@font/quicksand_bold"
-            android:title="@string/menu_my_medicine" />
+            android:title="@string/menu_my_medication" />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/baseline_navigate_next_black_36"

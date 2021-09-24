@@ -17,7 +17,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/lbl_header_medicine"
+            android:id="@+id/lbl_header_medication"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="Took Pill"
@@ -39,12 +39,12 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Medicine :"
+            android:text="Medication :"
             android:textColor="#101010"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/txt_medicine"
+            android:id="@+id/txt_medication"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"

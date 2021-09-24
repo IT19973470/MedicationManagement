@@ -1,4 +1,4 @@
-package lk.drugreminder.ui.medicine;
+package lk.drugreminder.ui.medication;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import lk.drugreminder.R;
 
-public class MedicineFragmentAdd extends Fragment {
+public class MedicationFragmentAdd extends Fragment {
 
     private LinearLayout lyPills, lyCards, lyBoxes;
     private LinearLayout lyAddPills;
@@ -23,7 +23,7 @@ public class MedicineFragmentAdd extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_medicine_add, container, false);
+        view = inflater.inflate(R.layout.fragment_medication_add, container, false);
 
         lyAddPills = view.findViewById(R.id.ly_add_pills);
 
@@ -40,13 +40,13 @@ public class MedicineFragmentAdd extends Fragment {
 
         setLayoutsFalse();
         lyPills.setVisibility(View.VISIBLE);
-        btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+        btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by));
 
         btnAddByPills.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setLayoutsFalse();
-                btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+                btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by));
                 btnSavePills.setText("Add pills");
                 btnUpdatePills.setText("Update pills");
                 lyPills.setVisibility(View.VISIBLE);
@@ -57,7 +57,7 @@ public class MedicineFragmentAdd extends Fragment {
             @Override
             public void onClick(View view) {
                 setLayoutsFalse();
-                btnAddByCards.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+                btnAddByCards.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by));
                 btnSavePills.setText("Add cards");
                 btnUpdatePills.setText("Update cards");
                 lyCards.setVisibility(View.VISIBLE);
@@ -68,7 +68,7 @@ public class MedicineFragmentAdd extends Fragment {
             @Override
             public void onClick(View view) {
                 setLayoutsFalse();
-                btnAddByBoxes.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by));
+                btnAddByBoxes.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by));
                 btnSavePills.setText("Add boxes");
                 btnUpdatePills.setText("Update boxes");
                 lyBoxes.setVisibility(View.VISIBLE);
@@ -79,9 +79,9 @@ public class MedicineFragmentAdd extends Fragment {
     }
 
     private void setLayoutsFalse() {
-        btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by_not_clicked));
-        btnAddByCards.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by_not_clicked));
-        btnAddByBoxes.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medicine_add_by_not_clicked));
+        btnAddByPills.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by_not_clicked));
+        btnAddByCards.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by_not_clicked));
+        btnAddByBoxes.setBackgroundTintList(getResources().getColorStateList(R.color.medi_medication_add_by_not_clicked));
         lyPills.setVisibility(View.GONE);
         lyCards.setVisibility(View.GONE);
         lyBoxes.setVisibility(View.GONE);

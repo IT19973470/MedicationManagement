@@ -29,14 +29,14 @@ public class ReminderFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private ReminderAdapter reminderAdapter;
-    private DatabaseReference dbMedicine;
+    private DatabaseReference dbMedication;
     private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_reminder_main, container, false);
 
-        dbMedicine = FirebaseDB.getDBMedicine();
+        dbMedication = FirebaseDB.getDBMedication();
 
         List<Reminder> reminders = new ArrayList<>();
         reminders.add(new Reminder("Diabetes Pill", "Donpiri", "2 pills", "01:30 PM", "Next day at 05:30 PM", "20 pills", "2020-03-02 AT 06:30 PM"));
@@ -60,7 +60,7 @@ public class ReminderFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         reminderAdapter = new ReminderAdapter(this);
 
-        dbMedicine.addValueEventListener(new ValueEventListener() {
+        dbMedication.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 reminderList.clear();
