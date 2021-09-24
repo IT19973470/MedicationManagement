@@ -15,6 +15,11 @@ public class FirebaseDB {
         return getFirebaseDatabaseRef().child("reminder");
     }
 
+    public static DatabaseReference getDBReason() {
+        //return FirebaseDatabase.getInstance().getReference("gayan").child("reason");
+        return getFirebaseDatabaseRef().child("reason");
+    }
+
     public static DatabaseReference getDBMedication() {
         return getFirebaseDatabaseRef().child("medication");
     }
