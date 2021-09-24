@@ -54,7 +54,7 @@
                     android:layout_weight="1"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Amexo"
+                    android:text="Abc"
                     android:textColor="@color/medi_blue"
                     android:textSize="20dp" />
 
@@ -77,14 +77,15 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Pills :"
+                    android:text="Total Pills :"
                     android:textColor="#101010"
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/lbl_total_pills"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -104,14 +105,15 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Cards :"
+                    android:text="Last added pills :"
                     android:textColor="#101010"
                     android:textSize="15dp" />
 
                 <TextView
+                    android:id="@+id/lbl_lastadded_pills"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -123,33 +125,33 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="4">
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:layout_weight="4">-->
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/quicksand_bold"
-                    android:text="Boxes :"
-                    android:textColor="#101010"
-                    android:textSize="15dp" />
+            <!--                <TextView-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="1"-->
+            <!--                    android:autoSizeTextType="uniform"-->
+            <!--                    android:fontFamily="@font/quicksand_bold"-->
+            <!--                    android:text="Boxes :"-->
+            <!--                    android:textColor="#101010"-->
+            <!--                    android:textSize="15dp" />-->
 
-                <TextView
-                    android:id="@+id/txt_due"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/quicksand_semibold"
-                    android:text="2"
-                    android:textColor="#7A7A7A"
-                    android:textSize="15dp" />
+            <!--                <TextView-->
+            <!--                    android:id="@+id/txt_due"-->
+            <!--                    android:layout_width="0dp"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_weight="5"-->
+            <!--                    android:autoSizeTextType="uniform"-->
+            <!--                    android:fontFamily="@font/quicksand_semibold"-->
+            <!--                    android:text="2"-->
+            <!--                    android:textColor="#7A7A7A"-->
+            <!--                    android:textSize="15dp" />-->
 
-            </LinearLayout>
+            <!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -167,7 +169,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/txt_medi_dose"
+                    android:id="@+id/lbl_medi_dose"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="5"
@@ -195,7 +197,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/txt_interval"
+                    android:id="@+id/lbl_interval"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -263,7 +265,7 @@
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Dose :"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <EditText
                     android:id="@+id/txt_dose"
@@ -273,6 +275,7 @@
                     android:background="@drawable/input_border"
                     android:ems="10"
                     android:fontFamily="@font/quicksand_semibold"
+                    android:inputType="number"
                     android:paddingLeft="5dp"
                     android:paddingTop="4dp"
                     android:paddingRight="5dp"
@@ -285,20 +288,102 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:layout_weight="4">
+                android:layout_weight="6">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="Interval :"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18dp" />
+                    android:textSize="16dp" />
 
                 <EditText
-                    android:id="@+id/txt_intervals"
+                    android:id="@+id/txt_intervalH"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:text="0"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="h"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/txt_intervalM"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:text="0"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="m"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_first_medi1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="First medication at :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_first_medi2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="4">
+
+                <TimePicker
+                    android:id="@+id/txt_first_medication"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -309,70 +394,8 @@
                     android:paddingTop="4dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="8dp"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_weight="4">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/quicksand_bold"
-                    android:text="First time to take :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18dp" />
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:background="@drawable/input_border"
-                    android:ems="10"
-                    android:fontFamily="@font/quicksand_semibold"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="8dp"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_weight="4">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/quicksand_bold"
-                    android:text="Pills will end on :"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:textSize="18dp" />
-
-                <EditText
-                    android:id="@+id/txt_first"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="4"
-                    android:background="@drawable/input_border"
-                    android:ems="10"
-                    android:fontFamily="@font/quicksand_semibold"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="4dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="8dp"
-                    android:textSize="16dp" />
+                    android:textSize="16dp"
+                    android:timePickerMode="spinner" />
 
             </LinearLayout>
 

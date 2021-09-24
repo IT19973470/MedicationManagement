@@ -31,10 +31,10 @@
             <Button
                 android:id="@+id/btn_add_by_pills"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="32dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
+                android:layout_weight="1"
                 android:background="@drawable/button_start"
                 android:backgroundTint="@color/medi_medication_add_by"
                 android:fontFamily="@font/quicksand_bold"
@@ -45,10 +45,10 @@
             <Button
                 android:id="@+id/btn_add_by_cards"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="32dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
+                android:layout_weight="1"
                 android:background="@drawable/button_start"
                 android:backgroundTint="@color/medi_medication_add_by_not_clicked"
                 android:fontFamily="@font/quicksand_bold"
@@ -59,10 +59,10 @@
             <Button
                 android:id="@+id/btn_add_by_box"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="32dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="0dp"
+                android:layout_weight="1"
                 android:background="@drawable/button_start"
                 android:backgroundTint="@color/medi_medication_add_by_not_clicked"
                 android:fontFamily="@font/quicksand_bold"
@@ -128,7 +128,7 @@
                 android:textSize="16dp" />
 
             <EditText
-                android:id="@+id/txt_pills_in_card"
+                android:id="@+id/txt_pills"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -139,6 +139,7 @@
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
+                android:inputType="number"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -169,7 +170,7 @@
                 android:textSize="16dp" />
 
             <EditText
-
+                android:id="@+id/txt_pills_incard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -180,6 +181,7 @@
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
+                android:inputType="number"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -201,7 +203,7 @@
                 android:textSize="16dp" />
 
             <EditText
-
+                android:id="@+id/txt_cards"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -212,6 +214,7 @@
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
+                android:inputType="number"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -242,7 +245,7 @@
                 android:textSize="16dp" />
 
             <EditText
-
+                android:id="@+id/txt_pills_incard_box"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -253,6 +256,7 @@
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
+                android:inputType="number"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -269,12 +273,12 @@
                 android:layout_weight="2"
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Cards :"
+                android:text="Cards In Box :"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="16dp" />
 
             <EditText
-
+                android:id="@+id/txt_cards_inbox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -285,6 +289,7 @@
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
+                android:inputType="number"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -306,7 +311,7 @@
                 android:textSize="16dp" />
 
             <EditText
-
+                android:id="@+id/txt_boxes"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="4"
@@ -317,6 +322,7 @@
                 android:paddingTop="4dp"
                 android:paddingRight="5dp"
                 android:paddingBottom="8dp"
+                android:inputType="number"
                 android:textSize="16dp" />
 
         </LinearLayout>
@@ -340,7 +346,7 @@
             android:textSize="16dp" />
 
         <EditText
-            android:id="@+id/txt_total"
+            android:id="@+id/txt_total_pills"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="4"
@@ -351,6 +357,7 @@
             android:paddingTop="4dp"
             android:paddingRight="5dp"
             android:paddingBottom="8dp"
+            android:inputType="number"
             android:textSize="16dp" />
 
     </LinearLayout>
