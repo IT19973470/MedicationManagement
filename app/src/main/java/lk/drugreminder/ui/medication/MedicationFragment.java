@@ -29,7 +29,6 @@ import java.util.List;
 
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.MedicationAdapter;
-import lk.drugreminder.adapter.SicknessAdapter;
 import lk.drugreminder.db.FirebaseDB;
 import lk.drugreminder.model.Medication;
 import lk.drugreminder.model.Sickness;
