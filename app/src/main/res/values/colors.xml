@@ -12,6 +12,7 @@
     <color name="medi_blue_dark">#0B4F85</color>
 
     <color name="medi_medication_delete">#F82B1C</color>
+    <color name="medi_medication_delete_text">#FDBBB6</color>
     <color name="medi_medication_next">#4CAF50</color>
 
     <color name="medi_medication">#8AA9C3</color>
@@ -37,21 +38,21 @@
 
 
 
-<!--<resources>-->
-<!--<color name="colorPrimary">#2F6831</color>-->
-<!--<color name="colorPrimaryDark">#1E421F</color>-->
-<!--<color name="colorAccent">#03DAC5</color>-->
-<!--<color name="medi_green">#B9CD5B</color>-->
-<!--<color name="medi_green_text">#465505</color>-->
-<!--<color name="medi_header_text">#107742</color>-->
+    <!--<resources>-->
+    <!--<color name="colorPrimary">#2F6831</color>-->
+    <!--<color name="colorPrimaryDark">#1E421F</color>-->
+    <!--<color name="colorAccent">#03DAC5</color>-->
+    <!--<color name="medi_green">#B9CD5B</color>-->
+    <!--<color name="medi_green_text">#465505</color>-->
+    <!--<color name="medi_header_text">#107742</color>-->
 
-<!--<color name="medi_medication_delete">#F82B1C</color>-->
+    <!--<color name="medi_medication_delete">#F82B1C</color>-->
 
-<!--<color name="medi_medication">#B9CD5B</color>-->
-<!--<color name="medi_medication_text">#465505</color>-->
-<!--<color name="medi_medication_not_clicked">#D1DAAB</color>-->
+    <!--<color name="medi_medication">#B9CD5B</color>-->
+    <!--<color name="medi_medication_text">#465505</color>-->
+    <!--<color name="medi_medication_not_clicked">#D1DAAB</color>-->
 
-<!--<color name="medi_medication_add_by">#FDC601</color>-->
-<!--<color name="medi_medication_add_by_not_clicked">#FAEAB3</color>-->
-<!--<color name="medi_medication_add_by_text">#5E3902</color>-->
-<!--</resources>-->
+    <!--<color name="medi_medication_add_by">#FDC601</color>-->
+    <!--<color name="medi_medication_add_by_not_clicked">#FAEAB3</color>-->
+    <!--<color name="medi_medication_add_by_text">#5E3902</color>-->
+    <!--</resources>-->

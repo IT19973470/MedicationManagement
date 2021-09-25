@@ -58,15 +58,6 @@
                     android:textColor="@color/medi_blue"
                     android:textSize="20dp" />
 
-                <TextView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:autoSizeTextType="uniform"
-                    android:fontFamily="@font/font_awesome_free_solid_900"
-                    android:text="\uf00d"
-                    android:textColor="@color/medi_medication_delete"
-                    android:textSize="25dp" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -225,7 +216,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/txt_medi_end"
+                    android:id="@+id/lbl_medi_end"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="4"
@@ -361,7 +352,6 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ly_first_medi1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -373,14 +363,13 @@
                     android:layout_weight="1"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="First medication at :"
+                    android:text="First Medication At :"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="16dp" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ly_first_medi2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -432,11 +421,86 @@
                     android:background="@drawable/button_crud"
                     android:backgroundTint="@color/medi_medication_not_clicked"
                     android:fontFamily="@font/quicksand_bold"
-                    android:text="Update Pills"
+                    android:text="Update"
                     android:textColor="@color/medi_medication_text"
                     android:textSize="17dp" />
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:weightSum="3"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Remove Pills :"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/txt_remove_pills"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:ems="10"
+                    android:fontFamily="@font/quicksand_semibold"
+                    android:inputType="number"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="8dp"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:textSize="16dp" />
+
+                <Button
+                    android:id="@+id/btn_remove_pills"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/button_crud"
+                    android:backgroundTint="@color/medi_medication"
+                    android:fontFamily="@font/quicksand_bold"
+                    android:text="Remove"
+                    android:textColor="@color/medi_medication_text"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:weightSum="1"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btn_remove_medication"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="32dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/button_crud"
+                android:backgroundTint="@color/medi_medication_delete"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="Delete Medication"
+                android:textColor="@color/medi_medication_delete_text"
+                android:textSize="17dp" />
 
         </LinearLayout>
 

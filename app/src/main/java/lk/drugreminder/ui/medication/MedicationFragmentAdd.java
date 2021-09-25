@@ -1,5 +1,7 @@
 package lk.drugreminder.ui.medication;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,19 +27,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.MedicationAdapter;
+import lk.drugreminder.calculations.Calculations;
 import lk.drugreminder.db.FirebaseDB;
 import lk.drugreminder.model.Medication;
 
 public class MedicationFragmentAdd extends Fragment {
 
     private LinearLayout lyPills, lyCards, lyBoxes;
-    private LinearLayout lyAddPills, lyFirstMedi1, lyFirstMedi2;
+    private LinearLayout lyAddPills;
     private Button btnAddByPills, btnAddByCards, btnAddByBoxes;
-    private EditText txtPills, txtPillsIncard, txtCards, txtPillsInCardBox, txtCardsInbox, txtBoxes, txtTotalPills;
+    private EditText txtPills, txtPillsIncard, txtCards, txtPillsInCardBox, txtCardsInbox, txtBoxes, txtTotalPills, txtRemovePills;
     private EditText txtDose, txtIntervalH, txtIntervalM;
     private TimePicker txtFirstMedication;
-    private Button btnSavePills, btnUpdatePills;
-    private TextView lblHeaderMedication, lblTotalPills, lblLastAddedPills, lblMediDose, lblInterval;
+    private Button btnSavePills, btnUpdatePills, btnRemovePills, btnRemoveMedication;
+    private TextView lblHeaderMedication, lblTotalPills, lblLastAddedPills, lblMediDose, lblInterval, lblMediEnd;
     private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -50,9 +54,6 @@ public class MedicationFragmentAdd extends Fragment {
         lyCards = view.findViewById(R.id.ly_cards);
         lyBoxes = view.findViewById(R.id.ly_boxes);
 
-        lyFirstMedi1 = view.findViewById(R.id.ly_first_medi1);
-        lyFirstMedi2 = view.findViewById(R.id.ly_first_medi2);
-
         txtPills = view.findViewById(R.id.txt_pills);
         txtPillsIncard = view.findViewById(R.id.txt_pills_incard);
         txtCards = view.findViewById(R.id.txt_cards);
@@ -60,6 +61,7 @@ public class MedicationFragmentAdd extends Fragment {
         txtCardsInbox = view.findViewById(R.id.txt_cards_inbox);
         txtBoxes = view.findViewById(R.id.txt_boxes);
         txtTotalPills = view.findViewById(R.id.txt_total_pills);
+        lblMediEnd = view.findViewById(R.id.lbl_medi_end);
 
         lblHeaderMedication = view.findViewById(R.id.lbl_header_medication);
         lblTotalPills = view.findViewById(R.id.lbl_total_pills);
@@ -73,6 +75,7 @@ public class MedicationFragmentAdd extends Fragment {
         txtIntervalH = view.findViewById(R.id.txt_intervalH);
         txtIntervalM = view.findViewById(R.id.txt_intervalM);
         txtFirstMedication = view.findViewById(R.id.txt_first_medication);
+        txtRemovePills = view.findViewById(R.id.txt_remove_pills);
 
         txtDose.setText(MedicationAdapter.getStaticMedication().getDose() + "");
         txtIntervalH.setText(MedicationAdapter.getStaticMedication().getIntervalH() + "");
@@ -80,6 +83,8 @@ public class MedicationFragmentAdd extends Fragment {
 
         btnSavePills = view.findViewById(R.id.btn_save_pills);
         btnUpdatePills = view.findViewById(R.id.btn_update_pills);
+        btnRemovePills = view.findViewById(R.id.btn_remove_pills);
+        btnRemoveMedication = view.findViewById(R.id.btn_remove_medication);
 
         btnAddByPills = view.findViewById(R.id.btn_add_by_pills);
         btnAddByCards = view.findViewById(R.id.btn_add_by_cards);
@@ -121,7 +126,92 @@ public class MedicationFragmentAdd extends Fragment {
         btnSavePills.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addPills();
+                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                alert.setTitle("Add");
+                alert.setMessage("Do you want to add pills?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (Integer.parseInt(txtTotalPills.getText().toString()) > 0) {
+                            addPills();
+                        } else {
+                            Toast.makeText(getContext(), "Please enter pills amount", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.show();
+            }
+        });
+
+        btnUpdatePills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                alert.setTitle("Update");
+                alert.setMessage("Do you want to update pills?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        updatePills();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.show();
+            }
+        });
+
+        btnRemovePills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                alert.setTitle("Remove");
+                alert.setMessage("Do you want to remove pills?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        removePills();
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.show();
+            }
+        });
+
+        btnRemoveMedication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                alert.setTitle("Remove");
+                alert.setMessage("Do you want to remove medication?");
+                alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        deleteMedication(view);
+                    }
+                });
+                alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                alert.show();
             }
         });
 
@@ -136,8 +226,8 @@ public class MedicationFragmentAdd extends Fragment {
     }
 
     private void addPills() {
-        DatabaseReference updateMedication = FirebaseDB.getDBMedication();
-        updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
+        DatabaseReference addMedication = FirebaseDB.getDBMedication();
+        addMedication.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Medication medication = MedicationAdapter.getStaticMedication();
@@ -147,11 +237,86 @@ public class MedicationFragmentAdd extends Fragment {
                     medication.setDose(Integer.parseInt(txtDose.getText().toString()));
                     medication.setIntervalH(Integer.parseInt(txtIntervalH.getText().toString()));
                     medication.setIntervalM(Integer.parseInt(txtIntervalM.getText().toString()));
-                    medication.setFirstMedicationH(txtFirstMedication.getHour());
-                    medication.setFirstMedicationM(txtFirstMedication.getMinute());
+                    medication.setLastMedicationH(txtFirstMedication.getHour());
+                    medication.setLastMedicationM(txtFirstMedication.getMinute());
+                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM());
+                    medication.setNextDueTimeH(nextDueTime[0]);
+                    medication.setNextDueTimeM(nextDueTime[1]);
+                    addMedication.child(medication.getMedicationId()).setValue(medication);
+                    setTextEmpty();
+                    Toast.makeText(getContext(), "Pills added successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void updatePills() {
+        DatabaseReference updateMedication = FirebaseDB.getDBMedication();
+        updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Medication medication = MedicationAdapter.getStaticMedication();
+                if (snapshot.hasChild(medication.getMedicationId())) {
+                    medication.setDose(Integer.parseInt(txtDose.getText().toString()));
+                    medication.setIntervalH(Integer.parseInt(txtIntervalH.getText().toString()));
+                    medication.setIntervalM(Integer.parseInt(txtIntervalM.getText().toString()));
+                    medication.setLastMedicationH(txtFirstMedication.getHour());
+                    medication.setLastMedicationM(txtFirstMedication.getMinute());
+                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM());
+                    medication.setNextDueTimeH(nextDueTime[0]);
+                    medication.setNextDueTimeM(nextDueTime[1]);
                     updateMedication.child(medication.getMedicationId()).setValue(medication);
                     setTextEmpty();
                     Toast.makeText(getContext(), "Pills added successfully", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void removePills() {
+        Medication medication = MedicationAdapter.getStaticMedication();
+        if (medication.getTotalPills() >= Integer.parseInt(txtRemovePills.getText().toString())) {
+            DatabaseReference updateMedication = FirebaseDB.getDBMedication();
+            updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if (snapshot.hasChild(medication.getMedicationId())) {
+                        medication.setTotalPills(medication.getTotalPills() - Integer.parseInt(txtRemovePills.getText().toString()));
+                        updateMedication.child(medication.getMedicationId()).setValue(medication);
+                        txtRemovePills.setText("0");
+                        Toast.makeText(getContext(), "Pills removed successfully", Toast.LENGTH_LONG).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        } else {
+            Toast.makeText(getContext(), "Pills amount exceeded", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void deleteMedication(View v) {
+        DatabaseReference deleteMedication = FirebaseDB.getDBMedication();
+        deleteMedication.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Medication medication = MedicationAdapter.getStaticMedication();
+                if (snapshot.hasChild(medication.getMedicationId())) {
+                    deleteMedication.child(medication.getMedicationId()).removeValue();
+                    Navigation.findNavController(v).navigate(R.id.nav_fragment_medication);
                 }
             }
 
@@ -170,14 +335,11 @@ public class MedicationFragmentAdd extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChild(MedicationAdapter.getStaticMedication().getMedicationId())) {
                     Medication medication = snapshot.child(MedicationAdapter.getStaticMedication().getMedicationId()).getValue(Medication.class);
-                    lblTotalPills.setText(medication.getTotalPills() + " pills");
-                    lblLastAddedPills.setText(medication.getLastAddedPills() + " pills");
-                    lblMediDose.setText(medication.getDose() + " pills");
+                    lblTotalPills.setText(medication.getTotalPills() + " Pills");
+                    lblLastAddedPills.setText(medication.getLastAddedPills() + " Pills");
+                    lblMediDose.setText(medication.getDose() + " Pills");
                     lblInterval.setText(medication.getIntervalH() + " hours  " + medication.getIntervalM() + " minutes");
-                    if (medication.getFirstMedicationH() > -1) {
-                        lyFirstMedi1.setVisibility(View.GONE);
-                        lyFirstMedi2.setVisibility(View.GONE);
-                    }
+                    lblMediEnd.setText(Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()));
                 }
             }
 
