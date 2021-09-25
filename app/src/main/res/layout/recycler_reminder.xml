@@ -22,7 +22,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:fontFamily="@font/quicksand_bold"
             android:text="Diabetes Pill"
             android:textColor="@color/medi_blue"
@@ -33,22 +33,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4">
+        android:layout_weight="7">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Medication :"
+            android:text="Sickness :"
             android:textColor="#101010"
             android:textSize="15dp" />
 
         <TextView
-            android:id="@+id/txt_medication"
+            android:id="@+id/txt_sickness"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:fontFamily="@font/quicksand_semibold"
             android:text="N/A"
             android:textColor="#7A7A7A"
@@ -59,12 +59,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4">
+        android:layout_weight="7">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:fontFamily="@font/quicksand_bold"
             android:text="Dose :"
             android:textColor="#101010"
@@ -74,7 +74,7 @@
             android:id="@+id/txt_dose"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="5"
             android:fontFamily="@font/quicksand_semibold"
             android:text="N/A"
             android:textColor="#7A7A7A"
@@ -85,14 +85,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4">
+        android:layout_weight="7">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Due Time :"
+            android:text="Next Time :"
             android:textColor="#101010"
             android:textSize="15dp" />
 
@@ -100,7 +100,33 @@
             android:id="@+id/txt_due"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="5"
+            android:fontFamily="@font/quicksand_semibold"
+            android:text="N/A"
+            android:textColor="#7A7A7A"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="7">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Pills End On :"
+            android:textColor="#101010"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txt_end_on"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
             android:fontFamily="@font/quicksand_semibold"
             android:text="N/A"
             android:textColor="#7A7A7A"
