@@ -112,7 +112,8 @@ public class MedicationFragment extends Fragment {
 
     private void addMedication() {
         String id = dbMedication.push().getKey();
-        Medication medication = new Medication(id, txtMedication.getText().toString(), sicknesses.get(sicknessPosition).getSicknessId());
+        Sickness sickness = sicknesses.get(sicknessPosition);
+        Medication medication = new Medication(id, txtMedication.getText().toString(), sickness.getSicknessId(), sickness.getSicknessName());
 //        dbDisease.push().setValue(sickness);
         dbMedication.child(id).setValue(medication);
         txtMedication.setText("");

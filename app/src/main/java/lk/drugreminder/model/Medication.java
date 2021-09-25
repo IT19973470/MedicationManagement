@@ -1,27 +1,29 @@
 package lk.drugreminder.model;
 
-import java.time.LocalTime;
-
 public class Medication {
 
     private String medicationId;
     private String medicationName;
     private String sicknessId;
+    private String sicknessName;
     private int totalPills;
     private int lastAddedPills;
     private int dose;
     private int intervalH;
     private int intervalM;
-    private int firstMedicationH = -1;
-    private int firstMedicationM = -1;
+    private int lastMedicationH;
+    private int lastMedicationM;
+    private int nextDueTimeH;
+    private int nextDueTimeM;
 
     public Medication() {
     }
 
-    public Medication(String medicationId, String medicationName, String sicknessId) {
+    public Medication(String medicationId, String medicationName, String sicknessId, String sicknessName) {
         this.medicationId = medicationId;
         this.medicationName = medicationName;
         this.sicknessId = sicknessId;
+        this.sicknessName = sicknessName;
     }
 
     public String getMedicationId() {
@@ -80,20 +82,20 @@ public class Medication {
         this.intervalM = intervalM;
     }
 
-    public int getFirstMedicationH() {
-        return firstMedicationH;
+    public int getLastMedicationH() {
+        return lastMedicationH;
     }
 
-    public void setFirstMedicationH(int firstMedicationH) {
-        this.firstMedicationH = firstMedicationH;
+    public void setLastMedicationH(int lastMedicationH) {
+        this.lastMedicationH = lastMedicationH;
     }
 
-    public int getFirstMedicationM() {
-        return firstMedicationM;
+    public int getLastMedicationM() {
+        return lastMedicationM;
     }
 
-    public void setFirstMedicationM(int firstMedicationM) {
-        this.firstMedicationM = firstMedicationM;
+    public void setLastMedicationM(int lastMedicationM) {
+        this.lastMedicationM = lastMedicationM;
     }
 
     public int getLastAddedPills() {
@@ -103,4 +105,29 @@ public class Medication {
     public void setLastAddedPills(int lastAddedPills) {
         this.lastAddedPills = lastAddedPills;
     }
+
+    public int getNextDueTimeH() {
+        return nextDueTimeH;
+    }
+
+    public void setNextDueTimeH(int nextDueTimeH) {
+        this.nextDueTimeH = nextDueTimeH;
+    }
+
+    public int getNextDueTimeM() {
+        return nextDueTimeM;
+    }
+
+    public void setNextDueTimeM(int nextDueTimeM) {
+        this.nextDueTimeM = nextDueTimeM;
+    }
+
+    public String getSicknessName() {
+        return sicknessName;
+    }
+
+    public void setSicknessName(String sicknessName) {
+        this.sicknessName = sicknessName;
+    }
+
 }
