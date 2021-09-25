@@ -186,7 +186,11 @@ public class MedicationFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recycler_medication);
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
-        medicationAdapter = new MedicationAdapter(this);
+        medicationAdapter = new MedicationAdapter();
+        medicationAdapter.setContext(getContext());
+        medicationAdapter.setTxtMedication(txtMedication);
+        medicationAdapter.setBtnMedication(btnMedication);
+        medicationAdapter.setMedicationList(medicationList);
 
         Query medications = dbMedication.orderByChild("sicknessId").equalTo(sicknesses.get(sicknessPosition).getSicknessId());
         medications.addValueEventListener(new ValueEventListener() {
@@ -197,9 +201,6 @@ public class MedicationFragment extends Fragment {
                     medicationList.add(medication.getValue(Medication.class));
                 }
                 medicationAdapter.setMedicationList(medicationList);
-                medicationAdapter.setContext(getContext());
-                medicationAdapter.setTxtMedication(txtMedication);
-                medicationAdapter.setBtnMedication(btnMedication);
                 recyclerView.setAdapter(medicationAdapter);
             }
 

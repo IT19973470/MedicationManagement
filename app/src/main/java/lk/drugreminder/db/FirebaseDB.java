@@ -11,12 +11,11 @@ public class FirebaseDB {
         return getFirebaseDatabaseRef().child("sickness");
     }
 
-    public static DatabaseReference getDBReminder() {
-        return getFirebaseDatabaseRef().child("reminder");
+    public static DatabaseReference getDBPillsLog() {
+        return getFirebaseDatabaseRef().child("pillsLog");
     }
 
     public static DatabaseReference getDBReason() {
-        //return FirebaseDatabase.getInstance().getReference("gayan").child("reason");
         return getFirebaseDatabaseRef().child("reason");
     }
 

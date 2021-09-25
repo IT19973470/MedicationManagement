@@ -49,6 +49,8 @@ public class ReminderAddReasonFragment extends Fragment {
             }
         });
 
+        // loadSicknesses();
+
         return view;
     }
 

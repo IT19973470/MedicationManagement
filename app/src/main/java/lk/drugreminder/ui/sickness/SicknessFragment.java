@@ -128,6 +128,9 @@ public class SicknessFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         sicknessAdapter = new SicknessAdapter(this);
+        sicknessAdapter.setContext(getContext());
+        sicknessAdapter.setTxtSickness(txtSickness);
+        sicknessAdapter.setBtnSickness(btnSickness);
 
         dbSickness.addValueEventListener(new ValueEventListener() {
             @Override
@@ -139,9 +142,6 @@ public class SicknessFragment extends Fragment {
                     );
                 }
                 sicknessAdapter.setSicknessList(sicknessList);
-                sicknessAdapter.setContext(getContext());
-                sicknessAdapter.setTxtSickness(txtSickness);
-                sicknessAdapter.setBtnSickness(btnSickness);
                 recyclerView.setAdapter(sicknessAdapter);
             }
 

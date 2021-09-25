@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,14 +15,28 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import lk.drugreminder.R;
+import lk.drugreminder.adapter.MedicationAdapter;
 import lk.drugreminder.adapter.ReminderAdapter;
 import lk.drugreminder.adapter.ReminderHistoryAdapter;
+import lk.drugreminder.calculations.Calculations;
+import lk.drugreminder.db.FirebaseDB;
+import lk.drugreminder.model.Medication;
 import lk.drugreminder.model.MedicationDTO;
+import lk.drugreminder.model.PillsLog;
 import lk.drugreminder.model.Reminder;
+import lk.drugreminder.model.Sickness;
 
 public class ReminderAcceptFragment extends Fragment {
 
@@ -49,7 +64,7 @@ public class ReminderAcceptFragment extends Fragment {
         btnTakeMedication.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.nav_fragment_medication_take);
+                takePills();
             }
         });
 
@@ -60,14 +75,30 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
+        Query medications = FirebaseDB.getDBMedication().orderByChild("medicationId").equalTo(ReminderAdapter.getReminderStatic().getMedication().getMedicationId());
+        medications.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
+                    Medication medication = snapshot.child(ReminderAdapter.getReminderStatic().getMedication().getMedicationId()).getValue(Medication.class);
+                    txtDue.setText(LocalTime.of(medication.getNextDueTimeH(), medication.getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")));
+                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getNextDueTimeH(), medication.getNextDueTimeM(), medication.getIntervalH(), medication.getIntervalM());
+                    txtNext.setText(LocalTime.of(nextDueTime[0], nextDueTime[1]).format(DateTimeFormatter.ofPattern("hh:mm a")));
+                    txtRemaining.setText(medication.getTotalPills() + " Pills");
+                    txtEnd.setText(Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         MedicationDTO reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedication.setText(reminder.getMedicationHeader());
         txtMedication.setText(reminder.getMedicationHeader());
         txtDose.setText(reminder.getDose());
-        txtDue.setText(reminder.getNextDueTime());
-        txtNext.setText(reminder.getSecondNextDueTime());
-        txtRemaining.setText(reminder.getRemaining() + " Pills");
-        txtEnd.setText(reminder.getEndAt());
 
         List<Reminder> reminders = new ArrayList<>();
         reminders.add(new Reminder("Took Pill", "Donpiri", "2 pills", "01:30 PM", "02:30 PM", "Next day at 05:30 PM", "20 pills", "2020-03-02 AT 06:30 PM", false));
@@ -89,4 +120,34 @@ public class ReminderAcceptFragment extends Fragment {
         return view;
     }
 
+    private void takePills() {
+        DatabaseReference dbPillsLog = FirebaseDB.getDBPillsLog();
+        String id = dbPillsLog.push().getKey();
+        PillsLog pillsLog = new PillsLog(ReminderAdapter.getStaticMedication(), true);
+        dbPillsLog.child(id).setValue(pillsLog);
+
+        DatabaseReference updateMedication = FirebaseDB.getDBMedication();
+        updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Medication medication = ReminderAdapter.getStaticMedication();
+                if (snapshot.hasChild(medication.getMedicationId())) {
+                    medication.setTotalPills(medication.getTotalPills() - medication.getDose());
+                    medication.setLastMedicationH(medication.getNextDueTimeH());
+                    medication.setLastMedicationM(medication.getNextDueTimeM());
+                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM());
+                    medication.setNextDueTimeH(nextDueTime[0]);
+                    medication.setNextDueTimeM(nextDueTime[1]);
+                    updateMedication.child(medication.getMedicationId()).setValue(medication);
+                    Toast.makeText(getContext(), "Took Medication", Toast.LENGTH_LONG).show();
+                    Navigation.findNavController(view).navigate(R.id.nav_fragment_medication_take);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 }
