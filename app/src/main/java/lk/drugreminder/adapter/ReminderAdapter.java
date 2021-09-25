@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lk.drugreminder.R;
+import lk.drugreminder.model.Medication;
 import lk.drugreminder.model.MedicationDTO;
 
 public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ReminderViewHolder> {
@@ -23,6 +24,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
     private Context context;
     //    private ReminderFragment fragment;
     private static MedicationDTO reminderStatic;
+    private static Medication staticMedication;
 
 //    public ReminderAdapter(ReminderFragment fragment) {
 //        this.fragment = fragment;
@@ -56,6 +58,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
             @Override
             public void onClick(View view) {
                 reminderStatic = reminder;
+                staticMedication = reminder.getMedication();
                 Navigation.findNavController(view).navigate(R.id.nav_fragment_reminder_accept);
             }
         });
@@ -92,6 +95,14 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
 
     public void setReminders(List<MedicationDTO> reminders) {
         this.reminders = reminders;
+    }
+
+    public static Medication getStaticMedication() {
+        return staticMedication;
+    }
+
+    public static void setStaticMedication(Medication staticMedication) {
+        ReminderAdapter.staticMedication = staticMedication;
     }
 
     public class ReminderViewHolder extends RecyclerView.ViewHolder {

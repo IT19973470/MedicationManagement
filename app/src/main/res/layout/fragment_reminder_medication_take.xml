@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_reminder_medication_take"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -69,7 +69,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Medication :"
                 android:textColor="#101010"
@@ -79,7 +79,7 @@
                 android:id="@+id/txt_medication"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:fontFamily="@font/quicksand_semibold"
                 android:text="N/A"
                 android:textColor="#7A7A7A"
@@ -95,7 +95,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Dose :"
                 android:textColor="#101010"
@@ -105,7 +105,7 @@
                 android:id="@+id/txt_dose"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:fontFamily="@font/quicksand_semibold"
                 android:text="N/A"
                 android:textColor="#7A7A7A"
@@ -121,7 +121,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="Next Time :"
                 android:textColor="#101010"
@@ -131,7 +131,7 @@
                 android:id="@+id/txt_next"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="5"
                 android:fontFamily="@font/quicksand_semibold"
                 android:text="N/A"
                 android:textColor="#7A7A7A"

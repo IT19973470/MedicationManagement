@@ -202,7 +202,7 @@ public class MedicationFragmentAdd extends Fragment {
                 alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteMedication(view);
+                        deleteMedication();
                     }
                 });
                 alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -308,7 +308,7 @@ public class MedicationFragmentAdd extends Fragment {
         }
     }
 
-    private void deleteMedication(View v) {
+    private void deleteMedication() {
         DatabaseReference deleteMedication = FirebaseDB.getDBMedication();
         deleteMedication.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -316,7 +316,7 @@ public class MedicationFragmentAdd extends Fragment {
                 Medication medication = MedicationAdapter.getStaticMedication();
                 if (snapshot.hasChild(medication.getMedicationId())) {
                     deleteMedication.child(medication.getMedicationId()).removeValue();
-                    Navigation.findNavController(v).navigate(R.id.nav_fragment_medication);
+                    Navigation.findNavController(view).navigate(R.id.nav_fragment_medication);
                 }
             }
 

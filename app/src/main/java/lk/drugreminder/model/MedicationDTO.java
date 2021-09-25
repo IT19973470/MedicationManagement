@@ -9,6 +9,7 @@ public class MedicationDTO {
     private String secondNextDueTime;
     private String endAt;
     private String remaining;
+    private Medication medication;
 
     public MedicationDTO(String medicationHeader, String sicknessName, String dose, String nextDueTime, String remaining, String endAt) {
         this.medicationHeader = medicationHeader;
@@ -19,14 +20,14 @@ public class MedicationDTO {
         this.endAt = endAt;
     }
 
-    public MedicationDTO(String medicationHeader, String sicknessName, String dose, String nextDueTime, String remaining, String endAt, String secondNextDueTime) {
+    public MedicationDTO(String medicationHeader, String sicknessName, String dose, String nextDueTime, String remaining, String endAt, Medication medication) {
         this.medicationHeader = medicationHeader;
         this.sicknessName = sicknessName;
         this.dose = dose;
         this.nextDueTime = nextDueTime;
         this.remaining = remaining;
         this.endAt = endAt;
-        this.secondNextDueTime = secondNextDueTime;
+        this.medication = medication;
     }
 
     public String getMedicationHeader() {
@@ -83,5 +84,13 @@ public class MedicationDTO {
 
     public void setSecondNextDueTime(String secondNextDueTime) {
         this.secondNextDueTime = secondNextDueTime;
+    }
+
+    public Medication getMedication() {
+        return medication;
+    }
+
+    public void setMedication(Medication medication) {
+        this.medication = medication;
     }
 }
