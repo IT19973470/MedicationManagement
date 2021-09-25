@@ -28,8 +28,8 @@ public class MedicationAdapter extends RecyclerView.Adapter<MedicationAdapter.Me
     private EditText txtMedication;
     private Button btnMedication;
 
-    public MedicationAdapter(MedicationFragment fragment) {
-        this.fragment = fragment;
+    public MedicationAdapter() {
+
     }
 
     public MedicationAdapter(List<Medication> medicationList, Context context) {

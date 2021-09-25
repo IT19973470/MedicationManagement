@@ -65,17 +65,19 @@ public class ReminderFragment extends Fragment {
                     Medication medication = dataSnapshot.getValue(Medication.class);
                     int[] nextDueTime = Calculations.calcNextDueTime(medication.getNextDueTimeH(), medication.getNextDueTimeM(), medication.getIntervalH(), medication.getIntervalM());
                     String secondNextTime = LocalTime.of(nextDueTime[0], nextDueTime[1]).format(DateTimeFormatter.ofPattern("hh:mm a"));
-                    medications.add(
-                            new MedicationDTO(
-                                    medication.getMedicationName() + " Pill",
-                                    medication.getSicknessName(),
-                                    medication.getDose() + " Pills",
-                                    LocalTime.of(medication.getNextDueTimeH(), medication.getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")),
-                                    medication.getTotalPills() + "",
-                                    Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()),
-                                    secondNextTime
-                            )
-                    );
+                    if (medication.getTotalPills() > 0) {
+                        medications.add(
+                                new MedicationDTO(
+                                        medication.getMedicationName() + " Pill",
+                                        medication.getSicknessName(),
+                                        medication.getDose() + " Pills",
+                                        LocalTime.of(medication.getNextDueTimeH(), medication.getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")),
+                                        medication.getTotalPills() + "",
+                                        Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()),
+                                        secondNextTime
+                                )
+                        );
+                    }
                 }
                 recyclerView = view.findViewById(R.id.recycler_reminder);
                 layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
