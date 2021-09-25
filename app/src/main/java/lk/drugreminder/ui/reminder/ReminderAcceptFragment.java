@@ -20,6 +20,7 @@ import java.util.List;
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.ReminderAdapter;
 import lk.drugreminder.adapter.ReminderHistoryAdapter;
+import lk.drugreminder.model.MedicationDTO;
 import lk.drugreminder.model.Reminder;
 
 public class ReminderAcceptFragment extends Fragment {
@@ -59,13 +60,13 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
-        Reminder reminder = ReminderAdapter.getReminderStatic();
+        MedicationDTO reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedication.setText(reminder.getMedicationHeader());
         txtMedication.setText(reminder.getMedicationHeader());
         txtDose.setText(reminder.getDose());
-        txtDue.setText(reminder.getDueTime());
-        txtNext.setText(reminder.getNextTime());
-        txtRemaining.setText(reminder.getRemaining());
+        txtDue.setText(reminder.getNextDueTime());
+        txtNext.setText(reminder.getSecondNextDueTime());
+        txtRemaining.setText(reminder.getRemaining() + " Pills");
         txtEnd.setText(reminder.getEndAt());
 
         List<Reminder> reminders = new ArrayList<>();

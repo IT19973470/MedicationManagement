@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.ReminderAdapter;
+import lk.drugreminder.model.MedicationDTO;
 import lk.drugreminder.model.Reminder;
 
 public class ReminderMedicationTakeFragment extends Fragment {
@@ -31,11 +32,11 @@ public class ReminderMedicationTakeFragment extends Fragment {
         txtRemaining = view.findViewById(R.id.txt_remian);
         txtEnd = view.findViewById(R.id.txt_end);
 
-        Reminder reminder = ReminderAdapter.getReminderStatic();
+        MedicationDTO reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedication.setText(reminder.getMedicationHeader());
         txtMedication.setText(reminder.getMedicationHeader());
         txtDose.setText(reminder.getDose());
-        txtNext.setText(reminder.getNextTime());
+        txtNext.setText(reminder.getNextDueTime());
         txtRemaining.setText(reminder.getRemaining());
         txtEnd.setText(reminder.getEndAt());
 
