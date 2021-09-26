@@ -53,6 +53,7 @@ public class ReminderUpdateReasonFragment extends Fragment {
         return view;
     }
 
+    //update
     private void updateReason() {
         DatabaseReference updateLog = FirebaseDB.getDBPillsLog();
         updateLog.addListenerForSingleValueEvent(new ValueEventListener() {

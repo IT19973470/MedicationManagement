@@ -225,6 +225,7 @@ public class MedicationFragmentAdd extends Fragment {
         return view;
     }
 
+    //add
     private void addPills() {
         DatabaseReference addMedication = FirebaseDB.getDBMedication();
         addMedication.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -255,6 +256,7 @@ public class MedicationFragmentAdd extends Fragment {
         });
     }
 
+    //update
     private void updatePills() {
         DatabaseReference updateMedication = FirebaseDB.getDBMedication();
         updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -283,6 +285,7 @@ public class MedicationFragmentAdd extends Fragment {
         });
     }
 
+    //update
     private void removePills() {
         Medication medication = MedicationAdapter.getStaticMedication();
         if (medication.getTotalPills() >= Integer.parseInt(txtRemovePills.getText().toString())) {
@@ -308,6 +311,7 @@ public class MedicationFragmentAdd extends Fragment {
         }
     }
 
+    //delete
     private void deleteMedication() {
         DatabaseReference deleteMedication = FirebaseDB.getDBMedication();
         deleteMedication.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -327,6 +331,7 @@ public class MedicationFragmentAdd extends Fragment {
         });
     }
 
+    //view all
     private void loadMedication() {
         DatabaseReference dbMedication = FirebaseDB.getDBMedication();
         Query medications = dbMedication.orderByChild("medicationId").equalTo(MedicationAdapter.getStaticMedication().getMedicationId());
@@ -366,6 +371,7 @@ public class MedicationFragmentAdd extends Fragment {
         lyBoxes.setVisibility(View.GONE);
     }
 
+    //calculation
     private TextWatcher getKeyListener(String inputType) {
         return new TextWatcher() {
             @Override

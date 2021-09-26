@@ -49,7 +49,6 @@ public class MedicationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_medication_main, container, false);
-//        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeAsUpIndicator(R.drawable.);
 
         spinner = view.findViewById(R.id.spinner_sicknesses);
         txtMedication = view.findViewById(R.id.txt_medication);
@@ -99,27 +98,20 @@ public class MedicationFragment extends Fragment {
 
         loadSicknesses();
 
-//        LinearLayout app_layer = (LinearLayout) view.findViewById(R.id.lbl_medication);
-//        app_layer.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Navigation.findNavController(v).navigate(R.id.nav_fragment_medication_add);
-//            }
-//        });
-
         return view;
     }
 
+    //add
     private void addMedication() {
         String id = dbMedication.push().getKey();
         Sickness sickness = sicknesses.get(sicknessPosition);
         Medication medication = new Medication(id, txtMedication.getText().toString(), sickness.getSicknessId(), sickness.getSicknessName());
-//        dbDisease.push().setValue(sickness);
         dbMedication.child(id).setValue(medication);
         txtMedication.setText("");
         Toast.makeText(getContext(), "Medication added successfully", Toast.LENGTH_LONG).show();
     }
 
+    //update
     private void updateMedication() {
         DatabaseReference updateMedication = FirebaseDB.getDBMedication();
         updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -142,6 +134,7 @@ public class MedicationFragment extends Fragment {
         });
     }
 
+    //view all sicknesses
     private void loadSicknesses() {
         sicknesses = new ArrayList<>();
         dbSickness.addValueEventListener(new ValueEventListener() {
@@ -181,6 +174,7 @@ public class MedicationFragment extends Fragment {
         });
     }
 
+    //view all medications for sickness
     private void loadMedications() {
         List<Medication> medicationList = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_medication);

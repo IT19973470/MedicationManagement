@@ -88,6 +88,7 @@ public class SicknessAdapter extends RecyclerView.Adapter<SicknessAdapter.Sickne
         });
     }
 
+    //delete
     private void deleteSickness(Sickness sickness) {
         DatabaseReference deleteSick = FirebaseDB.getDBSickness();
         deleteSick.addListenerForSingleValueEvent(new ValueEventListener() {
