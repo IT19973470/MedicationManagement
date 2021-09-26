@@ -108,11 +108,11 @@ public class MedicationFragment extends Fragment {
         Medication medication = new Medication(id, txtMedication.getText().toString(), sickness.getSicknessId(), sickness.getSicknessName());
         dbMedication.child(id).setValue(medication);
         txtMedication.setText("");
-        //toast message 
+        //toast message
         Toast.makeText(getContext(), "Medication added successfully", Toast.LENGTH_LONG).show();
     }
 
-    //update
+    //update medicine name
     private void updateMedication() {
         DatabaseReference updateMedication = FirebaseDB.getDBMedication();
         updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
