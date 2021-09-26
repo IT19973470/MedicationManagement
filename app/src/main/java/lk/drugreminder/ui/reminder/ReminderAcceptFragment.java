@@ -131,7 +131,7 @@ public class ReminderAcceptFragment extends Fragment {
         dbPillsLog.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                //calculation
+                //calculation total pills and miss pills
                 int tookPills = 0, missedPills = 0;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PillsLog pillsLog = dataSnapshot.getValue(PillsLog.class);
