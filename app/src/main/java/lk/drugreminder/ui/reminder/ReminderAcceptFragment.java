@@ -127,7 +127,7 @@ public class ReminderAcceptFragment extends Fragment {
         reminderHistoryAdapter.setContext(getActivity());
         reminderHistoryAdapter.setContext(getContext());
 
-        Query dbPillsLog = FirebaseDB.getDBPillsLog();
+        Query dbPillsLog = FirebaseDB.getDBPillsLog().orderByChild("medicationId").equalTo(ReminderAdapter.getReminderStatic().getMedication().getMedicationId());
         dbPillsLog.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -135,16 +135,16 @@ public class ReminderAcceptFragment extends Fragment {
                 int tookPills = 0, missedPills = 0;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PillsLog pillsLog = dataSnapshot.getValue(PillsLog.class);
-                    if (pillsLog.getMedication().getMedicationId().equals(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
-                        if (pillsLog.isTookPills()) {
-                            tookPills++;
-                        } else {
-                            missedPills++;
-                        }
-                        pillsLogs.add(
-                                new PillsLog(pillsLog.getPillsLogId(), pillsLog.getMedication(), pillsLog.isTookPills(), pillsLog.getReason(), pillsLog.getTookTimeH(), pillsLog.getTookTimeM(), pillsLog.getTookDate())
-                        );
+//                    if (pillsLog.getMedication().getMedicationId().equals(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
+                    if (pillsLog.isTookPills()) {
+                        tookPills++;
+                    } else {
+                        missedPills++;
                     }
+                    pillsLogs.add(
+                            new PillsLog(pillsLog.getPillsLogId(), pillsLog.getMedication(), pillsLog.isTookPills(), pillsLog.getReason(), pillsLog.getTookTimeH(), pillsLog.getTookTimeM(), pillsLog.getTookDate())
+                    );
+//                    }
                 }
                 Collections.reverse(pillsLogs);
                 reminderHistoryAdapter.setPillsLogs(pillsLogs);

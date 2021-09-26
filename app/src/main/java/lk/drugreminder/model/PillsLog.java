@@ -3,6 +3,7 @@ package lk.drugreminder.model;
 public class PillsLog {
     private String pillsLogId;
     private Medication medication;
+    private String medicationId;
     private boolean tookPills;
     private String reason;
     private int tookTimeH;
@@ -20,6 +21,7 @@ public class PillsLog {
         this.tookTimeH = tookTimeH;
         this.tookTimeM = tookTimeM;
         this.tookDate = tookDate;
+        this.medicationId = medication.getMedicationId();
     }
 
     public Medication getMedication() {
@@ -76,5 +78,13 @@ public class PillsLog {
 
     public void setPillsLogId(String pillsLogId) {
         this.pillsLogId = pillsLogId;
+    }
+
+    public String getMedicationId() {
+        return medicationId;
+    }
+
+    public void setMedicationId(String medicationId) {
+        this.medicationId = medicationId;
     }
 }
