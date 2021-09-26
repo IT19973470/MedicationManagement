@@ -50,10 +50,10 @@ public class Calculations {
             }
 
             LocalDateTime localDateTime = LocalDate.now().atTime(nextTimeH, nextTimeM);
-
             localDateTime = localDateTime.plusDays(days);
-
-            return localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm a"));
+            String formattedDateTime = localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm a"));
+            String[] formattedDateTimes = formattedDateTime.split(" ");
+            return formattedDateTimes[0] + " at " + formattedDateTimes[1] + " " + formattedDateTimes[2];
         } catch (ArithmeticException e) {
 
         }

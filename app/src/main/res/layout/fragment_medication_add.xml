@@ -116,34 +116,6 @@
 
             </LinearLayout>
 
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_weight="4">-->
-
-            <!--                <TextView-->
-            <!--                    android:layout_width="0dp"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_weight="1"-->
-            <!--                    android:autoSizeTextType="uniform"-->
-            <!--                    android:fontFamily="@font/quicksand_bold"-->
-            <!--                    android:text="Boxes :"-->
-            <!--                    android:textColor="#101010"-->
-            <!--                    android:textSize="15dp" />-->
-
-            <!--                <TextView-->
-            <!--                    android:id="@+id/txt_due"-->
-            <!--                    android:layout_width="0dp"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_weight="5"-->
-            <!--                    android:autoSizeTextType="uniform"-->
-            <!--                    android:fontFamily="@font/quicksand_semibold"-->
-            <!--                    android:text="2"-->
-            <!--                    android:textColor="#7A7A7A"-->
-            <!--                    android:textSize="15dp" />-->
-
-            <!--            </LinearLayout>-->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

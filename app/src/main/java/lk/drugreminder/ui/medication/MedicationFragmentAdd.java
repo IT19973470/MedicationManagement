@@ -274,7 +274,7 @@ public class MedicationFragmentAdd extends Fragment {
                     medication.setNextDueTimeM(nextDueTime[1]);
                     updateMedication.child(medication.getMedicationId()).setValue(medication);
                     setTextEmpty();
-                    Toast.makeText(getContext(), "Pills added successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Pills updated successfully", Toast.LENGTH_LONG).show();
                 }
             }
 

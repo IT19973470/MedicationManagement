@@ -1,5 +1,7 @@
 package lk.drugreminder.ui.reminder;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,7 +52,22 @@ public class ReminderAddReasonFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (!txtReason.getText().toString().equals("")) {
-                    addReason();
+                    AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                    alert.setTitle("Add");
+                    alert.setMessage("Do you want to add reason?");
+                    alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            addReason();
+                        }
+                    });
+                    alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alert.show();
                 } else {
                     Toast.makeText(getContext(), "Please enter a reason", Toast.LENGTH_LONG).show();
                 }
