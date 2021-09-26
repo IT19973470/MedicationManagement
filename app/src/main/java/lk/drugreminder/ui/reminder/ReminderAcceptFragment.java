@@ -43,7 +43,7 @@ import lk.drugreminder.model.Reminder;
 
 public class ReminderAcceptFragment extends Fragment {
 
-    private TextView lblHeaderMedication, txtMedication, txtDose, txtDue, txtNext, txtRemaining, txtEnd, txtTookPills, txtMissedPills;
+    private TextView lblHeaderMedication, txtSickness, txtDose, txtDue, txtNext, txtRemaining, txtEnd, txtTookPills, txtMissedPills;
     private Button btnTakeMedication, btnSkipMedication;
     private RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
@@ -55,7 +55,7 @@ public class ReminderAcceptFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_reminder_accept, container, false);
         lblHeaderMedication = view.findViewById(R.id.lbl_header_medication);
-        txtMedication = view.findViewById(R.id.txt_medication);
+        txtSickness = view.findViewById(R.id.txt_sickness);
         txtDose = view.findViewById(R.id.txt_dose);
         txtDue = view.findViewById(R.id.txt_due);
         txtNext = view.findViewById(R.id.txt_next);
@@ -135,14 +135,16 @@ public class ReminderAcceptFragment extends Fragment {
                 int tookPills = 0, missedPills = 0;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PillsLog pillsLog = dataSnapshot.getValue(PillsLog.class);
-                    if (pillsLog.isTookPills()) {
-                        tookPills++;
-                    } else {
-                        missedPills++;
+                    if (pillsLog.getMedication().getMedicationId().equals(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
+                        if (pillsLog.isTookPills()) {
+                            tookPills++;
+                        } else {
+                            missedPills++;
+                        }
+                        pillsLogs.add(
+                                new PillsLog(pillsLog.getPillsLogId(), pillsLog.getMedication(), pillsLog.isTookPills(), pillsLog.getReason(), pillsLog.getTookTimeH(), pillsLog.getTookTimeM(), pillsLog.getTookDate())
+                        );
                     }
-                    pillsLogs.add(
-                            new PillsLog(pillsLog.getPillsLogId(), pillsLog.getMedication(), pillsLog.isTookPills(), pillsLog.getReason(), pillsLog.getTookTimeH(), pillsLog.getTookTimeM(), pillsLog.getTookDate())
-                    );
                 }
                 Collections.reverse(pillsLogs);
                 reminderHistoryAdapter.setPillsLogs(pillsLogs);
@@ -182,7 +184,7 @@ public class ReminderAcceptFragment extends Fragment {
 
         MedicationDTO reminder = ReminderAdapter.getReminderStatic();
         lblHeaderMedication.setText(reminder.getMedicationHeader());
-        txtMedication.setText(reminder.getMedicationHeader());
+        txtSickness.setText(reminder.getSicknessName());
         txtDose.setText(reminder.getDose());
     }
 
