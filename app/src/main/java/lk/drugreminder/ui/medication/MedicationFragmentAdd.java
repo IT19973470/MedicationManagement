@@ -371,7 +371,7 @@ public class MedicationFragmentAdd extends Fragment {
         lyBoxes.setVisibility(View.GONE);
     }
 
-    //calculation
+    //calculate the total pills
     private TextWatcher getKeyListener(String inputType) {
         return new TextWatcher() {
             @Override
