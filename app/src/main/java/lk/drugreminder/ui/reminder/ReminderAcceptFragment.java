@@ -135,8 +135,7 @@ public class ReminderAcceptFragment extends Fragment {
                 int tookPills = 0, missedPills = 0;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PillsLog pillsLog = dataSnapshot.getValue(PillsLog.class);
-//                    if (pillsLog.getMedication().getMedicationId().equals(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
-                    if (pillsLog.isTookPills()) {
+                if (pillsLog.isTookPills()) {
                         tookPills++;
                     } else {
                         missedPills++;
@@ -144,8 +143,7 @@ public class ReminderAcceptFragment extends Fragment {
                     pillsLogs.add(
                             new PillsLog(pillsLog.getPillsLogId(), pillsLog.getMedication(), pillsLog.isTookPills(), pillsLog.getReason(), pillsLog.getTookTimeH(), pillsLog.getTookTimeM(), pillsLog.getTookDate())
                     );
-//                    }
-                }
+              }
                 Collections.reverse(pillsLogs);
                 reminderHistoryAdapter.setPillsLogs(pillsLogs);
                 recyclerView.setAdapter(reminderHistoryAdapter);
