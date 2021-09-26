@@ -113,11 +113,12 @@
         android:layout_weight="4">
 
         <TextView
+            android:id="@+id/lbl_took"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:fontFamily="@font/quicksand_bold"
-            android:text="Took Time :"
+            android:text="Took At :"
             android:textColor="#101010"
             android:textSize="15dp" />
 

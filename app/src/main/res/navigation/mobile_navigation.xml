@@ -49,7 +49,7 @@
 
     <fragment
         android:id="@+id/nav_fragment_skip_reason"
-        android:name="lk.drugreminder.ui.reminder.ReminderReasonFragment"
+        android:name="lk.drugreminder.ui.reminder.ReminderUpdateReasonFragment"
         android:label="@string/my_reminders"
         tools:layout="@layout/fragment_reminder_skip_reason" />
 
