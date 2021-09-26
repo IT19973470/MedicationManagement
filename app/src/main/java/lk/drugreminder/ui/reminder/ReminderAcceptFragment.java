@@ -77,6 +77,31 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
+        Query medications = FirebaseDB.getDBMedication().orderByChild("medicationId").equalTo(ReminderAdapter.getReminderStatic().getMedication().getMedicationId());
+        medications.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
+                    Medication medication = snapshot.child(ReminderAdapter.getReminderStatic().getMedication().getMedicationId()).getValue(Medication.class);
+                    txtDue.setText(LocalTime.of(medication.getNextDueTimeH(), medication.getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")));
+                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getNextDueTimeH(), medication.getNextDueTimeM(), medication.getIntervalH(), medication.getIntervalM());
+                    txtNext.setText(LocalTime.of(nextDueTime[0], nextDueTime[1]).format(DateTimeFormatter.ofPattern("hh:mm a")));
+                    txtRemaining.setText(medication.getTotalPills() + " Pills");
+                    txtEnd.setText(Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        MedicationDTO reminder = ReminderAdapter.getReminderStatic();
+        lblHeaderMedication.setText(reminder.getMedicationHeader());
+        txtMedication.setText(reminder.getMedicationHeader());
+        txtDose.setText(reminder.getDose());
+
         List<PillsLog> pillsLogs = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_reminder_history);
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
