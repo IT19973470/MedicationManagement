@@ -35,6 +35,8 @@ public class ReminderAddReasonFragment extends Fragment {
     private DatabaseReference dbReason;
     private EditText txtReason;
 
+    //Add reason
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_reminder_new_reason, container, false);
