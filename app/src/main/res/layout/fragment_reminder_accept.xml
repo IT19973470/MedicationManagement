@@ -146,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1.4dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/hr_line"/>
+                android:background="@drawable/hr_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -213,12 +213,12 @@
                     android:layout_height="32dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="0dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/button_crud"
                     android:backgroundTint="@color/medi_medication"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="@string/take_medication"
                     android:textColor="@color/medi_medication_text"
-                    android:layout_marginRight="10dp"
                     android:textSize="14dp" />
 
                 <Button
@@ -226,13 +226,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_gravity="end"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_crud"
                     android:backgroundTint="@color/medi_medication"
                     android:fontFamily="@font/quicksand_bold"
                     android:text="@string/skip_medication"
                     android:textColor="@color/medi_medication_text"
-                    android:layout_marginLeft="10dp"
                     android:textSize="14dp" />
 
             </LinearLayout>
@@ -249,8 +249,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="0dp"
                 android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
@@ -269,8 +269,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"
                 android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
@@ -280,64 +280,65 @@
 
         </LinearLayout>
 
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="5"-->
+        <!--            android:paddingLeft="8dp"-->
+        <!--            android:layout_marginLeft="30dp">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="0dp"-->
+        <!--                android:layout_marginLeft="5dp"-->
+        <!--                android:layout_marginBottom="0dp"-->
+        <!--                android:layout_weight="2"-->
+        <!--                android:fontFamily="@font/quicksand_bold"-->
+        <!--                android:text="Pills should have taken :"-->
+        <!--                android:textColor="#101010"-->
+        <!--                android:textSize="15dp" />-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="0dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="0dp"-->
+        <!--                android:layout_marginLeft="5dp"-->
+        <!--                android:layout_marginBottom="0dp"-->
+        <!--                android:layout_weight="2"-->
+        <!--                android:fontFamily="@font/quicksand_bold"-->
+        <!--                android:text="25 pills"-->
+        <!--                android:textSize="15dp" />-->
+
+        <!--        </LinearLayout>-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
             android:layout_weight="5"
-            android:paddingLeft="8dp"
-            android:layout_marginLeft="30dp">
+            android:paddingLeft="8dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"
                 android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
-                android:text="Pills should have taken :"
+                android:text="Pills Took :"
                 android:textColor="#101010"
                 android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/txt_took_pills"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="2"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="25 pills"
-                android:textSize="15dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:paddingLeft="8dp"
-            android:layout_marginLeft="30dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:layout_marginLeft="5dp"
                 android:layout_marginBottom="0dp"
-                android:layout_weight="2"
-                android:fontFamily="@font/quicksand_bold"
-                android:text="Pills took :"
-                android:textColor="#101010"
-                android:textSize="15dp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginBottom="0dp"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="20 pills"
                 android:textSize="15dp" />
@@ -347,29 +348,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
             android:layout_weight="5"
-            android:paddingLeft="8dp"
-            android:layout_marginLeft="30dp">
+            android:paddingLeft="8dp">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"
                 android:layout_weight="2"
                 android:fontFamily="@font/quicksand_bold"
+                android:text="Pills Missed :"
                 android:textColor="#101010"
-                android:text="Pills missed :"
                 android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/txt_missed_pills"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="0dp"
-                android:layout_weight="2"
+                android:layout_weight="4"
                 android:fontFamily="@font/quicksand_bold"
                 android:text="5 pills"
                 android:textSize="15dp" />
