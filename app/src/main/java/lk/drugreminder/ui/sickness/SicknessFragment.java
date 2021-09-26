@@ -91,15 +91,16 @@ public class SicknessFragment extends Fragment {
         return view;
     }
 
+    //add
     private void addSickness() {
         String id = dbSickness.push().getKey();
         Sickness sickness = new Sickness(id, txtSickness.getText().toString());
-//        dbDisease.push().setValue(sickness);
         dbSickness.child(id).setValue(sickness);
         txtSickness.setText("");
         Toast.makeText(getContext(), "Sickness added successfully", Toast.LENGTH_LONG).show();
     }
 
+    //update
     private void updateSickness() {
         DatabaseReference updateSick = FirebaseDB.getDBSickness();
         updateSick.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -122,6 +123,7 @@ public class SicknessFragment extends Fragment {
         });
     }
 
+    //view all
     private void loadSicknesses() {
         List<Sickness> sicknessList = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_sickness);

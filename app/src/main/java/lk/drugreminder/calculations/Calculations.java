@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Calculations {
 
+    //calculation
     public static int[] calcNextDueTime(int timeH, int timeM, int hours, int minutes) {
         int[] time = new int[2];
         timeM += minutes;

@@ -94,9 +94,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 signIn();
-//                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                manager.notify(100, builder.build());
             }
         });
         createNotificationChannel();

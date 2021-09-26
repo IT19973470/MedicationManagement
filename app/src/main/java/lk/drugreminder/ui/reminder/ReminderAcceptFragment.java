@@ -77,31 +77,15 @@ public class ReminderAcceptFragment extends Fragment {
             }
         });
 
-        Query medications = FirebaseDB.getDBMedication().orderByChild("medicationId").equalTo(ReminderAdapter.getReminderStatic().getMedication().getMedicationId());
-        medications.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChild(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
-                    Medication medication = snapshot.child(ReminderAdapter.getReminderStatic().getMedication().getMedicationId()).getValue(Medication.class);
-                    txtDue.setText(LocalTime.of(medication.getNextDueTimeH(), medication.getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")));
-                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getNextDueTimeH(), medication.getNextDueTimeM(), medication.getIntervalH(), medication.getIntervalM());
-                    txtNext.setText(LocalTime.of(nextDueTime[0], nextDueTime[1]).format(DateTimeFormatter.ofPattern("hh:mm a")));
-                    txtRemaining.setText(medication.getTotalPills() + " Pills");
-                    txtEnd.setText(Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()));
-                }
-            }
+        loadMedication();
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+        loadPillsLog();
 
-            }
-        });
+        return view;
+    }
 
-        MedicationDTO reminder = ReminderAdapter.getReminderStatic();
-        lblHeaderMedication.setText(reminder.getMedicationHeader());
-        txtMedication.setText(reminder.getMedicationHeader());
-        txtDose.setText(reminder.getDose());
-
+    //view
+    private void loadPillsLog() {
         List<PillsLog> pillsLogs = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_reminder_history);
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -114,6 +98,7 @@ public class ReminderAcceptFragment extends Fragment {
         dbPillsLog.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                //calculation
                 int tookPills = 0, missedPills = 0;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PillsLog pillsLog = dataSnapshot.getValue(PillsLog.class);
@@ -138,18 +123,37 @@ public class ReminderAcceptFragment extends Fragment {
 
             }
         });
-
-//        pillsLogs.add(new Reminder("Took Pill", "Donpiri", "2 pills", "01:30 PM", "02:30 PM", "Next day at 05:30 PM", "20 pills", "2020-03-02 AT 06:30 PM", false));
-//        pillsLogs.add(new Reminder("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true, "Forgot"));
-//        pillsLogs.add(new Reminder("Missed Pill", "Lumex", "3 pills", "02:30 PM", "03:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM", true, "Forgot"));
-//        pillsLogs.add(new Reminder("Missed Pill", "Amexo", "2 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "50 pills", "2020-04-08 AT 07:30 PM", true, "Forgot"));
-//        pillsLogs.add(new Reminder("Took Pill", "Amexo", "3 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "30 pills", "2020-04-08 AT 07:30 PM", false));
-//        pillsLogs.add(new Reminder("Missed Pill", "Amexo", "4 pills", "04:30 PM", "05:30 PM", "Next day at 11:30 PM", "20 pills", "2020-04-08 AT 07:30 PM", true, "Forgot"));
-
-
-        return view;
     }
 
+    //view
+    private void loadMedication() {
+        Query medications = FirebaseDB.getDBMedication().orderByChild("medicationId").equalTo(ReminderAdapter.getReminderStatic().getMedication().getMedicationId());
+        medications.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChild(ReminderAdapter.getReminderStatic().getMedication().getMedicationId())) {
+                    Medication medication = snapshot.child(ReminderAdapter.getReminderStatic().getMedication().getMedicationId()).getValue(Medication.class);
+                    txtDue.setText(LocalTime.of(medication.getNextDueTimeH(), medication.getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")));
+                    int[] nextDueTime = Calculations.calcNextDueTime(medication.getNextDueTimeH(), medication.getNextDueTimeM(), medication.getIntervalH(), medication.getIntervalM());
+                    txtNext.setText(LocalTime.of(nextDueTime[0], nextDueTime[1]).format(DateTimeFormatter.ofPattern("hh:mm a")));
+                    txtRemaining.setText(medication.getTotalPills() + " Pills");
+                    txtEnd.setText(Calculations.pillsEndOn(medication.getTotalPills(), medication.getDose(), medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM()));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        MedicationDTO reminder = ReminderAdapter.getReminderStatic();
+        lblHeaderMedication.setText(reminder.getMedicationHeader());
+        txtMedication.setText(reminder.getMedicationHeader());
+        txtDose.setText(reminder.getDose());
+    }
+
+    //update
     private void takePills() {
         DatabaseReference dbPillsLog = FirebaseDB.getDBPillsLog();
         String id = dbPillsLog.push().getKey();
