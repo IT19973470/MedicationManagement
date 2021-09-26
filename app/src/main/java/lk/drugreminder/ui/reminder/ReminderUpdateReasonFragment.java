@@ -32,7 +32,6 @@ public class ReminderUpdateReasonFragment extends Fragment {
     private EditText txtReason;
 
     //Update reason
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_reminder_skip_reason, container, false);
