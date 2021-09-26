@@ -10,28 +10,32 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import lk.drugreminder.R;
+import lk.drugreminder.model.PillsLog;
 import lk.drugreminder.model.Reminder;
 import lk.drugreminder.ui.reminder.ReminderAcceptFragment;
 
 public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistoryAdapter.ReminderHistoryViewHolder> {
 
-    private List<Reminder> reminders;
+    private List<PillsLog> pillsLogs;
     private LayoutInflater inflater;
     private Context context;
     private ReminderAcceptFragment fragment;
-    private static Reminder reminderStaticDTO;
+    private static PillsLog staticPillsLog;
 
     public ReminderHistoryAdapter(ReminderAcceptFragment fragment) {
         this.fragment = fragment;
     }
 
-    public ReminderHistoryAdapter(List<Reminder> reminders, Context context) {
-        this.reminders = reminders;
+    public ReminderHistoryAdapter(List<PillsLog> pillsLogs, Context context) {
+        this.pillsLogs = pillsLogs;
         this.context = context;
         this.inflater = LayoutInflater.from(context);
     }
@@ -45,32 +49,42 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
 
     @Override
     public void onBindViewHolder(@NonNull final ReminderHistoryViewHolder holder, int position) {
-        final Reminder reminder = reminders.get(position);
-        holder.getLblHeaderMedication().setText(reminder.getMedicationHeader());
-        holder.getTxtMedication().setText(reminder.getMedication());
-        holder.getTxtDose().setText(reminder.getDose());
-        holder.getTxtDue().setText(reminder.getDueTime());
-        holder.getTxtTook().setText(reminder.getTookTime());
+        final PillsLog pillsLog = pillsLogs.get(position);
+        holder.getLblHeaderMedication().setText("Took Pill");
+        holder.getLblTook().setText("Took At :");
+        holder.getTxtMedication().setText(pillsLog.getMedication().getMedicationName());
+        holder.getTxtDose().setText(pillsLog.getMedication().getDose() + " Pills");
+        holder.getTxtDue().setText(LocalTime.of(pillsLog.getMedication().getNextDueTimeH(), pillsLog.getMedication().getNextDueTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")));
+        holder.getTxtTook().setText(pillsLog.getTookDate() + " at " + LocalTime.of(pillsLog.getTookTimeH(), pillsLog.getTookTimeM()).format(DateTimeFormatter.ofPattern("hh:mm a")));
         holder.getLyReason().setVisibility(View.GONE);
-        if (reminder.isMissed()) {
+        if (!pillsLog.isTookPills()) {
+            holder.getLblHeaderMedication().setText("Missed Pill");
+            holder.getLblTook().setText("Skipped At :");
             holder.getLblHeaderMedication().setTextColor(Color.parseColor("red"));
             holder.getLinearLayout().setBackground(holder.getLinearLayout().getContext().getDrawable(R.drawable.card_border_missed));
-            holder.getTxtReason().setText(reminder.getReason());
+            holder.getTxtReason().setText(pillsLog.getReason());
             holder.getLyReason().setVisibility(View.VISIBLE);
+            holder.getLinearLayout().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    staticPillsLog = pillsLog;
+                    Navigation.findNavController(view).navigate(R.id.nav_fragment_skip_reason);
+                }
+            });
         }
     }
 
     @Override
     public int getItemCount() {
-        return reminders.size();
+        return pillsLogs.size();
     }
 
-    public List<Reminder> getReminders() {
-        return reminders;
+    public List<PillsLog> getPillsLogs() {
+        return pillsLogs;
     }
 
-    public void setReminders(List<Reminder> reminders) {
-        this.reminders = reminders;
+    public void setPillsLogs(List<PillsLog> pillsLogs) {
+        this.pillsLogs = pillsLogs;
     }
 
     public void setInflater(LayoutInflater inflater) {
@@ -85,14 +99,14 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
         return fragment;
     }
 
-    public static Reminder getReminderStaticDTO() {
-        return reminderStaticDTO;
+    public static PillsLog getStaticPillsLog() {
+        return staticPillsLog;
     }
 
 
     public class ReminderHistoryViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView lblHeaderMedication, txtMedication, txtDose, txtDue, txtTook, txtReason;
+        private TextView lblHeaderMedication, txtMedication, txtDose, txtDue, txtTook, txtReason, lblTook;
         private Button btnTakeMedication;
         private LinearLayout linearLayout, lyReason;
 
@@ -104,6 +118,7 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
             txtDue = itemView.findViewById(R.id.txt_due);
             txtTook = itemView.findViewById(R.id.txt_took);
             txtReason = itemView.findViewById(R.id.txt_reason);
+            lblTook = itemView.findViewById(R.id.lbl_took);
             btnTakeMedication = itemView.findViewById(R.id.btn_take_medication);
             linearLayout = itemView.findViewById(R.id.recycler_reminder_history);
             lyReason = itemView.findViewById(R.id.ly_reason);
@@ -179,6 +194,14 @@ public class ReminderHistoryAdapter extends RecyclerView.Adapter<ReminderHistory
 
         public void setLyReason(LinearLayout lyReason) {
             this.lyReason = lyReason;
+        }
+
+        public TextView getLblTook() {
+            return lblTook;
+        }
+
+        public void setLblTook(TextView lblTook) {
+            this.lblTook = lblTook;
         }
     }
 
