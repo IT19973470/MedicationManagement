@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,7 +25,7 @@ import lk.drugreminder.model.PillsLog;
 public class ReminderUpdateReasonFragment extends Fragment {
 
     private View view;
-    private Button btnUpdateReason, btnDeleteReason;
+    private Button btnUpdateReason;
     private DatabaseReference dbReason;
     private EditText txtReason;
 
@@ -35,7 +36,6 @@ public class ReminderUpdateReasonFragment extends Fragment {
         txtReason = view.findViewById(R.id.txt_reason);
         txtReason.setText(ReminderHistoryAdapter.getStaticPillsLog().getReason());
         btnUpdateReason = view.findViewById(R.id.btn_update);
-        btnDeleteReason = view.findViewById(R.id.btn_delete);
 
         btnUpdateReason.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +62,7 @@ public class ReminderUpdateReasonFragment extends Fragment {
                     pillsLog.setReason(txtReason.getText().toString());
                     updateLog.child(pillsLog.getPillsLogId()).setValue(pillsLog);
                     txtReason.setText("");
+                    Navigation.findNavController(view).navigate(R.id.nav_fragment_reminder_accept);
                     Toast.makeText(getContext(), "Reason updated successfully", Toast.LENGTH_LONG).show();
                 }
             }

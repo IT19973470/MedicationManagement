@@ -78,6 +78,7 @@ public class ReminderAddReasonFragment extends Fragment {
                     medication.setNextDueTimeH(nextDueTime[0]);
                     medication.setNextDueTimeM(nextDueTime[1]);
                     updateMedication.child(medication.getMedicationId()).setValue(medication);
+                    Navigation.findNavController(view).navigate(R.id.nav_fragment_reminder_accept);
                     Toast.makeText(getContext(), "Reason added successfully", Toast.LENGTH_LONG).show();
                 }
             }

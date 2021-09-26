@@ -67,20 +67,6 @@
             android:layout_marginRight="10dp"
             android:textSize="14dp" />
 
-        <Button
-            android:id="@+id/btn_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="32dp"
-            android:layout_gravity="end"
-            android:layout_marginTop="0dp"
-            android:background="@drawable/button_crud"
-            android:backgroundTint="@color/medi_medication"
-            android:fontFamily="@font/quicksand_bold"
-            android:text="@string/delete_reason"
-            android:textColor="@color/medi_medication_text"
-            android:layout_marginRight="10dp"
-            android:textSize="14dp" />
-
     </LinearLayout>
 
 </LinearLayout>
