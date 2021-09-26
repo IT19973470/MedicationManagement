@@ -43,6 +43,13 @@ public class ReminderMedicationTakeFragment extends Fragment {
         txtRemaining = view.findViewById(R.id.txt_remian);
         txtEnd = view.findViewById(R.id.txt_end);
 
+        loadMedication();
+
+        return view;
+    }
+
+    //view
+    private void loadMedication() {
         Query medications = FirebaseDB.getDBMedication().orderByChild("medicationId").equalTo(ReminderAdapter.getReminderStatic().getMedication().getMedicationId());
         medications.addValueEventListener(new ValueEventListener() {
             @Override
@@ -65,13 +72,6 @@ public class ReminderMedicationTakeFragment extends Fragment {
         lblHeaderMedication.setText(reminder.getMedicationHeader());
         txtMedication.setText(reminder.getMedicationHeader());
         txtDose.setText(reminder.getDose());
-
-        return view;
     }
 
-//    @Override
-//    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//        System.out.println(22);
-//    }
 }

@@ -58,6 +58,7 @@ public class ReminderAddReasonFragment extends Fragment {
         return view;
     }
 
+    //add
     private void addReason() {
         DatabaseReference dbPillsLog = FirebaseDB.getDBPillsLog();
         String id = dbPillsLog.push().getKey();

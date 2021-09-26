@@ -51,6 +51,7 @@ public class SignUpActivity extends Activity {
         });
     }
 
+    //sign up
     private void accSignup() {
         if (!txtName.getText().toString().equals("") && !txtEmail.getText().toString().equals("") && !txtPassword.getText().toString().equals("")) {
             if (txtPassword.getText().toString().equals(txtConfPassword.getText().toString())) {

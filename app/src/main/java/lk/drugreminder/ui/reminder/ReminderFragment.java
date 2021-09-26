@@ -46,14 +46,10 @@ public class ReminderFragment extends Fragment {
 
         loadReminders();
 
-//        medications.add(new Medication("Diabetes Pill", "Donpiri", "2 pills", "01:30 PM", "Next day at 05:30 PM", "20 pills", "2020-03-02 AT 06:30 PM"));
-//        medications.add(new Reminder("Diabetes Pill", "Lumex", "3 pills", "02:30 PM", "06:30 PM", "30 pills", "2020-03-02 AT 06:30 PM"));
-//        medications.add(new Reminder("Blood Pressure Pill", "Amexo", "2 pills", "04:30 PM", "Next day at 11:30 PM", "50 pills", "2020-04-08 AT 07:30 PM"));
-//        medications.add(new Reminder("Blood Pressure Pill", "Pfizer", "3 pills", "04:30 PM", "Next day at 11:30 PM", "50 pills", "2020-04-08 AT 07:30 PM"));
-
         return view;
     }
 
+    //view all
     private void loadReminders() {
         List<MedicationDTO> medications = new ArrayList<>();
         recyclerView = view.findViewById(R.id.recycler_reminder);

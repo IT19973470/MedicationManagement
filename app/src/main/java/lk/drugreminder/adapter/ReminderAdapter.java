@@ -22,14 +22,8 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
     private List<MedicationDTO> reminders;
     private LayoutInflater inflater;
     private Context context;
-    //    private ReminderFragment fragment;
     private static MedicationDTO reminderStatic;
     private static Medication staticMedication;
-
-//    public ReminderAdapter(ReminderFragment fragment) {
-//        this.fragment = fragment;
-//    }
-
 
     public ReminderAdapter() {
     }
@@ -85,10 +79,6 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
         this.inflater = LayoutInflater.from(context);
     }
 
-//    public ReminderFragment getFragment() {
-//        return fragment;
-//    }
-
     public List<MedicationDTO> getReminders() {
         return reminders;
     }
@@ -118,7 +108,6 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.Remind
             txtDue = itemView.findViewById(R.id.txt_due);
             txtEndOn = itemView.findViewById(R.id.txt_end_on);
             btnTakeMedication = itemView.findViewById(R.id.btn_take_medication);
-//        Intent intent = new Intent(LoginActivity.this, ZoomWaitingActivity.class);
         }
 
         public TextView getLblHeaderMedication() {
