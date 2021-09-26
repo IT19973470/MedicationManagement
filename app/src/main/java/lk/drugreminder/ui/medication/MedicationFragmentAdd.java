@@ -331,7 +331,7 @@ public class MedicationFragmentAdd extends Fragment {
         });
     }
 
-    //view all
+    //view all medicine details
     private void loadMedication() {
         DatabaseReference dbMedication = FirebaseDB.getDBMedication();
         Query medications = dbMedication.orderByChild("medicationId").equalTo(MedicationAdapter.getStaticMedication().getMedicationId());
@@ -371,7 +371,7 @@ public class MedicationFragmentAdd extends Fragment {
         lyBoxes.setVisibility(View.GONE);
     }
 
-    //calculation
+    //calculate the total pills
     private TextWatcher getKeyListener(String inputType) {
         return new TextWatcher() {
             @Override

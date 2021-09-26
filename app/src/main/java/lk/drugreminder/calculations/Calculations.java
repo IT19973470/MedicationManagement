@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Calculations {
 
-    //calculation
+    //calculate the next schedule time
     public static int[] calcNextDueTime(int timeH, int timeM, int hours, int minutes) {
         int[] time = new int[2];
         timeM += minutes;
@@ -30,6 +30,7 @@ public class Calculations {
         return time;
     }
 
+    //calculate remaining pills
     public static String pillsEndOn(int pillsCount, int dose, int nextTimeH, int nextTimeM, int intervalH, int intervalM) {
         try {
             pillsCount = pillsCount / dose;
