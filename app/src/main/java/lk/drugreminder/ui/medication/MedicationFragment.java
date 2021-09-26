@@ -101,13 +101,14 @@ public class MedicationFragment extends Fragment {
         return view;
     }
 
-    //add
+    //add medicine name
     private void addMedication() {
         String id = dbMedication.push().getKey();
         Sickness sickness = sicknesses.get(sicknessPosition);
         Medication medication = new Medication(id, txtMedication.getText().toString(), sickness.getSicknessId(), sickness.getSicknessName());
         dbMedication.child(id).setValue(medication);
         txtMedication.setText("");
+        //toast message 
         Toast.makeText(getContext(), "Medication added successfully", Toast.LENGTH_LONG).show();
     }
 
