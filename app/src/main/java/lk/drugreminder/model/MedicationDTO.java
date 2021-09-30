@@ -1,6 +1,10 @@
 package lk.drugreminder.model;
 
-public class MedicationDTO {
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+public class MedicationDTO implements Comparable<MedicationDTO>{
 
     private String medicationHeader;
     private String sicknessName;
@@ -92,5 +96,14 @@ public class MedicationDTO {
 
     public void setMedication(Medication medication) {
         this.medication = medication;
+    }
+
+    @Override
+    public int compareTo(MedicationDTO medicationDTO) {
+        LocalDateTime dateTimeOne = LocalDateTime.of(LocalDate.now().plusDays(getMedication().getNextDueDay()), LocalTime.of(getMedication().getNextDueTimeH(), getMedication().getNextDueTimeM()));
+
+        LocalDateTime dateTimeTwo = LocalDateTime.of(LocalDate.now().plusDays(medicationDTO.getMedication().getNextDueDay()), LocalTime.of(medicationDTO.getMedication().getNextDueTimeH(), medicationDTO.getMedication().getNextDueTimeM()));
+
+        return dateTimeOne.compareTo(dateTimeTwo);
     }
 }

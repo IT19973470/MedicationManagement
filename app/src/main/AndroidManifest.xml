@@ -37,6 +37,9 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+        <receiver
+            android:name=".NotificationReceiver"
+            android:enabled="true" />
     </application>
 
 </manifest>

@@ -1,7 +1,11 @@
 package lk.drugreminder.ui.reminder;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,12 +28,15 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import lk.drugreminder.NotificationReceiver;
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.MedicationAdapter;
 import lk.drugreminder.adapter.ReminderAdapter;
@@ -49,6 +56,7 @@ public class ReminderAcceptFragment extends Fragment {
     private RecyclerView recyclerView;
     private ReminderHistoryAdapter reminderHistoryAdapter;
     private View view;
+    static boolean tookPill = false;
 
     @Nullable
     @Override
@@ -135,7 +143,7 @@ public class ReminderAcceptFragment extends Fragment {
                 int tookPills = 0, missedPills = 0;
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     PillsLog pillsLog = dataSnapshot.getValue(PillsLog.class);
-                if (pillsLog.isTookPills()) {
+                    if (pillsLog.isTookPills()) {
                         tookPills++;
                     } else {
                         missedPills++;
@@ -143,7 +151,7 @@ public class ReminderAcceptFragment extends Fragment {
                     pillsLogs.add(
                             new PillsLog(pillsLog.getPillsLogId(), pillsLog.getMedication(), pillsLog.isTookPills(), pillsLog.getReason(), pillsLog.getTookTimeH(), pillsLog.getTookTimeM(), pillsLog.getTookDate())
                     );
-              }
+                }
                 Collections.reverse(pillsLogs);
                 reminderHistoryAdapter.setPillsLogs(pillsLogs);
                 recyclerView.setAdapter(reminderHistoryAdapter);
@@ -206,6 +214,8 @@ public class ReminderAcceptFragment extends Fragment {
                     int[] nextDueTime = Calculations.calcNextDueTime(medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM());
                     medication.setNextDueTimeH(nextDueTime[0]);
                     medication.setNextDueTimeM(nextDueTime[1]);
+                    medication.setNextDueDay(nextDueTime[2]);
+                    tookPill = true;
                     updateMedication.child(medication.getMedicationId()).setValue(medication);
                     Toast.makeText(getContext(), "Took Medication", Toast.LENGTH_LONG).show();
                     Navigation.findNavController(view).navigate(R.id.nav_fragment_medication_take);
