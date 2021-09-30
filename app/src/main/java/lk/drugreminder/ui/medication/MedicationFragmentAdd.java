@@ -288,26 +288,30 @@ public class MedicationFragmentAdd extends Fragment {
     //update
     private void removePills() {
         Medication medication = MedicationAdapter.getStaticMedication();
-        if (medication.getTotalPills() >= Integer.parseInt(txtRemovePills.getText().toString())) {
-            DatabaseReference updateMedication = FirebaseDB.getDBMedication();
-            updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.hasChild(medication.getMedicationId())) {
-                        medication.setTotalPills(medication.getTotalPills() - Integer.parseInt(txtRemovePills.getText().toString()));
-                        updateMedication.child(medication.getMedicationId()).setValue(medication);
-                        txtRemovePills.setText("0");
-                        Toast.makeText(getContext(), "Pills removed successfully", Toast.LENGTH_LONG).show();
+        if (Integer.parseInt(txtRemovePills.getText().toString()) > 0) {
+            if (medication.getTotalPills() >= Integer.parseInt(txtRemovePills.getText().toString())) {
+                DatabaseReference updateMedication = FirebaseDB.getDBMedication();
+                updateMedication.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChild(medication.getMedicationId())) {
+                            medication.setTotalPills(medication.getTotalPills() - Integer.parseInt(txtRemovePills.getText().toString()));
+                            updateMedication.child(medication.getMedicationId()).setValue(medication);
+                            txtRemovePills.setText("0");
+                            Toast.makeText(getContext(), "Pills removed successfully", Toast.LENGTH_LONG).show();
+                        }
                     }
-                }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                }
-            });
+                    }
+                });
+            } else {
+                Toast.makeText(getContext(), "Pills amount exceeded", Toast.LENGTH_LONG).show();
+            }
         } else {
-            Toast.makeText(getContext(), "Pills amount exceeded", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Invalid pills amount entered", Toast.LENGTH_LONG).show();
         }
     }
 
