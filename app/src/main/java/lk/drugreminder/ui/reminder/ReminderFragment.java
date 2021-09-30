@@ -88,8 +88,9 @@ public class ReminderFragment extends Fragment {
                 Collections.sort(medications);
                 reminderAdapter.setReminders(medications);
                 recyclerView.setAdapter(reminderAdapter);
-                if (ReminderAcceptFragment.tookPill) {
+                if (ReminderAcceptFragment.tookPill || ReminderAddReasonFragment.tookPill) {
                     ReminderAcceptFragment.tookPill = false;
+                    ReminderAddReasonFragment.tookPill = false;
                     scheduleNotification(medications.get(0).getMedication(), "It's time to take your medication");
                 }
             }
@@ -105,7 +106,7 @@ public class ReminderFragment extends Fragment {
         Intent intent = new Intent(getContext(), NotificationReceiver.class);
         intent.putExtra("title", nextMedication.getMedicationName() + " Pill");
         intent.putExtra("text", text);
-        PendingIntent pending = PendingIntent.getBroadcast(getContext(), 42, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pending = PendingIntent.getBroadcast(getContext(), 200, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         // Schdedule notification
         AlarmManager manager = (AlarmManager) getContext().getSystemService(Context.ALARM_SERVICE);
         manager.set(

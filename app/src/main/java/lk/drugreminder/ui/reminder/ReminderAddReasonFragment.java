@@ -1,7 +1,11 @@
 package lk.drugreminder.ui.reminder;
 
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +24,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
+import lk.drugreminder.NotificationReceiver;
 import lk.drugreminder.R;
 import lk.drugreminder.adapter.ReminderAdapter;
 import lk.drugreminder.calculations.Calculations;
@@ -36,6 +43,7 @@ public class ReminderAddReasonFragment extends Fragment {
     private Button btnAddReason;
     private DatabaseReference dbReason;
     private EditText txtReason;
+    static boolean tookPill = false;
 
     //Add reason
 
@@ -96,6 +104,8 @@ public class ReminderAddReasonFragment extends Fragment {
                     int[] nextDueTime = Calculations.calcNextDueTime(medication.getLastMedicationH(), medication.getLastMedicationM(), medication.getIntervalH(), medication.getIntervalM());
                     medication.setNextDueTimeH(nextDueTime[0]);
                     medication.setNextDueTimeM(nextDueTime[1]);
+                    medication.setNextDueDay(nextDueTime[2]);
+                    tookPill = true;
                     updateMedication.child(medication.getMedicationId()).setValue(medication);
                     Navigation.findNavController(view).navigate(R.id.nav_fragment_reminder_accept);
                     Toast.makeText(getContext(), "Reason added successfully", Toast.LENGTH_LONG).show();
