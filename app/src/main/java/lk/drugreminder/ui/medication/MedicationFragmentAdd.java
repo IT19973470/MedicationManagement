@@ -36,11 +36,11 @@ public class MedicationFragmentAdd extends Fragment {
     private LinearLayout lyPills, lyCards, lyBoxes;
     private LinearLayout lyAddPills;
     private Button btnAddByPills, btnAddByCards, btnAddByBoxes;
-    private EditText txtPills, txtPillsIncard, txtCards, txtPillsInCardBox, txtCardsInbox, txtBoxes, txtTotalPills, txtRemovePills;
+    private EditText txtPills, txtPillsIncard, txtCards, txtPillsInCardBox, txtCardsInbox, txtBoxes, txtRemovePills;
     private EditText txtDose, txtIntervalH, txtIntervalM;
     private TimePicker txtFirstMedication;
     private Button btnSavePills, btnUpdatePills, btnRemovePills, btnRemoveMedication;
-    private TextView lblHeaderMedication, lblTotalPills, lblLastAddedPills, lblMediDose, lblInterval, lblMediEnd;
+    private TextView lblHeaderMedication, lblTotalPills, lblLastAddedPills, lblMediDose, lblInterval, lblMediEnd, txtTotalPills;
     private View view;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -360,10 +360,11 @@ public class MedicationFragmentAdd extends Fragment {
     }
 
     private void setTextEmpty() {
-        EditText[] editTexts = {txtPillsInCardBox, txtPills, txtPillsIncard, txtBoxes, txtCards, txtCardsInbox, txtTotalPills};
+        EditText[] editTexts = {txtPillsInCardBox, txtPills, txtPillsIncard, txtBoxes, txtCards, txtCardsInbox};
         for (EditText editText : editTexts) {
             editText.setText("0");
         }
+        txtTotalPills.setText("0");
     }
 
     private void setLayoutsFalse() {

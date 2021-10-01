@@ -73,19 +73,6 @@ public class LoginActivity extends AppCompatActivity {
                         .setContentText("Your next pill is at 5:30 PM")//this is notification message
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT); //set priority of notification
 
-
-//        final Intent notificationIntent = new Intent(this, MainActivity.class);
-//        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        //notification message will get at NotificationView
-//        notificationIntent.putExtra("message", "This is a notification message");
-//
-//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent,
-//                PendingIntent.FLAG_UPDATE_CURRENT);
-//        builder.setContentIntent(pendingIntent);
-//
-//        // Add as notification
-//        final NotificationManagerCompat manager = NotificationManagerCompat.from(this);
-
         mAuth = FirebaseAuth.getInstance();
 
         chkLogin();
