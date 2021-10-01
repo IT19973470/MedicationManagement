@@ -15,6 +15,7 @@ public class Medication {
     private int lastMedicationM;
     private int nextDueTimeH;
     private int nextDueTimeM;
+    private int nextDueDay;
 
     public Medication() {
     }
@@ -130,4 +131,11 @@ public class Medication {
         this.sicknessName = sicknessName;
     }
 
+    public int getNextDueDay() {
+        return nextDueDay;
+    }
+
+    public void setNextDueDay(int nextDueDay) {
+        this.nextDueDay = nextDueDay;
+    }
 }
