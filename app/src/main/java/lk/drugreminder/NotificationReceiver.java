@@ -12,15 +12,6 @@ import androidx.core.app.NotificationManagerCompat;
 public class NotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
-        // Build notification based on Intent
-//        Notification notification = new NotificationCompat.Builder(context)
-//                .setSmallIcon(R.drawable.ic_menu_slideshow)
-//                .setContentTitle(intent.getStringExtra("title"))
-//                .setContentText(intent.getStringExtra("text"))
-//                .build();
-//        // Show notification
-//        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-//        manager.notify(42, notification);
         final NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(context, "abcd")
                         .setSmallIcon(R.drawable.ic_menu_slideshow) //set icon for notification
